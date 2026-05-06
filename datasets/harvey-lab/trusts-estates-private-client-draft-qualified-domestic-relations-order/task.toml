@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/trusts-estates-private-client-draft-qualified-domestic-relations-order"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Family Law", "QDRO", "retirement-benefits-division", "ERISA", "defined-benefit-pension", "401k", "divorce-decree-implementation", "marital-property-division"]
+
+[agent]
+timeout_sec = 2400
+
+[verifier]
+timeout_sec = 1200
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

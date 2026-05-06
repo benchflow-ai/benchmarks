@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-ma-identify-issues-in-counterpartys-draft-stock-purchase-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Mergers & Acquisitions", "stock-purchase-agreement", "private-equity", "acquisition", "issue-spotting", "SPA-review", "seller-favorable-terms", "market-practice"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 795
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

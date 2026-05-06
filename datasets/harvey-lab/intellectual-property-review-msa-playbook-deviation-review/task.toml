@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-review-msa-playbook-deviation-review"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Technology Transactions", "contract-review", "playbook-compliance", "SaaS", "enterprise-negotiation", "redline-analysis", "risk-assessment", "B2B"]
+
+[agent]
+timeout_sec = 2190
+
+[verifier]
+timeout_sec = 1095
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

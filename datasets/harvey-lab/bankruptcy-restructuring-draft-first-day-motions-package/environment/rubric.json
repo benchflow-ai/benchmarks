@@ -1,0 +1,1042 @@
+{
+  "title": "Chapter 11 First-Day Motions Package for MidStar Hospitality Group \u2014 CRO Declaration and Five First-Day Motions",
+  "criteria": [
+    {
+      "id": "C-001",
+      "title": "CRO Declaration: Prescott identified with Hollcroft Ventures Advisory Partners",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies Jonathan R. Prescott as affiliated with Hollcroft Ventures Advisory Partners LLC. FAIL if Prescott's name or Hollcroft Ventures affiliation is missing."
+    },
+    {
+      "id": "C-002",
+      "title": "CRO Declaration: Prescott identified as CRO",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states that Jonathan R. Prescott was appointed as Chief Restructuring Officer. FAIL if the CRO appointment is not stated."
+    },
+    {
+      "id": "C-003",
+      "title": "CRO Declaration: Prescott biographical qualifications",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration includes biographical facts about Prescott's restructuring experience (e.g., years of experience, prior CRO engagements, hospitality sector experience, or former professional affiliations). FAIL if no biographical qualifications are provided."
+    },
+    {
+      "id": "C-004",
+      "title": "CRO Declaration: Prescott engagement date",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states the CRO engagement date as November 4, 2025. FAIL if the engagement date is omitted or incorrect."
+    },
+    {
+      "id": "C-005",
+      "title": "CRO Declaration: Monthly engagement fee of $175,000",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration identifies the CRO engagement fee as $175,000 per month. FAIL if the monthly fee is omitted or incorrect."
+    },
+    {
+      "id": "C-006",
+      "title": "CRO Declaration: $1.25 million success fee upon plan confirmation",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration identifies a $1.25 million success fee upon plan confirmation. FAIL if the success fee is omitted or incorrect."
+    },
+    {
+      "id": "C-007",
+      "title": "CRO Declaration: 23 properties with ~4,870 rooms across 9 states",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration describes MidStar as operating 23 hotel and resort properties with approximately 4,870 total guest rooms across 9 states. FAIL if the property count, room count, or state count is materially wrong."
+    },
+    {
+      "id": "C-008",
+      "title": "CRO Declaration: Property breakdown by type",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states the property breakdown as 14 full-service hotels, 6 limited-service hotels, and 3 resort properties. FAIL if the breakdown by type is materially wrong or omitted."
+    },
+    {
+      "id": "C-009",
+      "title": "CRO Declaration: Employee count",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states approximately 3,847 employees (2,612 full-time, 1,235 part-time/seasonal). FAIL if employee figures are omitted or materially misstated."
+    },
+    {
+      "id": "C-010",
+      "title": "CRO Declaration: All 9 debtor entities identified by name",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration identifies all 9 debtor entities by name (MidStar Hospitality Group, Inc. as lead debtor and 8 subsidiaries). FAIL if any debtor entity is omitted."
+    },
+    {
+      "id": "C-011",
+      "title": "CRO Declaration: Corporate organizational relationships described",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration describes the corporate structure relationships (parent-subsidiary hierarchy). FAIL if the organizational relationships are materially misstated or absent."
+    },
+    {
+      "id": "C-012",
+      "title": "CRO Declaration: Total funded debt ~$487.4M",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states total funded debt of approximately $487.4 million. FAIL if total debt is materially misstated or omitted."
+    },
+    {
+      "id": "C-013",
+      "title": "CRO Declaration: First lien term loan ($293.7M)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states the first lien term loan at approximately $293.7M outstanding. FAIL if the first lien term loan amount is materially misstated or omitted."
+    },
+    {
+      "id": "C-014",
+      "title": "CRO Declaration: First lien revolver ($42.3M drawn)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states the first lien revolver at approximately $42.3M drawn. FAIL if the first lien revolver amount is materially misstated or omitted."
+    },
+    {
+      "id": "C-015",
+      "title": "CRO Declaration: Second lien notes ($151.4M outstanding)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states second lien notes at approximately $151.4M outstanding. FAIL if the second lien notes amount is materially misstated or omitted."
+    },
+    {
+      "id": "C-016",
+      "title": "CRO Declaration: Events leading to filing \u2014 causes of distress",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration describes >=4 of the following 5 causes of distress: (1) over-leverage from the September 2019 leveraged recapitalization, (2) COVID-19 pandemic impact on revenue, (3) rising interest rates (SOFR increase resulting in ~$17.8M incremental annual interest cost), (4) deferred maintenance backlog of approximately $47 million, (5) management turnover (CEO Marcus Trelawney resignation effective December 20, 2025). FAIL if fewer than 4 of these 5 causes are addressed."
+    },
+    {
+      "id": "C-017",
+      "title": "CRO Declaration: Prepetition restructuring timeline milestones",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration describes >=4 of the following 5 prepetition restructuring milestones: (1) missed second lien interest payment (June 15, 2025, cure period expiring July 15, 2025), (2) engagement of advisors (Ironclad Capital Advisors LLC, Hollcroft Ventures Advisory Partners LLC, Thornfield & Castellan LLP \u2014 retained since October 2025), (3) CRO appointment (November 4, 2025), (4) DIP commitment letter execution (December 15, 2025), (5) board authorization (January 6, 2026). FAIL if fewer than 4 of these 5 milestones are described."
+    },
+    {
+      "id": "C-018",
+      "title": "CRO Declaration: Cash on hand ~$21.5M as of January 10, 2026",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states total cash on hand of approximately $21.5 million as of January 10, 2026. FAIL if the cash-on-hand figure is absent or materially wrong."
+    },
+    {
+      "id": "C-019",
+      "title": "CRO Declaration: Available revolver capacity ~$4.5M and total liquidity ~$26.0M",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states available revolver capacity of approximately $4.5 million, yielding total liquidity of approximately $26.0 million. FAIL if these figures are absent or materially wrong."
+    },
+    {
+      "id": "C-020",
+      "title": "CRO Declaration: 30-day obligations ~$58.0M",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states upcoming 30-day obligations of approximately $58.0 million. FAIL if the 30-day obligation total is absent or materially wrong."
+    },
+    {
+      "id": "C-021",
+      "title": "CRO Declaration: $34.5M first lien interest payment due January 22, 2026",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration identifies the $34.5 million first lien interest payment due January 22, 2026. FAIL if this payment and its date are absent or materially wrong."
+    },
+    {
+      "id": "C-022",
+      "title": "CRO Declaration: Liquidity shortfall requiring DIP financing",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration identifies the resulting shortfall between available liquidity and 30-day obligations as the basis for needing DIP financing. FAIL if the shortfall narrative connecting liquidity to obligations is absent."
+    },
+    {
+      "id": "C-023",
+      "title": "CRO Declaration: TTM revenue ~$312.4M",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states trailing twelve month revenue of approximately $312.4 million. FAIL if TTM revenue is omitted or materially misstated."
+    },
+    {
+      "id": "C-024",
+      "title": "CRO Declaration: Adjusted EBITDA ~$24.2M",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the declaration states Adjusted EBITDA of approximately $24.2 million. FAIL if Adjusted EBITDA is omitted or materially misstated."
+    },
+    {
+      "id": "C-025",
+      "title": "CRO Declaration: MidStar Loyalty Program LLC identified as non-debtor affiliate owned by MidStar Operations LLC",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies MidStar Loyalty Program LLC as a non-debtor affiliate that is 100% owned by MidStar Operations LLC (a debtor). FAIL if the loyalty entity is not identified or its ownership is missing."
+    },
+    {
+      "id": "C-026",
+      "title": "CRO Declaration: Loyalty entity liability and membership figures",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states that MidStar Loyalty Program LLC holds $14.2 million in loyalty point liabilities for approximately 2.3 million members. FAIL if the liability or membership figures are missing."
+    },
+    {
+      "id": "C-027",
+      "title": "CRO Declaration: Rationale for excluding loyalty entity from filing",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration explains the rationale for excluding MidStar Loyalty Program LLC from the Chapter 11 filing. FAIL if the exclusion rationale is not provided."
+    },
+    {
+      "id": "C-028",
+      "title": "ISSUE_001: Loyalty entity \u2014 franchise agreement risk",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration or any motion flags the risk that the Horizon franchise agreement requires maintenance of the StarRewards loyalty program (Section 7.04, with termination rights under Section 14.02(a)(iv) referencing Section 14.01(h)) and that collapse of the loyalty program could trigger franchise defaults. The franchise agreement's Section 14.02 governs termination by Franchisor, not \u00a7 14.02 of the credit agreement. FAIL if this franchise-linked loyalty program risk is not mentioned in any deliverable."
+    },
+    {
+      "id": "C-029",
+      "title": "ISSUE_001: Cash management authorizes loyalty entity funding",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion specifically requests authority to continue funding the non-debtor MidStar Loyalty Program LLC through intercompany transfers. FAIL if the motion does not address continued funding of the non-debtor loyalty entity."
+    },
+    {
+      "id": "C-030",
+      "title": "ISSUE_002: DIP motion addresses $35M roll-up feature",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP financing motion describes the $35 million roll-up of prepetition first lien revolver debt into the DIP facility, converting prepetition claims into post-petition administrative claims. FAIL if the roll-up is not specifically described."
+    },
+    {
+      "id": "C-031",
+      "title": "ISSUE_002: DIP motion provides legal justification for roll-up",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion includes specific legal justification for the roll-up feature, such as market-testing, absence of alternative financing, benefit to the estate, or necessity to secure DIP lender participation. FAIL if no affirmative legal justification for the roll-up is provided."
+    },
+    {
+      "id": "C-032",
+      "title": "ISSUE_002: DIP motion addresses anticipated objections to roll-up",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion anticipates likely objections from second lien noteholders and/or unsecured creditors to the roll-up and addresses them (e.g., no prejudice given adequate protection, market-tested terms, no alternative lender willing to provide financing without roll-up). FAIL if anticipated objections to the roll-up are not discussed."
+    },
+    {
+      "id": "C-033",
+      "title": "ISSUE_002: DIP motion addresses $7.3M remaining revolver repayment",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion addresses the remaining $7.3 million of prepetition revolver debt ($42.3M total - $35.0M roll-up = $7.3M) that will be repaid from DIP proceeds. FAIL if the $7.3M repayment is not mentioned."
+    },
+    {
+      "id": "C-034",
+      "title": "ISSUE_002: DIP motion cites \u00a7 364(c) and (d)",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion cites 11 U.S.C. \u00a7 364(c) and/or \u00a7 364(d) as the legal basis for the DIP financing and discusses the applicable legal standards. FAIL if \u00a7 364 is not cited or the legal standard is not articulated."
+    },
+    {
+      "id": "C-035",
+      "title": "DIP Motion: Adequate protection package \u2014 at least 3 of 4 elements",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion describes >=3 of the following 4 adequate protection elements: (1) current-pay interest at non-default rate, (2) replacement liens, (3) superpriority administrative expense claim (junior to DIP), (4) payment of first lien advisor fees and expenses. FAIL if fewer than 3 of these 4 elements are described."
+    },
+    {
+      "id": "C-036",
+      "title": "Wages motion: $1.9M sales/occupancy taxes identified",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion identifies $1.9 million in sales/occupancy taxes as trust fund obligations. FAIL if sales/occupancy taxes are not identified or the amount is materially wrong."
+    },
+    {
+      "id": "C-037",
+      "title": "Wages motion: $1.4M withheld payroll taxes identified",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion identifies $1.4 million in withheld employee payroll taxes as trust fund obligations. FAIL if withheld payroll taxes are not identified or the amount is materially wrong."
+    },
+    {
+      "id": "C-038",
+      "title": "Wages motion: Trust fund taxes \u2014 \u00a7 541 exclusion addressed",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion explains that trust fund taxes are not property of the estate under \u00a7 541 (or equivalent legal basis). FAIL if the special status of trust fund taxes under \u00a7 541 is not addressed."
+    },
+    {
+      "id": "C-039",
+      "title": "ISSUE_003: Sales/occupancy tax urgency \u2014 due January 20",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the motion notes the urgency of the $1.9 million sales/occupancy tax payment due January 20, 2026 (5 days after the petition date) and requests authority to pay it. FAIL if the January 20 due date and its urgency are not mentioned."
+    },
+    {
+      "id": "C-040",
+      "title": "ISSUE_003: Personal liability risk under IRC \u00a7 6672",
+      "deliverables": [
+        "wages-employee-motion.docx",
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable addresses the risk of personal liability for officers/directors/CRO under IRC \u00a7 6672 (trust fund recovery penalty) for unpaid trust fund taxes. FAIL if personal liability for trust fund taxes is not mentioned in any deliverable."
+    },
+    {
+      "id": "C-041",
+      "title": "Chesapeake LP: Ipso facto dissolution clause identified",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration or any motion identifies the ipso facto clause in the Chesapeake Lodging Partners LP agreement (\u00a7 9.01(d) providing for dissolution upon a bankruptcy filing by or against any Partner, or appointment of a receiver, or general assignment for the benefit of creditors by any Partner). FAIL if the Chesapeake LP dissolution trigger is not identified."
+    },
+    {
+      "id": "C-042",
+      "title": "Chesapeake LP: \u00a7 365(e) override of ipso facto clause",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable addresses how \u00a7 365(e) of the Bankruptcy Code renders such ipso facto clauses unenforceable. FAIL if \u00a7 365(e) is not cited in connection with the Chesapeake LP dissolution clause."
+    },
+    {
+      "id": "C-043",
+      "title": "CRO Declaration: Chesapeake LP partnership structure (1% GP / 99% LP)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the Chesapeake LP structure with MidStar Hospitality Group, Inc. holding the 1% general partner interest and MidStar Operations LLC holding the 99% limited partner interest. FAIL if the partnership structure is not described."
+    },
+    {
+      "id": "C-044",
+      "title": "CRO Declaration: Chesapeake LP holds 8 properties with $127M aggregate initial Book Value",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration notes that 8 properties with $127,000,000 in aggregate initial Book Value are held by Chesapeake LP. FAIL if the property count or value for Chesapeake LP is not described."
+    },
+    {
+      "id": "C-045",
+      "title": "ISSUE_006: Utilities motion proposes $0.9M adequate assurance deposit",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion states the proposed adequate assurance deposit is approximately $0.9 million, based on approximately 2 weeks of average utility costs. FAIL if the proposed deposit amount or its calculation basis is not stated."
+    },
+    {
+      "id": "C-046",
+      "title": "ISSUE_006: Utilities motion addresses Judge Waverly's 4-week preference",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion acknowledges or addresses the assigned judge's (Judge Waverly) known preference for 4-week adequate assurance deposits rather than the proposed 2-week basis, and provides justification for the lower amount or offers to adjust. FAIL if the judicial preference for a 4-week deposit is not acknowledged."
+    },
+    {
+      "id": "C-047",
+      "title": "ISSUE_006: Utilities motion addresses resort property disproportionate costs",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion specifically addresses the disproportionate utility costs at the 3 resort properties (approximately $0.44M/month or 48% of total electric costs) and discusses implications for adequate assurance. FAIL if the resort property utility cost concentration is not discussed."
+    },
+    {
+      "id": "C-048",
+      "title": "ISSUE_006: Alternative forms of adequate assurance offered",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion offers alternative forms of adequate assurance beyond the cash deposit (e.g., DIP budget line item, letter of credit, surety bond, or administrative expense priority for post-petition utility charges). FAIL if no alternative forms of adequate assurance are mentioned."
+    },
+    {
+      "id": "C-049",
+      "title": "ISSUE_006: Utilities motion cites \u00a7 366",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion cites 11 U.S.C. \u00a7 366 (specifically \u00a7 366(c)(2) regarding adequate assurance of payment) as the governing statutory provision. FAIL if \u00a7 366 is not cited."
+    },
+    {
+      "id": "C-050",
+      "title": "Utilities motion: 47 utility providers serving 23 properties",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion states that approximately 47 utility providers serve the properties. FAIL if the number of providers is materially misstated or omitted."
+    },
+    {
+      "id": "C-051",
+      "title": "Utilities motion: Total monthly utility expense ~$1.85M",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion states the total monthly utility expense is approximately $1.85 million. FAIL if the total monthly cost is materially misstated or omitted."
+    },
+    {
+      "id": "C-052",
+      "title": "Utilities motion: Monthly utility cost breakdown by category",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion provides a breakdown of monthly utility costs by category (electric ~$0.92M, gas ~$0.38M, water/sewer ~$0.31M, telecom ~$0.24M). FAIL if no category breakdown is provided."
+    },
+    {
+      "id": "C-053",
+      "title": "Wages motion: \u00a7 507(a)(4) priority cap identified ($15,150 for 2026)",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion identifies the \u00a7 507(a)(4) priority cap of $15,150 per employee for 2026 cases. FAIL if the \u00a7 507(a)(4) cap is not stated."
+    },
+    {
+      "id": "C-054",
+      "title": "Wages motion: 3 executives exceeding \u00a7 507(a)(4) cap",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion notes that 3 senior executives have prepetition wage claims of $15,385 each, exceeding the cap by $235 each. FAIL if the excess amounts for these executives are not identified."
+    },
+    {
+      "id": "C-055",
+      "title": "ISSUE_007: Excess amounts classified as general unsecured",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the motion notes that the amounts exceeding the \u00a7 507(a)(4) cap ($235 \u00d7 3 = $705 total) would be classified as general unsecured claims rather than priority claims. FAIL if this reclassification is not addressed."
+    },
+    {
+      "id": "C-056",
+      "title": "ISSUE_007: Wages motion addresses payroll deductions",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion requests authority to honor prepetition payroll deductions including union dues (for 412 union employees under 2 CBAs), garnishments, and 401(k) contributions, noting these involve third-party obligations. FAIL if payroll deductions for union dues and garnishments are not addressed."
+    },
+    {
+      "id": "C-057",
+      "title": "Wages motion: $3.1M prepetition wages described",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion identifies $3.1 million in prepetition accrued wages (one week for pay period ending January 10, 2026, due to be paid January 17, 2026). FAIL if the prepetition wage amount or timing is materially misstated."
+    },
+    {
+      "id": "C-058",
+      "title": "Wages motion: $4.6M accrued PTO liability",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion addresses the $4.6 million accrued vacation/PTO liability. FAIL if PTO liability is omitted."
+    },
+    {
+      "id": "C-059",
+      "title": "Wages motion: Health insurance continuation ($0.5M employer portion per pay period)",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion requests authority to continue health insurance with the employer portion of approximately $0.5M per pay period. FAIL if health insurance continuation is not addressed."
+    },
+    {
+      "id": "C-060",
+      "title": "Wages motion: 401(k) employer match continuation ($0.2M per pay period)",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion requests authority to continue the 401(k) employer match of approximately $0.2M per pay period. FAIL if 401(k) continuation is not addressed."
+    },
+    {
+      "id": "C-061",
+      "title": "CRO Declaration: Franchise agreements described (Horizon 8, Landmark 4, 11 independent)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the franchise agreements: 8 with Horizon Hotels International, 4 with Landmark Collection Hotels, and 11 independent/unbranded properties. FAIL if franchise agreements are not described or the counts are materially wrong."
+    },
+    {
+      "id": "C-062",
+      "title": "CRO Declaration: Annual franchise fees (~$11.8M) stated",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states that annual franchise fees aggregate approximately $11.8 million across all franchise relationships. FAIL if the fee amount is materially misstated or omitted."
+    },
+    {
+      "id": "C-063",
+      "title": "ISSUE_008: Horizon PIP requirement flagged",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable flags the Horizon Hotels International PIP (Property Improvement Plan) requirement triggered within 18 months of a change of control (including Chapter 11 filing) with estimated cost of $22 million across 8 properties. FAIL if the Horizon PIP obligation is not mentioned."
+    },
+    {
+      "id": "C-064",
+      "title": "ISSUE_008: Franchise assumption/rejection rights preserved",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable notes that the franchise agreements are executory contracts subject to \u00a7 365 and that the Debtors' rights to assume or reject them during the case must be preserved, including the requirement to cure prepetition defaults and provide adequate assurance of future performance upon assumption. FAIL if \u00a7 365 executory contract rights for franchise agreements are not addressed."
+    },
+    {
+      "id": "C-065",
+      "title": "Cash management motion: Intercompany transaction volume ($4.2M/month)",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion states the average monthly intercompany transactions of $4.2 million. FAIL if intercompany transaction volume is not described."
+    },
+    {
+      "id": "C-066",
+      "title": "Cash management motion: Outstanding intercompany balances ($25.5M total)",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion states outstanding intercompany receivables/payables of $25.5 million total (Operations LLC $12.8M, HQ $7.3M, Development $5.4M). FAIL if outstanding intercompany balances are not described."
+    },
+    {
+      "id": "C-067",
+      "title": "ISSUE_009: Intercompany claim preservation addressed",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion addresses whether intercompany claims should be preserved, subordinated, or potentially eliminated, and/or mentions the possibility of substantive consolidation. FAIL if intercompany claim treatment is not discussed at all."
+    },
+    {
+      "id": "C-068",
+      "title": "ISSUE_010: Workers' comp SIR payments authorized",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion requests authority to continue payment of workers' compensation obligations within the $250,000 per-occurrence self-insured retention, identifying 7 open claims with $550,000 in pending exposure. FAIL if workers' comp SIR payments are not specifically addressed."
+    },
+    {
+      "id": "C-069",
+      "title": "Customer deposits ($5.7M) addressed",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable addresses the $5.7 million in customer deposits for future reservations. FAIL if customer deposits are not discussed."
+    },
+    {
+      "id": "C-070",
+      "title": "Gift card liabilities ($2.1M) addressed",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable addresses the $2.1 million in gift card liabilities. FAIL if gift card liabilities are not discussed."
+    },
+    {
+      "id": "C-071",
+      "title": "Forward bookings context for honoring customer deposits ($18.3M Q1 2026)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if any deliverable mentions the importance of honoring customer deposits to maintain $18.3 million in forward Q1 2026 bookings. FAIL if the forward bookings context is not provided."
+    },
+    {
+      "id": "C-072",
+      "title": "ISSUE_011: State trust fund arguments for deposits",
+      "deliverables": [
+        "cro-declaration.docx",
+        "wages-employee-motion.docx",
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if any deliverable notes that certain states have consumer protection statutes or statutory trust requirements that may treat advance customer deposits or collected taxes as trust funds (e.g., Maryland, Florida, and South Carolina are noted in the tax memo for sales/occupancy tax trust requirements, and Florida and South Carolina have consumer protection statutes relevant to customer obligations), creating an argument these are not property of the estate. FAIL if the state-law trust fund issue for customer deposits or collected taxes is not mentioned."
+    },
+    {
+      "id": "C-073",
+      "title": "CRO Declaration: Contemplated workforce reduction of ~340 employees (~8.8%)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration mentions the contemplated workforce reduction of approximately 340 employees (~8.8% of workforce) beginning around day 90. FAIL if the contemplated layoffs are not addressed. NOTE: The provided documents may not contain these specific figures; the agent must synthesize available information."
+    },
+    {
+      "id": "C-074",
+      "title": "CRO Declaration: WARN Act obligations flagged for contemplated layoffs",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration flags WARN Act obligations (60 days' notice requirement) and notes that several property-level layoffs may exceed 50 employees and trigger WARN. FAIL if WARN Act implications are not addressed."
+    },
+    {
+      "id": "C-075",
+      "title": "Cash management motion: 28 bank accounts across 3 institutions",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion describes the 28 bank accounts across 3 financial institutions (Pinnacle National Bank 18 accounts, Harbor Commerce Bank 6 accounts, Sentry Federal Credit Union 4 accounts). FAIL if the account count or bank names are materially misstated."
+    },
+    {
+      "id": "C-076",
+      "title": "Cash management motion: Daily sweep structure",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion describes the daily revenue sweep from property-level accounts to the main operating account at Pinnacle, and central disbursement from operating and payroll accounts. FAIL if the sweep/disbursement structure is not described."
+    },
+    {
+      "id": "C-077",
+      "title": "Cash management motion: Banks are UST-approved depositories",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the motion notes that Pinnacle, Harbor Commerce, and Sentry Federal are authorized depositories under the U.S. Trustee's operating guidelines for the District of Delaware. FAIL if the authorized depository status is not mentioned."
+    },
+    {
+      "id": "C-078",
+      "title": "Critical vendors motion: $9.7M critical vendor pool identified",
+      "deliverables": [
+        "critical-vendors-motion.docx"
+      ],
+      "match_criteria": "PASS if the critical vendor motion identifies the proposed critical vendor pool of approximately $9.5 million across the recommended critical vendors. FAIL if the total critical vendor amount is materially misstated or omitted."
+    },
+    {
+      "id": "C-079",
+      "title": "Critical vendors motion: Kmart/necessities-of-business doctrine",
+      "deliverables": [
+        "critical-vendors-motion.docx"
+      ],
+      "match_criteria": "PASS if the critical vendor motion provides legal analysis under the Kmart/necessities-of-business doctrine and/or cites In re Kmart Corp. or similar precedent establishing the legal standard for critical vendor payments. FAIL if no legal doctrine for critical vendor authority is cited."
+    },
+    {
+      "id": "C-080",
+      "title": "Critical vendors motion: Key vendors identified",
+      "deliverables": [
+        "critical-vendors-motion.docx"
+      ],
+      "match_criteria": "PASS if the motion identifies >=3 of the following 4 key critical vendors by name: Coastal Linen & Supply Co. ($3.2M), Brightway Food Distribution Inc. ($2.8M), LodgeTech Solutions Inc. ($2.4M), Keystone HVAC Solutions LLC ($1.7M). FAIL if fewer than 3 key vendors are identified by name."
+    },
+    {
+      "id": "C-081",
+      "title": "Critical vendors motion: Vendor-by-vendor justification methodology",
+      "deliverables": [
+        "critical-vendors-motion.docx"
+      ],
+      "match_criteria": "PASS if the critical vendor motion includes or describes a vendor-by-vendor justification methodology (e.g., individual vendor declarations, vendor-specific facts supporting critical vendor status, or a schedule with vendor-specific rationale). FAIL if no vendor-specific justification methodology is described."
+    },
+    {
+      "id": "C-082",
+      "title": "CRO Declaration: Delaware court identification",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies the United States Bankruptcy Court for the District of Delaware as the court. FAIL if the court is misidentified."
+    },
+    {
+      "id": "C-083",
+      "title": "CRO Declaration: Petition date January 15, 2026",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states the petition date as January 15, 2026. FAIL if the petition date is wrong."
+    },
+    {
+      "id": "C-084",
+      "title": "CRO Declaration: 2017 LBO described",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the 2017 leveraged buyout by Aldersgate Equity Partners Fund III, LP. The documents reference a June 15, 2017 Existing Credit Agreement and Aldersgate Equity Partners Fund III, LP as the equity sponsor, but do not state a specific enterprise value of $425 million or a $185M equity / $240M debt breakdown. The CRO declaration should describe the LBO consistent with the facts derivable from the documents (Aldersgate as sponsor, 2017 acquisition, original credit facility). FAIL if the LBO by Aldersgate is not described at all."
+    },
+    {
+      "id": "C-085",
+      "title": "CRO Declaration: September 2019 leveraged recapitalization \u2014 second lien notes",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the September 2019 leveraged recapitalization including the issuance of $155M second lien notes (10.25% Senior Secured Second Lien Notes due 2028). FAIL if the $155M second lien notes issuance is not described or is materially wrong."
+    },
+    {
+      "id": "C-086",
+      "title": "CRO Declaration: September 2019 first lien refinancing ($310M term loan, $50M revolver)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the amendment and restatement of the first lien credit agreement with a $310M term loan and $50M revolver in connection with the September 2019 recapitalization. FAIL if the first lien refinancing is not described."
+    },
+    {
+      "id": "C-087",
+      "title": "CRO Declaration: Dividend distribution to Aldersgate in 2019 recapitalization",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes a dividend distribution to Aldersgate Equity Partners Fund III, LP in connection with the September 2019 recapitalization. FAIL if the dividend distribution is not described."
+    },
+    {
+      "id": "C-088",
+      "title": "CRO Declaration: Forward-looking restructuring strategy",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration includes a forward-looking discussion of the restructuring strategy (e.g., stabilizing operations, asset disposition or sale process, plan of reorganization timeline, addressing deferred maintenance). FAIL if no forward-looking restructuring strategy is provided."
+    },
+    {
+      "id": "C-089",
+      "title": "CRO Declaration: Union employees and CBAs",
+      "deliverables": [
+        "cro-declaration.docx",
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if any deliverable identifies union employees under collective bargaining agreements with UNITE HERE Local 7 Baltimore and UNITE HERE Local 355 Southeast Florida. The documents (Schedule III of the indenture) reference Liens arising under collective bargaining agreements with these two locals, but do not specify 412 union employees or the number 2 CBAs explicitly. FAIL if union employees and CBAs with UNITE HERE Local 7 Baltimore and UNITE HERE Local 355 Southeast Florida are not mentioned."
+    },
+    {
+      "id": "C-090",
+      "title": "DIP Motion: Default interest rate of additional 200 basis points",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion mentions the default rate of additional 200 basis points. FAIL if the default rate is omitted."
+    },
+    {
+      "id": "C-091",
+      "title": "DIP Motion: Events of default or milestone deadlines described",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion describes key events of default or milestone deadlines. FAIL if events of default/milestones are entirely omitted."
+    },
+    {
+      "id": "C-092",
+      "title": "Wages motion: Bi-weekly payroll total (~$6.2M)",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion states the bi-weekly payroll of approximately $6.2 million. FAIL if the payroll amount is omitted or materially misstated."
+    },
+    {
+      "id": "C-093",
+      "title": "Wages motion: Bi-weekly payroll component breakdown",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion provides at least a partial component breakdown of the bi-weekly payroll (e.g., wages $4.8M, employer payroll taxes $0.7M, health insurance $0.5M, 401(k) match $0.2M). FAIL if no component breakdown is provided."
+    },
+    {
+      "id": "C-094",
+      "title": "Wages motion: Employer payroll taxes of $0.7M",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion addresses the $0.7 million in accrued employer payroll taxes and distinguishes them from the $1.4 million in withheld employee payroll taxes (trust fund). FAIL if employer payroll taxes are not addressed."
+    },
+    {
+      "id": "C-095",
+      "title": "Cash management motion: Total cash ~$21.5M",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion states total cash on hand as approximately $21.5 million. FAIL if total cash is materially misstated or omitted."
+    },
+    {
+      "id": "C-096",
+      "title": "Cash management motion: Cash component breakdown",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion provides a component breakdown of the $21.5M (operating $8.4M, payroll $2.1M, property accounts $4.7M, FF&E reserve $6.3M). FAIL if no breakdown is provided."
+    },
+    {
+      "id": "C-097",
+      "title": "CRO Declaration: Summary of each first-day motion",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration includes a summary section addressing >=4 of the 5 first-day motions (DIP financing, cash management, wages/employees, critical vendors, utilities) with factual support for each. FAIL if summaries of fewer than 4 motions are provided."
+    },
+    {
+      "id": "C-098",
+      "title": "DIP Motion: Pinnacle identified as both prepetition first lien agent and DIP agent",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion identifies Pinnacle National Bank, N.A. as both the prepetition first lien administrative agent and the proposed DIP lender/DIP agent. FAIL if Pinnacle's dual role is not made clear."
+    },
+    {
+      "id": "C-099",
+      "title": "DIP Motion: $35M roll-up of prepetition revolver into DIP facility",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion describes the roll-up of $35.0 million of prepetition revolving credit obligations into the DIP facility. FAIL if the roll-up amount is not stated in the DIP motion."
+    },
+    {
+      "id": "C-100",
+      "title": "Cash management motion: Investment guidelines addressed",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion addresses investment guidelines for funds held in bank accounts (e.g., compliance with \u00a7 345 investment restrictions or waiver thereof). FAIL if investment guidelines are not mentioned."
+    },
+    {
+      "id": "C-101",
+      "title": "Wages motion: Workers' comp insurer identified as Sentinel Indemnity Corp",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion identifies workers' compensation insurance through Sentinel Indemnity Corp. FAIL if the insurer is omitted."
+    },
+    {
+      "id": "C-102",
+      "title": "Wages motion: Workers' comp $250,000 per-occurrence SIR",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion states the $250,000 per-occurrence self-insured retention. FAIL if the SIR amount is omitted."
+    },
+    {
+      "id": "C-103",
+      "title": "Wages motion: Workers' comp policy current through March 31, 2026",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages/employee motion states the workers' comp policy is current through March 31, 2026. FAIL if the policy expiration date is omitted."
+    },
+    {
+      "id": "C-104",
+      "title": "CRO Declaration: Board authorization described",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration notes the board's January 6, 2026 authorization for the Chapter 11 filing. FAIL if the board authorization is not mentioned."
+    },
+    {
+      "id": "C-105",
+      "title": "CRO Declaration: Aldersgate Equity Partners identified as equity sponsor",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies Aldersgate Equity Partners Fund III, LP as the equity sponsor. The documents do not specify a 78.2% ownership percentage; the first lien credit agreement's Change of Control provision references Aldersgate owning at least 51.0% of voting stock, and the second lien indenture identifies Aldersgate as a Permitted Holder, but no exact ownership percentage is stated. FAIL if the equity sponsor is not identified."
+    },
+    {
+      "id": "C-106",
+      "title": "CRO Declaration: Pinnacle identified as first lien administrative agent",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies Pinnacle National Bank, N.A. as the first lien administrative agent. FAIL if Pinnacle is not identified as the first lien agent."
+    },
+    {
+      "id": "C-107",
+      "title": "CRO Declaration: Total first lien debt ($336.0M)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states total first lien debt of approximately $336.0M ($293.7M term loan + $42.3M revolver). FAIL if total first lien debt is materially wrong."
+    },
+    {
+      "id": "C-108",
+      "title": "CRO Declaration: Atlantic Fiduciary Trust Company as second lien trustee",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration identifies Atlantic Fiduciary Trust Company as the second lien indenture trustee. FAIL if the trustee is not identified or is wrong."
+    },
+    {
+      "id": "C-109",
+      "title": "CRO Declaration: Second lien notes ~$151.4M at 10.25%",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration states the second lien notes outstanding at approximately $151.4 million at 10.25% interest. FAIL if the note amount or interest rate is materially wrong."
+    },
+    {
+      "id": "C-110",
+      "title": "CRO Declaration: Missed second lien interest payment",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration notes the missed second lien interest payment on June 15, 2025 ($7.0 million) and the expiration of the cure period on July 15, 2025. FAIL if the payment default is not described."
+    },
+    {
+      "id": "C-111",
+      "title": "CRO Declaration: Property descriptions by subsidiary",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the property holdings by subsidiary entity (e.g., Chesapeake LP holds 8 MD/VA properties, Palmetto holds 5 SC/NC/GA properties, etc.). FAIL if properties are not allocated to their holding entities."
+    },
+    {
+      "id": "C-112",
+      "title": "Utilities motion: Adequate assurance procedures established",
+      "deliverables": [
+        "utilities-motion.docx"
+      ],
+      "match_criteria": "PASS if the utilities motion establishes procedures for utility providers to request additional or modified adequate assurance (e.g., deadline for providers to request additional assurance, dispute resolution mechanism). FAIL if no adequate assurance procedures or timeline are provided."
+    },
+    {
+      "id": "C-113",
+      "title": "DIP Motion: FRBP 4001 compliance",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion references Federal Rule of Bankruptcy Procedure 4001 (governing DIP financing applications) or Delaware Local Bankruptcy Rule 4001-2. FAIL if neither FRBP 4001 nor Del. Bankr. LR 4001-2 is cited."
+    },
+    {
+      "id": "C-114",
+      "title": "CRO Declaration: Deferred maintenance backlog ($47M)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration mentions the $47 million deferred maintenance backlog as a factor contributing to declining property performance. FAIL if the deferred maintenance backlog is not mentioned."
+    },
+    {
+      "id": "C-115",
+      "title": "CRO Declaration: NOL carryforwards (~$62M)",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration mentions the approximately $62 million in net operating loss carryforwards. FAIL if the NOLs are not mentioned."
+    },
+    {
+      "id": "C-116",
+      "title": "DIP Motion: Unused fee of 0.50%",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion mentions the unused/undrawn fee of 0.50% on undrawn new money portions. FAIL if the unused fee is omitted."
+    },
+    {
+      "id": "C-117",
+      "title": "CRO Declaration: Interest rate environment impact",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration describes the impact of rising SOFR rates (from approximately 0.05% in 2021 to approximately 5.30% in 2025) on first lien interest expense. FAIL if the interest rate impact is not discussed."
+    },
+    {
+      "id": "C-118",
+      "title": "Wages motion: UNITE HERE Local 7 Baltimore CBA identified",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion identifies the collective bargaining agreement with UNITE HERE Local 7 Baltimore. FAIL if this CBA is not identified."
+    },
+    {
+      "id": "C-119",
+      "title": "Wages motion: UNITE HERE Local 355 Southeast Florida CBA identified",
+      "deliverables": [
+        "wages-employee-motion.docx"
+      ],
+      "match_criteria": "PASS if the wages motion identifies the collective bargaining agreement with UNITE HERE Local 355 Southeast Florida. FAIL if this CBA is not identified."
+    },
+    {
+      "id": "C-120",
+      "title": "Cash management motion: UST guidelines compliance",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion references the U.S. Trustee's operating guidelines for the District of Delaware regarding bank accounts and cash management. FAIL if UST guidelines are not referenced."
+    },
+    {
+      "id": "C-121",
+      "title": "CRO Declaration: D&O tail policy noted",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration mentions the directors' and officers' liability tail policy through Everwatch Insurance Co. ($5 million premium for 6-year tail, paid in full October 2025). FAIL if the D&O tail policy is not mentioned."
+    },
+    {
+      "id": "C-122",
+      "title": "CRO Declaration: Top trade creditors listed",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the CRO declaration lists >=3 of the following 5 top unsecured trade creditors by name: Coastal Linen & Supply Co. ($3.2M), Brightway Food Distribution ($2.8M), Meridian Facility Services ($2.1M), Keystone HVAC Solutions ($1.7M), TrueNorth Janitorial Products ($1.4M). FAIL if fewer than 3 are listed."
+    },
+    {
+      "id": "C-123",
+      "title": "DIP Motion: Ad hoc group consent referenced",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion references the consent/support of the ad hoc group of first lien lenders (holding approximately 62% of first lien debt) for the DIP financing. FAIL if lender support is not mentioned."
+    },
+    {
+      "id": "C-124",
+      "title": "DIP Motion: Cash collateral use addressed",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP motion addresses the Debtors' use of cash collateral (in addition to new DIP money) and the first lien lenders' consent to such use. FAIL if cash collateral use is not addressed."
+    },
+    {
+      "id": "C-125",
+      "title": "Financial consistency: DIP facility size across documents",
+      "deliverables": [
+        "cro-declaration.docx",
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if the DIP facility size is consistently stated at $65 million ($30M new money + $35M roll-up) across both the CRO declaration and DIP motion. FAIL if DIP figures are inconsistent between documents."
+    },
+    {
+      "id": "C-126",
+      "title": "CRO Declaration: Lender counsel identified",
+      "deliverables": [
+        "cro-declaration.docx"
+      ],
+      "match_criteria": "PASS if the prepetition lender consent letter identifies Hargrove, Slater & Poole LLP as counsel to the Ad Hoc Group of First Lien Lenders, and/or the second lien notes indenture identifies Atlantic Fiduciary Trust Company as trustee for the second lien noteholders. FAIL if neither lender/noteholder counsel or representative is identified in any document."
+    },
+    {
+      "id": "C-127",
+      "title": "Cash management motion: Addresses \u00a7 345 or investment requirements",
+      "deliverables": [
+        "cash-management-motion.docx"
+      ],
+      "match_criteria": "PASS if the cash management motion or cash management system description references deposit and investment guidelines or existing deposit/investment practices for estate money (such as the recommendation to 'maintain existing deposit and investment guidelines applicable to the Cash Management System accounts'). FAIL if deposit/investment guidelines are entirely absent from the cash management documentation."
+    },
+    {
+      "id": "C-128",
+      "title": "DIP Motion: Superpriority administrative expense status",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if any document references superpriority administrative expense status for DIP claims (e.g., the prepetition lender consent letter's reference to adequate protection including a 'superpriority administrative expense claim under Section 507(b)' junior to superpriority DIP claims, or the indenture's intercreditor provisions referencing superpriority claims in connection with DIP financing). FAIL if superpriority status for DIP claims is not referenced in any document."
+    },
+    {
+      "id": "C-129",
+      "title": "DIP Motion: Priming liens under \u00a7 364(d)",
+      "deliverables": [
+        "dip-financing-motion.docx"
+      ],
+      "match_criteria": "PASS if any document addresses the DIP lien priority structure, including priming of existing liens or senior secured status (e.g., the second lien indenture's Section 12.06 addressing DIP Financing under \u00a7 364(c) or \u00a7 364(d) and the agreement not to object to DIP liens that prime existing liens, or the prepetition lender consent letter's discussion of the DIP facility structure). FAIL if the lien priority structure of the DIP is not addressed in any document."
+    }
+  ]
+}

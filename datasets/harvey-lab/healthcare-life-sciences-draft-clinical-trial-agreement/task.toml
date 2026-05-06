@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/healthcare-life-sciences-draft-clinical-trial-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Healthcare & Life Sciences", "clinical-trial-agreement", "pharmaceutical", "IP-provisions", "publication-rights", "academic-medical-center", "contract-drafting", "life-sciences-transactions"]
+
+[agent]
+timeout_sec = 2370
+
+[verifier]
+timeout_sec = 1185
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

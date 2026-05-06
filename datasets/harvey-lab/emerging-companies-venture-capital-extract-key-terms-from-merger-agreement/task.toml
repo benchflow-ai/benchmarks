@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/emerging-companies-venture-capital-extract-key-terms-from-merger-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Emerging Companies & Venture Capital", "term-extraction", "preferred-stockholders", "merger-agreement", "biotech", "liquidation-preferences", "indemnification", "closing-conditions"]
+
+[agent]
+timeout_sec = 2310
+
+[verifier]
+timeout_sec = 1155
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

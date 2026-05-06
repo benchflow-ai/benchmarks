@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/bankruptcy-restructuring-draft-bid-procedures-motion"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Bankruptcy & Restructuring", "section-363-sale", "bid-procedures", "stalking-horse", "motion-drafting", "asset-sale", "chapter-11"]
+
+[agent]
+timeout_sec = 2010
+
+[verifier]
+timeout_sec = 1005
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

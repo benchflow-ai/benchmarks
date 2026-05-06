@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/emerging-companies-venture-capital-draft-markup-of-investors-rights-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Emerging Companies & Venture Capital", "investors-rights-agreement", "Series B", "NVCA", "redline-markup", "preferred-stock", "venture-financing", "corporate-governance"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 750
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

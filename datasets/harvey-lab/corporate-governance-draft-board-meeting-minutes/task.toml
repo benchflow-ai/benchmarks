@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-governance-draft-board-meeting-minutes"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Corporate Governance", "board-minutes", "M&A", "conflict-of-interest", "Delaware-corporation", "pharma", "officer-appointments", "board-resolutions"]
+
+[agent]
+timeout_sec = 2520
+
+[verifier]
+timeout_sec = 1260
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

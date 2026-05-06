@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-extract-key-obligations-from-executed-master-services-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Technology Transactions", "contract-analysis", "obligation-tracking", "healthcare", "master-services-agreement", "EHR", "procurement", "compliance"]
+
+[agent]
+timeout_sec = 2070
+
+[verifier]
+timeout_sec = 1035
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

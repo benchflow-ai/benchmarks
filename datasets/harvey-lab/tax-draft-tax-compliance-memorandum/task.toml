@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/tax-draft-tax-compliance-memorandum"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Tax", "corporate-restructuring", "spin-off", "IP-migration", "intercompany-debt", "consolidated-returns", "federal-tax-compliance", "state-tax-compliance", "Section-355", "transfer-pricing", "GILTI", "tax-filing-obligations"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 780
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

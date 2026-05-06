@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-governance-draft-corporate-governance"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Corporate Governance", "board-minutes", "preferred-stock-financing", "equity-incentive-plan", "related-party-transaction", "special-litigation-committee", "Delaware-corporation"]
+
+[agent]
+timeout_sec = 2700
+
+[verifier]
+timeout_sec = 1350
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

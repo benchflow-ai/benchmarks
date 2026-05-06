@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-draft-ip-assignment-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Technology Transactions", "assignment-agreement", "technology-acquisition", "patents", "trade-secrets", "software", "open-source", "earnout", "encumbrances", "ag-tech"]
+
+[agent]
+timeout_sec = 2460
+
+[verifier]
+timeout_sec = 1230
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

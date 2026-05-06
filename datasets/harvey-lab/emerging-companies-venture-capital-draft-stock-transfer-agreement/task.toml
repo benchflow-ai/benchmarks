@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/emerging-companies-venture-capital-draft-stock-transfer-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Emerging Companies & Venture Capital", "stock-transfer-agreement", "secondary-sale", "securities-exemptions", "founder-shares", "right-of-first-refusal", "transfer-restrictions", "Delaware-corporation"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 780
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/environmental-esg-extract-reporting-obligations-from-consent-decree"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Environmental", "consent-decree", "regulatory-compliance", "Clean-Water-Act", "RCRA", "compliance-calendar", "obligation-extraction", "EPA", "reporting-obligations"]
+
+[agent]
+timeout_sec = 2340
+
+[verifier]
+timeout_sec = 1170
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/litigation-dispute-resolution-extract-privileged-communications-from-production-set"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Litigation (General)", "clawback", "FRE-502(b)", "privilege-log", "e-discovery", "DOJ-investigation", "white-collar", "pharmaceutical", "grand-jury-subpoena", "attorney-client-privilege", "work-product"]
+
+[agent]
+timeout_sec = 1980
+
+[verifier]
+timeout_sec = 990
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

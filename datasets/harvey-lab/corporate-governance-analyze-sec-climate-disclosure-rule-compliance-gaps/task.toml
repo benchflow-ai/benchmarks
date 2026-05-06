@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-governance-analyze-sec-climate-disclosure-rule-compliance-gaps"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Compliance & Regulatory", "SEC climate disclosure", "ESG reporting", "gap analysis", "securities regulation", "GHG emissions", "10-K disclosure", "implementation roadmap"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 735
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480
