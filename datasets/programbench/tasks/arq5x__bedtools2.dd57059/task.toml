@@ -1,0 +1,22 @@
+version = "1.0"
+
+[task]
+name = "programbench/arq5x__bedtools2.dd57059"
+
+[metadata]
+author_name = "ProgramBench (Meta FAIR)"
+difficulty = "medium"
+category = "programming"
+tags = ["program-reconstruction", "c"]
+
+[agent]
+timeout_sec = 5400
+
+[verifier]
+timeout_sec = 1800
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+allow_internet = false

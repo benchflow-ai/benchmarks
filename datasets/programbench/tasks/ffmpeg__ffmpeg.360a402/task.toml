@@ -1,0 +1,22 @@
+version = "1.0"
+
+[task]
+name = "programbench/ffmpeg__ffmpeg.360a402"
+
+[metadata]
+author_name = "ProgramBench (Meta FAIR)"
+difficulty = "hard"
+category = "programming"
+tags = ["program-reconstruction", "c"]
+
+[agent]
+timeout_sec = 7200
+
+[verifier]
+timeout_sec = 2400
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+allow_internet = false
