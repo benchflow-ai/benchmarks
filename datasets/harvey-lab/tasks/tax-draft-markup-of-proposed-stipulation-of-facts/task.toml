@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/tax-draft-markup-of-proposed-stipulation-of-facts"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Tax", "tax-court-litigation", "stipulation-of-facts", "R&E-tax-credits", "IRC-41", "domestic-production-deduction", "disguised-dividends", "redline-markup", "pretrial-preparation"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 540
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

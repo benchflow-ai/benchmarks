@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/international-trade-sanctions-draft-trade-compliance-policy-manual"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["International Trade & Sanctions", "export-controls", "EAR", "ITAR", "OFAC-sanctions", "anti-boycott", "EU-dual-use", "corporate-policy", "customs-classification", "voluntary-self-disclosure", "compliance-program", "aerospace-defense", "semiconductor", "multinational-operations"]
+
+[agent]
+timeout_sec = 2340
+
+[verifier]
+timeout_sec = 1170
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/litigation-dispute-resolution-draft-motion-to-dismiss-brief"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["motion-to-dismiss", "commercial-litigation", "software-licensing", "breach-of-contract", "fraud", "DTPA", "Rule-12(b)(6)", "enterprise-software", "healthcare-IT"]
+
+[agent]
+timeout_sec = 2670
+
+[verifier]
+timeout_sec = 1335
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

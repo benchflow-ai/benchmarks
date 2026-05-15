@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/international-trade-sanctions-draft-sanctions-compliance-program-framework"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["International Trade & Sanctions", "compliance-program", "OFAC", "sanctions-screening", "voluntary-self-disclosure", "export-compliance", "risk-assessment", "chemicals-industry"]
+
+[agent]
+timeout_sec = 2760
+
+[verifier]
+timeout_sec = 1380
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

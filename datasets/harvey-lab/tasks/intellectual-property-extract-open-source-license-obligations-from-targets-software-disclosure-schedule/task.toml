@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-extract-open-source-license-obligations-from-targets-software-disclosure-schedule"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "easy"
+category = "legal-analyze"
+tags = ["Technology Transactions", "Intellectual Property", "open-source-licensing", "due-diligence", "software-composition-analysis", "copyleft-risk", "disclosure-schedules", "technology-transactions", "private-equity"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 495
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

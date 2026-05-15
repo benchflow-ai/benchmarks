@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-ma-draft-ma-agreement-from-precedent-scenario-01"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["M&A", "stock-purchase-agreement", "private-equity", "bolt-on-acquisition", "earnout", "escrow", "working-capital-adjustment", "rollover-equity", "lower-middle-market", "chemical-distribution"]
+
+[agent]
+timeout_sec = 3150
+
+[verifier]
+timeout_sec = 1575
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

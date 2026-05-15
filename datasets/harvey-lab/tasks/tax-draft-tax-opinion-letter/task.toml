@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/tax-draft-tax-opinion-letter"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Tax", "spin-off", "Section 355", "Section 368(a)(1)(D)", "tax opinion letter", "corporate reorganization", "Capital Markets", "Form 10", "tax-free distribution"]
+
+[agent]
+timeout_sec = 2280
+
+[verifier]
+timeout_sec = 1140
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/funds-asset-management-draft-capital-call-distribution"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["private-equity", "fund-administration", "capital-call", "distribution-notice", "waterfall-calculation", "LP-allocation", "capital-accounts", "partnership-agreement"]
+
+[agent]
+timeout_sec = 3690
+
+[verifier]
+timeout_sec = 1845
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

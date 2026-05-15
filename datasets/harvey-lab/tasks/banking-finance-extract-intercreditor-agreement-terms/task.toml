@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/banking-finance-extract-intercreditor-agreement-terms"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-analyze"
+tags = ["Banking & Finance", "bankruptcy", "Chapter-11", "secured-lending", "payment-waterfall", "DIP-financing", "debt-restructuring", "term-extraction"]
+
+[agent]
+timeout_sec = 2610
+
+[verifier]
+timeout_sec = 1305
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

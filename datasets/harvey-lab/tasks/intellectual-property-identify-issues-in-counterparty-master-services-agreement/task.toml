@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-identify-issues-in-counterparty-master-services-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Technology Transactions", "healthcare-IT", "master-services-agreement", "vendor-management", "contract-review", "redline-negotiation", "EHR-migration", "HIPAA", "cloud-services"]
+
+[agent]
+timeout_sec = 1830
+
+[verifier]
+timeout_sec = 915
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

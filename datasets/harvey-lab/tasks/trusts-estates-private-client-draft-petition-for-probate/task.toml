@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/trusts-estates-private-client-draft-petition-for-probate"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Trusts & Estates", "probate", "court-filing", "petition", "Virginia", "estate-administration", "minor-beneficiary", "charitable-bequest", "revocable-trust", "pour-over-will"]
+
+[agent]
+timeout_sec = 2340
+
+[verifier]
+timeout_sec = 1170
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

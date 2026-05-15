@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-draft-order-form-for-enterprise-saas-platform-renewal"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Technology Transactions", "SaaS", "order-form", "contract-drafting", "healthcare", "enterprise-procurement", "pricing", "renewal"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 870
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/capital-markets-draft-legal-opinion-for-rule-144a-regulation-s-high"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Capital Markets", "high-yield-debt", "Rule-144A", "Regulation-S", "legal-opinion", "senior-unsecured-notes", "securities-exemption", "enforceability-opinion", "guarantor-subsidiaries", "oil-and-gas"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 750
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

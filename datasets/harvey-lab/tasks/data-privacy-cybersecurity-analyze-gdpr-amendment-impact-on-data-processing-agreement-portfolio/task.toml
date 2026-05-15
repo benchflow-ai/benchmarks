@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/data-privacy-cybersecurity-analyze-gdpr-amendment-impact-on-data-processing-agreement-portfolio"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Privacy & Data Security", "data-privacy", "data-processing-agreements", "health-data", "regulatory-compliance", "gap-analysis", "cross-border-transfers", "AI-transparency", "EU-law"]
+
+[agent]
+timeout_sec = 2100
+
+[verifier]
+timeout_sec = 1050
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

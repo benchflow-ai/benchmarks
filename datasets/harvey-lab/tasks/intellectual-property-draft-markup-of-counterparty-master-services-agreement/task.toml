@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-draft-markup-of-counterparty-master-services-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Technology Transactions", "master-services-agreement", "healthcare-IT", "contract-negotiation", "redline-markup", "vendor-management", "data-privacy", "HIPAA", "cloud-services", "procurement"]
+
+[agent]
+timeout_sec = 2100
+
+[verifier]
+timeout_sec = 1050
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

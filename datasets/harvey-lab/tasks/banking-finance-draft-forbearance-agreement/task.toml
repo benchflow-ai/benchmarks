@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/banking-finance-draft-forbearance-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Banking & Finance", "forbearance-agreement", "loan-workout", "covenant-default", "secured-lending", "credit-facility", "environmental-remediation", "personal-guaranty"]
+
+[agent]
+timeout_sec = 2190
+
+[verifier]
+timeout_sec = 1095
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

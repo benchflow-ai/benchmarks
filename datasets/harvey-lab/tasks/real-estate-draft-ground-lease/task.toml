@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/real-estate-draft-ground-lease"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Real Estate", "ground-lease", "mixed-use-development", "waterfront", "rent-escalation", "subordination-non-disturbance", "construction-financing", "redevelopment-authority", "development-milestones", "reverter-rights", "regulatory-compliance"]
+
+[agent]
+timeout_sec = 2010
+
+[verifier]
+timeout_sec = 1005
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

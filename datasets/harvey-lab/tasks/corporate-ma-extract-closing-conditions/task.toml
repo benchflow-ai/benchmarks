@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-ma-extract-closing-conditions"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Mergers & Acquisitions", "M&A", "closing-conditions", "SPA", "acquisition", "environmental-services", "due-diligence"]
+
+[agent]
+timeout_sec = 2100
+
+[verifier]
+timeout_sec = 1050
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480
