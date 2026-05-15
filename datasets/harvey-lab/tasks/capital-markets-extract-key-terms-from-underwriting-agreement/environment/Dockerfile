@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir \
     python-pptx \
     markitdown \
     pandas \
-    google-genai
+    anthropic
 
 WORKDIR /app
 
