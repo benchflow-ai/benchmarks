@@ -1,0 +1,22 @@
+version = "1.0"
+
+[task]
+name = "programbench/eradman__entr.8e2e8b4"
+
+[metadata]
+author_name = "ProgramBench (Meta FAIR)"
+difficulty = "easy"
+category = "programming"
+tags = ["program-reconstruction", "c"]
+
+[agent]
+timeout_sec = 3600
+
+[verifier]
+timeout_sec = 1200
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+allow_internet = false

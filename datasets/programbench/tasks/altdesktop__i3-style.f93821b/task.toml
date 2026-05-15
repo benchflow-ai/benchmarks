@@ -1,0 +1,22 @@
+version = "1.0"
+
+[task]
+name = "programbench/altdesktop__i3-style.f93821b"
+
+[metadata]
+author_name = "ProgramBench (Meta FAIR)"
+difficulty = "medium"
+category = "programming"
+tags = ["program-reconstruction", "rust"]
+
+[agent]
+timeout_sec = 5400
+
+[verifier]
+timeout_sec = 1800
+
+[environment]
+cpus = 2
+memory_mb = 4096
+storage_mb = 20480
+allow_internet = false

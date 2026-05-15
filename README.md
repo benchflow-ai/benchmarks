@@ -23,6 +23,22 @@ datasets/
 │       │       ├── test.sh
 │       │       └── evaluate.py
 │       └── ...
+├── programbench/
+│   ├── parity/
+│   │   └── parity_experiment.json  # agent + pipeline parity results
+│   └── tasks/
+│       ├── <owner>__<repo>.<commit>/
+│       │   ├── task.toml
+│       │   ├── instruction.md
+│       │   ├── environment/
+│       │   │   └── Dockerfile
+│       │   ├── tests/
+│       │   │   ├── test.sh
+│       │   │   ├── verify.py
+│       │   │   └── tests.json
+│       │   └── solution/
+│       │       └── solve.sh
+│       └── ...
 └── <next-benchmark>/
     └── ...
 ```
@@ -33,6 +49,7 @@ Each task directory follows the BenchFlow task format:
 - `environment/Dockerfile` — container setup
 - `tests/test.sh` — verifier entry point
 - `tests/evaluate.py` — evaluation logic (for LLM-as-judge benchmarks)
+- `tests/verify.py` — evaluation logic (for compile + unit test benchmarks)
 - `solution/solve.sh` — oracle solution (when available)
 
 ## Available Datasets
@@ -40,10 +57,7 @@ Each task directory follows the BenchFlow task format:
 | Dataset | Tasks | Verification | Parity | Source |
 |---|---|---|---|---|
 | [harvey-lab](datasets/harvey-lab/) | 1,251 | LLM-as-judge | 25/25 (100%) | [Harvey LAB](https://github.com/harveyai/harvey-labs) |
-
-## Also on HuggingFace
-
-Pre-converted tasks and parity results are also published to [benchflow/benchmarks](https://huggingface.co/datasets/benchflow/benchmarks) on HuggingFace.
+| [programbench](datasets/programbench/) | 201 | compile + unit tests | 4/5 exact match | [ProgramBench](https://github.com/facebookresearch/programbench) |
 
 ## Usage
 
@@ -52,9 +66,11 @@ Pre-converted tasks and parity results are also published to [benchflow/benchmar
 git clone https://github.com/benchflow-ai/benchmarks.git
 cd benchmarks
 benchflow run -t datasets/harvey-lab/tasks/<task-id>
+benchflow run -t datasets/programbench/tasks/<task-id>
 
 # Or use from the benchflow repo with auto-download
 python benchmarks/harvey-lab/run_harvey_lab.py
+python benchmarks/run_programbench.py
 ```
 
 ## Adding a Dataset
@@ -64,3 +80,5 @@ python benchmarks/harvey-lab/run_harvey_lab.py
 3. Generate all tasks and add them under `datasets/<name>/tasks/`
 4. Add parity results under `datasets/<name>/parity/`
 5. Submit a PR
+
+See [CONVERT.md](https://github.com/benchflow-ai/benchflow/blob/main/benchmarks/CONVERT.md) in the main repo for detailed instructions.
