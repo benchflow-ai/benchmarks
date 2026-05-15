@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-governance-compare-proposed-fda-rule-against-current-device-registration-requirements"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Compliance & Regulatory", "FDA-regulatory", "medical-devices", "gap-analysis", "compliance-infrastructure", "21-CFR-807", "establishment-registration", "device-listing"]
+
+[agent]
+timeout_sec = 1920
+
+[verifier]
+timeout_sec = 960
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

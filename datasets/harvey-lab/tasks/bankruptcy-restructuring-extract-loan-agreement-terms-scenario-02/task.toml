@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/bankruptcy-restructuring-extract-loan-agreement-terms-scenario-02"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-analyze"
+tags = ["Bankruptcy & Restructuring", "Chapter-11", "credit-facilities", "loan-agreements", "cross-default", "covenants", "distressed-debt", "key-terms-extraction"]
+
+[agent]
+timeout_sec = 3060
+
+[verifier]
+timeout_sec = 1530
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

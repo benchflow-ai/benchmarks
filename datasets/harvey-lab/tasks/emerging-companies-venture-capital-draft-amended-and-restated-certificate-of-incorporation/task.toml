@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/emerging-companies-venture-capital-draft-amended-and-restated-certificate-of-incorporation"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Emerging Companies & Venture Capital", "corporate-charter", "certificate-of-incorporation", "Series B", "preferred-stock", "Delaware-corporate-law", "protective-provisions", "capital-structure", "venture-financing"]
+
+[agent]
+timeout_sec = 2310
+
+[verifier]
+timeout_sec = 1155
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

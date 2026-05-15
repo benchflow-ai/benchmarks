@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/healthcare-life-sciences-draft-corporate-integrity-agreement-response"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Healthcare & Life Sciences", "Compliance & Regulatory", "White Collar & Investigations", "corporate-integrity-agreement", "False Claims Act", "OIG", "anti-kickback", "off-label-promotion", "pharmaceutical-compliance", "board-governance"]
+
+[agent]
+timeout_sec = 1890
+
+[verifier]
+timeout_sec = 945
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

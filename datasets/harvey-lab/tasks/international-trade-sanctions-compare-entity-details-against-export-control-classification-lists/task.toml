@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/international-trade-sanctions-compare-entity-details-against-export-control-classification-lists"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["International Trade & Sanctions", "export-controls", "EAR-compliance", "denied-party-screening", "defense-electronics", "BIS-licensing", "red-flag-analysis"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 705
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

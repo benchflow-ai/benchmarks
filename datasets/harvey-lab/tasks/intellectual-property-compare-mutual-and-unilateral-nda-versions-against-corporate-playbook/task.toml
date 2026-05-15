@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/intellectual-property-compare-mutual-and-unilateral-nda-versions-against-corporate-playbook"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Technology Transactions", "NDA", "playbook-compliance", "deviation-analysis", "joint-venture", "confidentiality", "cross-border"]
+
+[agent]
+timeout_sec = 1950
+
+[verifier]
+timeout_sec = 975
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

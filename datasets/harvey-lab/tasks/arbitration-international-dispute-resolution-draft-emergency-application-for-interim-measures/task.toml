@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/arbitration-international-dispute-resolution-draft-emergency-application-for-interim-measures"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Arbitration", "interim-measures", "international-arbitration", "ICC", "shipping", "letter-of-credit", "emergency-relief", "bunker-fuel", "procedural-application"]
+
+[agent]
+timeout_sec = 1860
+
+[verifier]
+timeout_sec = 930
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

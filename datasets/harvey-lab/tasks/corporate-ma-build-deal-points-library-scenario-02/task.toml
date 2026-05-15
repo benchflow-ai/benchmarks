@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-ma-build-deal-points-library-scenario-02"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-analyze"
+tags = ["Mergers & Acquisitions", "deal-points", "precedent-database", "representations-and-warranties", "indemnification", "closing-conditions", "purchase-agreement", "knowledge-management"]
+
+[agent]
+timeout_sec = 5730
+
+[verifier]
+timeout_sec = 2865
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

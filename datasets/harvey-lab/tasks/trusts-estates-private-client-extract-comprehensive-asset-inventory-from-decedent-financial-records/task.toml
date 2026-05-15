@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/trusts-estates-private-client-extract-comprehensive-asset-inventory-from-decedent-financial-records"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-analyze"
+tags = ["Trusts & Estates", "probate-administration", "asset-inventory", "date-of-death-valuation", "estate-asset-schedule", "titling-analysis"]
+
+[agent]
+timeout_sec = 2490
+
+[verifier]
+timeout_sec = 1245
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

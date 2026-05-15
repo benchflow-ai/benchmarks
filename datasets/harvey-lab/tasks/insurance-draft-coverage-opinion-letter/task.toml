@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/insurance-draft-coverage-opinion-letter"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-draft"
+tags = ["Insurance", "CGL-policy", "toxic-tort", "coverage-opinion", "defense-obligation", "exclusion-analysis", "products-liability", "environmental-contamination"]
+
+[agent]
+timeout_sec = 1920
+
+[verifier]
+timeout_sec = 960
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

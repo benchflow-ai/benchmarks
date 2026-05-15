@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/healthcare-life-sciences-identify-issues-in-management-services-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-review"
+tags = ["Healthcare & Life Sciences", "corporate-practice-of-medicine", "management-services-agreement", "anti-kickback", "stark-law", "fee-splitting", "private-equity", "physician-autonomy", "fair-market-value", "issue-memorandum", "regulatory-compliance"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 810
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

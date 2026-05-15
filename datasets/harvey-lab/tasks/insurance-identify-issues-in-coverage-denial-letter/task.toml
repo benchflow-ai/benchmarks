@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/insurance-identify-issues-in-coverage-denial-letter"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "easy"
+category = "legal-analyze"
+tags = ["Insurance", "coverage-litigation", "denial-letter-review", "commercial-property", "environmental-liability", "policyholder-representation"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 480
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

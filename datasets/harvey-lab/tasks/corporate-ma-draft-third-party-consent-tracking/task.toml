@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/corporate-ma-draft-third-party-consent-tracking"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["M&A", "third-party-consents", "change-of-control", "consent-letters", "stock-purchase-agreement", "closing-conditions", "medical-devices", "contract-review"]
+
+[agent]
+timeout_sec = 3150
+
+[verifier]
+timeout_sec = 1575
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

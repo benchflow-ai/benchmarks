@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/capital-markets-draft-proxy-statement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Capital Markets", "proxy-statement", "DEF-14A", "activist-investor", "say-on-pay", "shareholder-proposals", "securities-disclosure", "board-elections", "executive-compensation", "ESG"]
+
+[agent]
+timeout_sec = 2490
+
+[verifier]
+timeout_sec = 1245
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

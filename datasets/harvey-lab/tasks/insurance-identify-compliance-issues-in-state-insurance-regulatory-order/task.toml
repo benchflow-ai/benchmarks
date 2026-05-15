@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/insurance-identify-compliance-issues-in-state-insurance-regulatory-order"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "medium"
+category = "legal-analyze"
+tags = ["Insurance", "compliance", "regulatory-enforcement", "market-conduct-examination", "consent-order", "remediation", "state-regulation", "issue-memorandum"]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+timeout_sec = 675
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

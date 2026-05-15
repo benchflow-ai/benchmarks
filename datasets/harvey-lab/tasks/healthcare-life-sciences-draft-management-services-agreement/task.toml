@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/healthcare-life-sciences-draft-management-services-agreement"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-draft"
+tags = ["Healthcare & Life Sciences", "management-services-agreement", "corporate-practice-of-medicine", "anti-kickback", "HIPAA", "physician-autonomy", "MSO", "private-equity", "Stark-Law", "fee-splitting", "Texas-healthcare-regulation"]
+
+[agent]
+timeout_sec = 2820
+
+[verifier]
+timeout_sec = 1410
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480

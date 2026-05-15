@@ -1,0 +1,26 @@
+version = "1.0"
+
+[task]
+name = "harvey-lab/bankruptcy-restructuring-extract-ballot-tallies-from-voting-report"
+
+[metadata]
+author_name = "Harvey AI"
+author_email = "labs@harvey.ai"
+difficulty = "hard"
+category = "legal-analyze"
+tags = ["Bankruptcy & Restructuring", "ballot-tabulation", "chapter-11", "plan-confirmation", "data-extraction", "voting-agent-report"]
+
+[agent]
+timeout_sec = 2520
+
+[verifier]
+timeout_sec = 1260
+
+[verifier.env]
+GEMINI_API_KEY = "${GEMINI_API_KEY}"
+
+[environment]
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 4096
+storage_mb = 20480
