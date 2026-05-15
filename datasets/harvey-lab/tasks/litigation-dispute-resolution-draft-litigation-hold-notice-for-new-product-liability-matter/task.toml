@@ -17,7 +17,7 @@ timeout_sec = 1830
 timeout_sec = 915
 
 [verifier.env]
-GEMINI_API_KEY = "${GEMINI_API_KEY}"
+ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"
 
 [environment]
 build_timeout_sec = 600
