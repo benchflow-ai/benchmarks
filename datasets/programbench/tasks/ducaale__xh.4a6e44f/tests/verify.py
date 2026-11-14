@@ -1,8 +1,14 @@
 """ProgramBench verifier for BenchFlow.
 
-Compiles the agent's submission, downloads test branch archives from
-HuggingFace, runs each branch's pytest suite, parses JUnit XML results,
-and writes a partial-credit reward.
+Downloads every active test branch's archive from Hugging Face first, before
+any of the agent's code runs; then compiles the agent's submission, runs each
+branch's pytest suite, parses JUnit XML results, and writes a partial-credit
+reward.
+
+The archives are the task's hidden tests, so a failed download is never the
+submission's 0: verify.py then writes no reward and exits with
+DOWNLOAD_FAILED_EXIT, and the run ends unscored. The task's [verifier]
+allowlist names the Hugging Face hosts the download needs.
 """
 
 from __future__ import annotations
@@ -13,6 +19,10 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+#: Exit status when a hidden-test archive cannot be downloaded (no reward).
+DOWNLOAD_FAILED_EXIT = 3
+HF_DATASET = "programbench/ProgramBench-Tests"
 
 
 def _compile(workspace: Path) -> bool:
@@ -59,9 +69,8 @@ def _remove_hashed_files(workspace: Path, hashes: list[str]) -> None:
             path.unlink(missing_ok=True)
 
 
-def _stash_executable(workspace: Path) -> Path:
+def _stash_executable(workspace: Path, stash: Path) -> Path:
     """Move the compiled executable to a safe location."""
-    stash = Path("/opt/benchflow-stashed-executable")
     exe = workspace / "executable"
     if exe.exists():
         import shutil
@@ -84,24 +93,47 @@ def _download_test_blob(instance_id: str, branch: str) -> Path:
 
     return Path(
         hf_hub_download(
-            repo_id="programbench/ProgramBench-Tests",
+            repo_id=HF_DATASET,
             filename=f"{instance_id}/tests/{branch}.tar.gz",
             repo_type="dataset",
         )
     )
 
 
+def _download_all(instance_id: str, branches: list[str]) -> dict[str, Path]:
+    """Every branch's archive, or exit DOWNLOAD_FAILED_EXIT with no reward.
+
+    Runs before the agent's compile.sh or executable, so a failure here comes
+    from the network or Hugging Face, never from the submission.
+    """
+    blobs: dict[str, Path] = {}
+    for branch in branches:
+        try:
+            blobs[branch] = _download_test_blob(instance_id, branch)
+        except Exception as exc:
+            sys.stdout.flush()
+            print(
+                f"ERROR: hidden-test download failed: {instance_id} branch "
+                f"{branch} from Hugging Face dataset {HF_DATASET}: "
+                f"{type(exc).__name__}: {exc}",
+                file=sys.stderr,
+            )
+            print(
+                "ERROR: no reward written and the run is not scored: the "
+                "hidden tests are unavailable, which says nothing about the "
+                "submission. The verifier needs the Hugging Face hosts in the "
+                "task's [verifier] allowed_hosts.",
+                file=sys.stderr,
+                flush=True,
+            )
+            sys.exit(DOWNLOAD_FAILED_EXIT)
+    return blobs
+
+
 def _run_test_branch(
-    workspace: Path, instance_id: str, branch: str, stash: Path
+    workspace: Path, branch: str, blob_path: Path, stash: Path
 ) -> tuple[int, int]:
     """Run one test branch and return (passed, total)."""
-    # Download and extract test archive
-    try:
-        blob_path = _download_test_blob(instance_id, branch)
-    except Exception as exc:
-        print(f"  WARNING: failed to download blob for branch {branch}: {exc}")
-        return 0, 0
-
     try:
         subprocess.run(
             ["tar", "xzf", str(blob_path), "-C", str(workspace)],
@@ -166,21 +198,35 @@ def main() -> None:
     parser.add_argument("--workspace", required=True, type=Path)
     parser.add_argument("--clean-hashes", default="[]")
     parser.add_argument("--reward-file", required=True, type=Path)
+    parser.add_argument("--tests-json", default="/tests/tests.json", type=Path)
+    parser.add_argument(
+        "--stash-path", default="/opt/benchflow-stashed-executable", type=Path
+    )
     args = parser.parse_args()
 
     reward_file: Path = args.reward_file
     reward_file.parent.mkdir(parents=True, exist_ok=True)
+    # Only this run's verdict may be read as the reward.
+    reward_file.unlink(missing_ok=True)
 
     # Load tests.json from the tests/ directory (copied by BenchFlow)
-    tests_json_path = Path("/tests/tests.json")
+    tests_json_path: Path = args.tests_json
     if not tests_json_path.exists():
-        print("ERROR: /tests/tests.json not found")
+        print(f"ERROR: {tests_json_path} not found")
         reward_file.write_text("0")
         sys.exit(0)
 
     tests_data = json.loads(tests_json_path.read_text())
     branches = tests_data.get("branches", {})
     clean_hashes: list[str] = json.loads(args.clean_hashes)
+    active_branches = [
+        name for name, info in branches.items() if not info.get("ignored")
+    ]
+
+    # Step 0: Download every hidden-test archive before any of the agent's
+    # code runs; a failure exits DOWNLOAD_FAILED_EXIT with no reward.
+    print("=== Step 0: Downloading hidden tests ===", flush=True)
+    blobs = _download_all(args.instance_id, active_branches)
 
     # Step 1: Remove hash-matched files from submission (anti-cheat).
     # Must happen BEFORE compile — matches ProgramBench's eval order.
@@ -197,20 +243,17 @@ def main() -> None:
         sys.exit(0)
 
     # Step 3: Stash executable
-    stash = _stash_executable(args.workspace)
+    stash = _stash_executable(args.workspace, args.stash_path)
 
     # Step 4: Run test branches
     print("=== Step 3: Running behavioral tests ===")
     total_passed = 0
     total_tests = 0
-    active_branches = [
-        name for name, info in branches.items() if not info.get("ignored")
-    ]
 
     for i, branch in enumerate(active_branches):
         print(f"  Branch {i + 1}/{len(active_branches)}: {branch}")
         passed, total = _run_test_branch(
-            args.workspace, args.instance_id, branch, stash
+            args.workspace, branch, blobs[branch], stash
         )
         total_passed += passed
         total_tests += total
