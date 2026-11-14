@@ -1,35 +1,97 @@
 """ProgramBench verifier for BenchFlow.
 
-Downloads every active test branch's archive from Hugging Face first, before
-any of the agent's code runs; then compiles the agent's submission, runs each
-branch's pytest suite, parses JUnit XML results, and writes a partial-credit
-reward.
+Step 0, before any of the agent's code runs: download every active test
+branch's archive from Hugging Face, check that each one opens and holds
+eval/run.sh, and install the pip requirements the run.sh files name. Then
+compile the agent's submission, run each branch's pytest suite, parse the
+JUnit XML results, and write a partial-credit reward.
 
-The archives are the task's hidden tests, so a failed download is never the
-submission's 0: verify.py then writes no reward and exits with
-DOWNLOAD_FAILED_EXIT, and the run ends unscored. The task's [verifier]
-allowlist names the hosts the download and each run.sh need.
-
-A branch whose tests never report (its archive would not extract, or run.sh
-stopped before pytest wrote eval/results.xml, say on a refused pip or apt
-fetch) counts every expected test as failed, as ProgramBench's own eval does
-(not_run): a silent branch never leaves the denominator.
+The archives are the task's hidden tests, so a missing test is never the
+submission's 0. When Step 0 cannot make the tests ready (a failed download, an
+unusable archive, PyPI unreachable), verify.py writes no reward and exits with
+DOWNLOAD_FAILED_EXIT. When a branch's tests report no results (pytest never
+ran or never finished), it writes no reward and exits with
+TESTS_DID_NOT_REPORT_EXIT. Either way the run ends unscored, never with a
+silent 0 or a partial score. The task's [verifier] allowlist names the hosts
+Step 0 and run.sh need.
 """
 
 from __future__ import annotations
 
 import argparse
+import errno
+import gzip
 import json
 import os
+import re
+import shlex
 import signal
 import subprocess
 import sys
+import tarfile
+import tempfile
 import xml.etree.ElementTree as ET
+import zlib
 from pathlib import Path
 
-#: Exit status when a hidden-test archive cannot be downloaded (no reward).
+#: Exit status when Step 0 cannot make the hidden tests ready (no reward).
 DOWNLOAD_FAILED_EXIT = 3
+#: Exit status when a branch's tests report no results (no reward).
+TESTS_DID_NOT_REPORT_EXIT = 5
 HF_DATASET = "programbench/ProgramBench-Tests"
+
+# A failure on this machine (a full or read-only disk), not on the network.
+_LOCAL_ERRNOS = {errno.ENOSPC, errno.EDQUOT, errno.EROFS}
+_LOCAL_TEXT = (
+    "No space left on device",
+    "os error 28",
+    "Disk quota exceeded",
+    "Read-only file system",
+)
+# pip output that says the package index could not be reached or answered.
+_PIP_NETWORK = re.compile(
+    r"Max retries exceeded|NewConnectionError|ConnectionError|ConnectTimeout"
+    r"|ReadTimeout|Read timed out|timed out|Temporary failure in name resolution"
+    r"|Name or service not known|Failed to establish a new connection"
+    r"|Connection refused|Connection reset|ProxyError|Tunnel connection failed"
+    r"|Cannot connect to proxy|SSLError|CERTIFICATE_VERIFY_FAILED"
+    r"|HTTP error \d{3}|\b(?:403|404|429|5\d\d) (?:Client|Server) Error"
+    r"|from versions: none",
+    re.IGNORECASE,
+)
+_PIP_CMD = re.compile(
+    r"^(?:sudo\s+(?:-\S+\s+)*)?(?:[\w./-]*python[\d.]*\s+-m\s+)?pip[\d.]*\s+"
+    r"(?P<opts>(?:-\S+\s+)*)install\b(?P<args>.*)$"
+)
+_REDIRECT = re.compile(r"^(?:\d*>>?|&>>?|\d*<)")
+_OPTION_WITH_VALUE = (
+    "-i", "--index-url", "--extra-index-url", "-c", "--constraint",
+    "-t", "--target", "--timeout", "--retries",
+)
+
+
+def _fail(lines: list[str], code: int) -> None:
+    """Print the reasons on stderr and exit *code*, with no reward written."""
+    sys.stdout.flush()
+    for line in lines:
+        print(line, file=sys.stderr)
+    sys.stderr.flush()
+    sys.exit(code)
+
+
+def _local_cause(exc: BaseException | None) -> str | None:
+    """The local reason (a full or read-only disk) behind *exc*, else None."""
+    seen = set()
+    while exc is not None and id(exc) not in seen:
+        seen.add(id(exc))
+        if isinstance(exc, OSError) and exc.errno in _LOCAL_ERRNOS:
+            return os.strerror(exc.errno)
+        text = str(exc)
+        for marker in _LOCAL_TEXT:
+            if marker in text:
+                return marker
+        exc = exc.__cause__ or exc.__context__
+    return None
 
 
 def _compile(workspace: Path) -> bool:
@@ -77,12 +139,16 @@ def _remove_hashed_files(workspace: Path, hashes: list[str]) -> None:
 
 
 def _stash_executable(workspace: Path, stash: Path) -> Path:
-    """Move the compiled executable to a safe location."""
+    """Copy the compiled executable's bytes to a safe location and remove it
+    from the workspace. The stash is a regular file even when executable is
+    a symlink, so nothing below acts on the symlink's target."""
     exe = workspace / "executable"
     if exe.exists():
         import shutil
-        shutil.move(str(exe), str(stash))
+        stash.unlink(missing_ok=True)
+        shutil.copyfile(str(exe), str(stash))
         stash.chmod(0o755)
+        exe.unlink()
     return stash
 
 
@@ -99,15 +165,16 @@ def _restore_executable(stash: Path, workspace: Path) -> None:
 
 def _stop_leftovers(pgid: int, workspace: Path, stash: Path) -> None:
     """Kill what a branch's tests left running (a watcher, a clock, a server):
-    their process group, and any process still running the submission, which
-    may have left the group."""
+    their process group, and any process still running one of the two copies
+    of the submission, which may have left the group. The copies are matched
+    by their own paths, never by what a path resolves to."""
     try:
         os.killpg(pgid, signal.SIGKILL)
     except (ProcessLookupError, PermissionError):
         pass
     targets = {
-        os.path.realpath(str(workspace / "executable")),
-        os.path.realpath(str(stash)),
+        os.path.join(os.path.realpath(str(workspace)), "executable"),
+        os.path.join(os.path.realpath(str(stash.parent)), stash.name),
     }
     for entry in Path("/proc").iterdir():
         if not entry.name.isdigit() or int(entry.name) == os.getpid():
@@ -139,43 +206,204 @@ def _download_test_blob(instance_id: str, branch: str) -> Path:
 
 
 def _download_all(instance_id: str, branches: list[str]) -> dict[str, Path]:
-    """Every branch's archive, or exit DOWNLOAD_FAILED_EXIT with no reward.
-
-    Runs before the agent's compile.sh or executable, so a failure here comes
-    from the network or Hugging Face, never from the submission.
-    """
+    """Every branch's archive, or exit DOWNLOAD_FAILED_EXIT with no reward."""
     blobs: dict[str, Path] = {}
     for branch in branches:
         try:
             blobs[branch] = _download_test_blob(instance_id, branch)
         except Exception as exc:
-            sys.stdout.flush()
-            print(
-                f"ERROR: hidden-test download failed: {instance_id} branch "
-                f"{branch} from Hugging Face dataset {HF_DATASET}: "
-                f"{type(exc).__name__}: {exc}",
-                file=sys.stderr,
+            what = (
+                f"{instance_id} branch {branch} from Hugging Face dataset "
+                f"{HF_DATASET}: {type(exc).__name__}: {exc}"
             )
-            print(
-                "ERROR: no reward written and the run is not scored: the "
-                "hidden tests are unavailable, which says nothing about the "
-                "submission. The verifier needs the Hugging Face hosts in the "
-                "task's [verifier] allowed_hosts.",
-                file=sys.stderr,
-                flush=True,
+            local = _local_cause(exc)
+            if local:
+                _fail(
+                    [
+                        f"ERROR: hidden-test download failed on this machine "
+                        f"({local}), not on the network: {what}",
+                        "ERROR: no reward written and the run is not scored.",
+                    ],
+                    DOWNLOAD_FAILED_EXIT,
+                )
+            _fail(
+                [
+                    f"ERROR: hidden-test download failed: {what}",
+                    "ERROR: no reward written and the run is not scored: the "
+                    "hidden tests are unavailable, which says nothing about the "
+                    "submission. The verifier needs the Hugging Face hosts in "
+                    "the task's [verifier] allowed_hosts.",
+                ],
+                DOWNLOAD_FAILED_EXIT,
             )
-            sys.exit(DOWNLOAD_FAILED_EXIT)
     return blobs
 
 
-def _run_test_branch(
-    workspace: Path, branch: str, blob_path: Path, stash: Path, expected: int
-) -> tuple[int, int]:
-    """Run one test branch and return (passed, total).
+def _archive_contents(blob: Path) -> tuple[str, dict[str, str]]:
+    """eval/run.sh's text and any requirements*.txt files in the archive.
 
-    *expected* is the branch's test count in tests.json: the total when the
-    branch reports no tests.
+    Reads the archive to its end first (gzip checks its length and CRC there),
+    then lists it. Raises ValueError when the archive is unusable.
     """
+    try:
+        with gzip.open(str(blob), "rb") as stream:
+            while stream.read(1 << 20):
+                pass
+        run_sh = None
+        requirements: dict[str, str] = {}
+        with tarfile.open(str(blob), "r:gz") as tar:
+            for member in tar:
+                name = member.name[2:] if member.name.startswith("./") else member.name
+                if not member.isfile():
+                    continue
+                wanted = name == "eval/run.sh" or (
+                    name.rsplit("/", 1)[-1].startswith("requirements")
+                    and name.endswith(".txt")
+                    and member.size < (1 << 20)
+                )
+                if not wanted:
+                    continue
+                data = tar.extractfile(member)
+                text = data.read().decode("utf-8", "replace") if data else ""
+                if name == "eval/run.sh":
+                    run_sh = text
+                else:
+                    requirements[name] = text
+    except (OSError, EOFError, tarfile.TarError, zlib.error) as exc:
+        raise ValueError(f"unreadable archive: {type(exc).__name__}: {exc}") from exc
+    if run_sh is None:
+        raise ValueError("the archive has no eval/run.sh")
+    return run_sh, requirements
+
+
+def _pip_requirements(run_sh: str) -> tuple[bool, list[str], list[str]]:
+    """(upgrade pip, packages, requirement files) that run.sh's pip lines install."""
+    upgrade, packages, files = False, [], []
+    for raw in run_sh.replace("\\\n", " ").splitlines():
+        line = raw.strip()
+        if line.startswith("#"):
+            continue
+        for segment in re.split(r"&&|\|\||;|\|", line):
+            m = _PIP_CMD.match(segment.strip())
+            if not m:
+                continue
+            try:
+                tokens = shlex.split(m.group("args"), comments=True)
+            except ValueError:
+                tokens = m.group("args").split()
+            wants_upgrade = any(o in ("-U", "--upgrade") for o in m.group("opts").split())
+            skip_next = take_file = False
+            for tok in tokens:
+                if skip_next:
+                    skip_next = False
+                elif take_file:
+                    files.append(tok)
+                    take_file = False
+                elif tok in ("-r", "--requirement"):
+                    take_file = True
+                elif tok in ("-U", "--upgrade"):
+                    wants_upgrade = True
+                elif _REDIRECT.match(tok):
+                    skip_next = tok in (">", ">>", "1>", "2>", "2>>", "&>", "<")
+                elif tok.startswith("-"):
+                    skip_next = tok in _OPTION_WITH_VALUE
+                elif tok.lower() == "pip":
+                    upgrade = upgrade or wants_upgrade
+                else:
+                    packages.append(tok)
+    return upgrade, packages, files
+
+
+def _pip(args: list[str], timeout: int) -> tuple[bool, str]:
+    """``python3 -m pip install`` *args*, retried with --break-system-packages
+    where the image's Python is externally managed: (ok, output)."""
+    out = ""
+    for extra in ([], ["--break-system-packages"]):
+        cmd = ["python3", "-m", "pip", "install", "-q", "--disable-pip-version-check"]
+        try:
+            result = subprocess.run(
+                cmd + args + extra, capture_output=True, text=True, timeout=timeout
+            )
+        except subprocess.TimeoutExpired:
+            return False, f"pip timed out after {timeout}s"
+        out = (result.stdout or "") + (result.stderr or "")
+        if result.returncode == 0:
+            return True, out
+        if "externally-managed-environment" not in out:
+            return False, out
+    return False, out
+
+
+def _preinstall(archives: dict[str, tuple[str, dict[str, str]]], timeout: int) -> None:
+    """Install what the run.sh files pip-install, before any agent code runs.
+
+    Exits DOWNLOAD_FAILED_EXIT when pip cannot reach the package index (the
+    run.sh files would fail the same way later). A package that fails to build
+    with the index reachable is left to run.sh, as upstream runs it.
+    """
+    upgrade = False
+    groups: list[list[str]] = []
+    with tempfile.TemporaryDirectory(prefix="programbench-req-") as tmp:
+        for branch, (run_sh, requirement_files) in archives.items():
+            up, packages, files = _pip_requirements(run_sh)
+            upgrade = upgrade or up
+            group = list(packages)
+            for name in files:
+                found = [
+                    text
+                    for path, text in sorted(requirement_files.items())
+                    if path == name or path.endswith("/" + name)
+                ]
+                if found:
+                    local = Path(tmp) / f"{branch}-{len(groups)}.txt"
+                    local.write_text(found[0])
+                    group += ["-r", str(local)]
+            if group and group not in groups:
+                groups.append(group)
+        steps = ([["--upgrade", "pip"]] if upgrade else []) + groups
+        for args in steps:
+            print(f"  pip install {' '.join(args)}", flush=True)
+            ok, out = _pip(args, timeout)
+            if ok:
+                continue
+            tail = " | ".join(out.strip().splitlines()[-3:])
+            if out.startswith("pip timed out") or _PIP_NETWORK.search(out):
+                _fail(
+                    [
+                        "ERROR: the hidden tests' pip requirements could not be "
+                        f"installed from PyPI: pip install {' '.join(args)}: {tail}",
+                        "ERROR: no reward written and the run is not scored: the "
+                        "tests cannot run without them, which says nothing about "
+                        "the submission. The verifier needs pypi.org and "
+                        "files.pythonhosted.org in the task's [verifier] "
+                        "allowed_hosts.",
+                    ],
+                    DOWNLOAD_FAILED_EXIT,
+                )
+            print(
+                f"  WARNING: pip install {' '.join(args)} failed with the index "
+                f"reachable; left to run.sh: {tail}",
+                flush=True,
+            )
+
+
+def _load_excluded(path: Path) -> dict[str, set[str]]:
+    """Branch -> test cases not counted (they need hosts the verifier refuses)."""
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text())
+    return {branch: set(names) for branch, names in data.items()}
+
+
+def _run_test_branch(
+    workspace: Path,
+    branch: str,
+    blob_path: Path,
+    stash: Path,
+    excluded: set[str],
+) -> tuple[int, int] | None:
+    """Run one test branch: (passed, total) over its counted test cases, or
+    None when its tests reported no results."""
     try:
         subprocess.run(
             ["tar", "xzf", str(blob_path), "-C", str(workspace)],
@@ -184,7 +412,7 @@ def _run_test_branch(
         )
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
         print(f"  WARNING: failed to extract archive for branch {branch}: {exc}")
-        return 0, expected
+        return None
 
     # Restore executable
     _restore_executable(stash, workspace)
@@ -210,6 +438,7 @@ def _run_test_branch(
             proc.wait()
 
     # Parse results
+    reported = 0
     passed = 0
     total = 0
     results_xml = workspace / "eval" / "results.xml"
@@ -218,6 +447,11 @@ def _run_test_branch(
             raw = results_xml.read_text()
             root = ET.fromstring(raw)
             for tc in root.iter("testcase"):
+                reported += 1
+                name = tc.get("name", "")
+                classname = tc.get("classname", "")
+                if (f"{classname}.{name}" if classname else name) in excluded:
+                    continue
                 total += 1
                 has_fail = any(
                     c.tag in ("failure", "error") for c in tc
@@ -226,12 +460,7 @@ def _run_test_branch(
                     passed += 1
         except ET.ParseError as exc:
             print(f"  WARNING: failed to parse results.xml: {exc}")
-    if total == 0 and expected:
-        print(
-            f"  WARNING: branch {branch} reported no tests; its {expected} "
-            "expected tests count as failed"
-        )
-        passed, total = 0, expected
+            reported = 0
 
     # Clean up test artifacts for next branch
     eval_dir = workspace / "eval"
@@ -239,6 +468,8 @@ def _run_test_branch(
         import shutil
         shutil.rmtree(eval_dir, ignore_errors=True)
 
+    if reported == 0:
+        return None
     return passed, total
 
 
@@ -250,8 +481,12 @@ def main() -> None:
     parser.add_argument("--reward-file", required=True, type=Path)
     parser.add_argument("--tests-json", default="/tests/tests.json", type=Path)
     parser.add_argument(
+        "--excluded-tests", default="/tests/excluded_tests.json", type=Path
+    )
+    parser.add_argument(
         "--stash-path", default="/opt/benchflow-stashed-executable", type=Path
     )
+    parser.add_argument("--pip-timeout", default=900, type=int)
     args = parser.parse_args()
 
     reward_file: Path = args.reward_file
@@ -269,14 +504,33 @@ def main() -> None:
     tests_data = json.loads(tests_json_path.read_text())
     branches = tests_data.get("branches", {})
     clean_hashes: list[str] = json.loads(args.clean_hashes)
+    excluded = _load_excluded(args.excluded_tests)
     active_branches = [
         name for name, info in branches.items() if not info.get("ignored")
     ]
 
-    # Step 0: Download every hidden-test archive before any of the agent's
-    # code runs; a failure exits DOWNLOAD_FAILED_EXIT with no reward.
+    # Step 0: make the hidden tests ready before any of the agent's code runs.
+    # A failure exits DOWNLOAD_FAILED_EXIT with no reward.
     print("=== Step 0: Downloading hidden tests ===", flush=True)
     blobs = _download_all(args.instance_id, active_branches)
+    archives: dict[str, tuple[str, dict[str, str]]] = {}
+    for branch in active_branches:
+        try:
+            archives[branch] = _archive_contents(blobs[branch])
+        except ValueError as exc:
+            local = _local_cause(exc)
+            where = f"on this machine ({local})" if local else "as downloaded"
+            _fail(
+                [
+                    f"ERROR: hidden-test archive for {args.instance_id} branch "
+                    f"{branch} is unusable {where}: {exc}",
+                    "ERROR: no reward written and the run is not scored: the "
+                    "hidden tests are unavailable, which says nothing about the "
+                    "submission.",
+                ],
+                DOWNLOAD_FAILED_EXIT,
+            )
+    _preinstall(archives, args.pip_timeout)
 
     # Step 1: Remove hash-matched files from submission (anti-cheat).
     # Must happen BEFORE compile — matches ProgramBench's eval order.
@@ -302,13 +556,23 @@ def main() -> None:
 
     for i, branch in enumerate(active_branches):
         print(f"  Branch {i + 1}/{len(active_branches)}: {branch}")
-        passed, total = _run_test_branch(
+        result = _run_test_branch(
             args.workspace,
             branch,
             blobs[branch],
             stash,
-            len(branches[branch].get("tests") or []),
+            excluded.get(branch, set()),
         )
+        if result is None:
+            _fail(
+                [
+                    f"ERROR: branch {branch}'s tests reported no results: pytest "
+                    "never ran or never finished (see the run.sh output above).",
+                    "ERROR: no reward written and the run is not scored.",
+                ],
+                TESTS_DID_NOT_REPORT_EXIT,
+            )
+        passed, total = result
         total_passed += passed
         total_tests += total
         print(f"    {passed}/{total} tests passed")

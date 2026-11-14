@@ -15,7 +15,7 @@ timeout_sec = 3600
 [verifier]
 timeout_sec = 1200
 network_mode = "allowlist"
-allowed_hosts = ["huggingface.co", "cas-server.xethub.hf.co", "us.gcp.cdn.hf.co", "pypi.org", "files.pythonhosted.org"]
+allowed_hosts = ["huggingface.co", "cas-server.xethub.hf.co", "us.gcp.cdn.hf.co", "us.aws.cdn.hf.co", "pypi.org", "files.pythonhosted.org"]
 pytest_plugin_releases = ["pytest-timeout==2.4.0"]
 
 [sandbox]
