@@ -20,6 +20,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import signal
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -88,8 +90,39 @@ def _restore_executable(stash: Path, workspace: Path) -> None:
     """Copy the stashed executable back into workspace."""
     import shutil
     dest = workspace / "executable"
+    # A process still running the previous copy keeps its own inode; writing
+    # over a running binary fails with ETXTBSY.
+    dest.unlink(missing_ok=True)
     shutil.copy2(str(stash), str(dest))
     dest.chmod(0o755)
+
+
+def _stop_leftovers(pgid: int, workspace: Path, stash: Path) -> None:
+    """Kill what a branch's tests left running (a watcher, a clock, a server):
+    their process group, and any process still running the submission, which
+    may have left the group."""
+    try:
+        os.killpg(pgid, signal.SIGKILL)
+    except (ProcessLookupError, PermissionError):
+        pass
+    targets = {
+        os.path.realpath(str(workspace / "executable")),
+        os.path.realpath(str(stash)),
+    }
+    for entry in Path("/proc").iterdir():
+        if not entry.name.isdigit() or int(entry.name) == os.getpid():
+            continue
+        try:
+            exe = os.readlink(str(entry / "exe"))
+        except OSError:
+            continue
+        if exe.endswith(" (deleted)"):
+            exe = exe[: -len(" (deleted)")]
+        if exe in targets:
+            try:
+                os.kill(int(entry.name), signal.SIGKILL)
+            except OSError:
+                pass
 
 
 def _download_test_blob(instance_id: str, branch: str) -> Path:
@@ -163,16 +196,18 @@ def _run_test_branch(
         content = content.replace("--timeout-method=thread", "--timeout-method=signal")
         run_sh.write_text(content)
         run_sh.chmod(0o755)
-        # Run tests
+        # Run tests in a session of their own, so what they leave running
+        # can be stopped before the next branch copies the executable back.
+        proc = subprocess.Popen(
+            ["bash", str(run_sh)], cwd=str(workspace), start_new_session=True
+        )
         try:
-            subprocess.run(
-                ["bash", str(run_sh)],
-                cwd=str(workspace),
-                timeout=3600,
-                capture_output=False,
-            )
+            proc.wait(timeout=3600)
         except subprocess.TimeoutExpired:
             print(f"  WARNING: test run timed out for branch {branch}")
+        finally:
+            _stop_leftovers(proc.pid, workspace, stash)
+            proc.wait()
 
     # Parse results
     passed = 0
