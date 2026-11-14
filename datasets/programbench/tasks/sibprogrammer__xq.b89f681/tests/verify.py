@@ -8,7 +8,12 @@ reward.
 The archives are the task's hidden tests, so a failed download is never the
 submission's 0: verify.py then writes no reward and exits with
 DOWNLOAD_FAILED_EXIT, and the run ends unscored. The task's [verifier]
-allowlist names the Hugging Face hosts the download needs.
+allowlist names the hosts the download and each run.sh need.
+
+A branch whose tests never report (its archive would not extract, or run.sh
+stopped before pytest wrote eval/results.xml, say on a refused pip or apt
+fetch) counts every expected test as failed, as ProgramBench's own eval does
+(not_run): a silent branch never leaves the denominator.
 """
 
 from __future__ import annotations
@@ -131,9 +136,13 @@ def _download_all(instance_id: str, branches: list[str]) -> dict[str, Path]:
 
 
 def _run_test_branch(
-    workspace: Path, branch: str, blob_path: Path, stash: Path
+    workspace: Path, branch: str, blob_path: Path, stash: Path, expected: int
 ) -> tuple[int, int]:
-    """Run one test branch and return (passed, total)."""
+    """Run one test branch and return (passed, total).
+
+    *expected* is the branch's test count in tests.json: the total when the
+    branch reports no tests.
+    """
     try:
         subprocess.run(
             ["tar", "xzf", str(blob_path), "-C", str(workspace)],
@@ -142,7 +151,7 @@ def _run_test_branch(
         )
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
         print(f"  WARNING: failed to extract archive for branch {branch}: {exc}")
-        return 0, 0
+        return 0, expected
 
     # Restore executable
     _restore_executable(stash, workspace)
@@ -182,6 +191,12 @@ def _run_test_branch(
                     passed += 1
         except ET.ParseError as exc:
             print(f"  WARNING: failed to parse results.xml: {exc}")
+    if total == 0 and expected:
+        print(
+            f"  WARNING: branch {branch} reported no tests; its {expected} "
+            "expected tests count as failed"
+        )
+        passed, total = 0, expected
 
     # Clean up test artifacts for next branch
     eval_dir = workspace / "eval"
@@ -253,7 +268,11 @@ def main() -> None:
     for i, branch in enumerate(active_branches):
         print(f"  Branch {i + 1}/{len(active_branches)}: {branch}")
         passed, total = _run_test_branch(
-            args.workspace, branch, blobs[branch], stash
+            args.workspace,
+            branch,
+            blobs[branch],
+            stash,
+            len(branches[branch].get("tests") or []),
         )
         total_passed += passed
         total_tests += total
