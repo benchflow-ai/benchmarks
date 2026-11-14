@@ -59,6 +59,17 @@ Each task directory follows the BenchFlow task format:
 | [harvey-lab](datasets/harvey-lab/) | 1,251 | LLM-as-judge | 25/25 (100%) | [Harvey LAB](https://github.com/harveyai/harvey-labs) |
 | [programbench](datasets/programbench/) | 201 | compile + unit tests | 4/5 exact match | [ProgramBench](https://github.com/facebookresearch/programbench) |
 
+## Dataset versions
+
+`registry.json` lists each dataset version in BenchFlow's registry format: every task is pinned to a commit and a content digest, and `bench_version` gives the BenchFlow releases a version needs.
+
+| Dataset | Version | Tasks | BenchFlow (`bench_version`) | What changed |
+|---|---|---|---|---|
+| programbench | 1.0 | 201 | any | The first conversion (commit `c65af83`), unchanged. |
+| programbench | 1.1 | 201 | `>=0.9.PLACEHOLDER`: the first releases, on the 0.9 and 0.10 lines, that enforce a task's verifier network allowlist (to be filled in) | The verifier reaches only `huggingface.co`, `cas-server.xethub.hf.co`, `us.gcp.cdn.hf.co`, `pypi.org` and `files.pythonhosted.org`, with pytest-timeout pinned. A failed hidden-test download ends unscored, a branch that reports no tests counts its expected tests as failed, and processes a branch leaves running are stopped. |
+
+Run a version with `bench run -d programbench@1.0 --registry https://raw.githubusercontent.com/benchflow-ai/benchmarks/main/registry.json`.
+
 ## Usage
 
 ```bash
