@@ -2,7 +2,7 @@
   {
     "name": "programbench",
     "version": "1.0",
-    "description": "ProgramBench (Meta FAIR): 201 program-reconstruction tasks converted by BenchFlow from facebookresearch/programbench 2803dcc, as first published here (2026-05-14). Unchanged.",
+    "description": "ProgramBench (Meta FAIR): 201 program-reconstruction tasks converted by BenchFlow from facebookresearch/programbench 2803dcc, as first published here (2026-05-14). Unchanged. 1.0 does not produce scores on any BenchFlow release; use 1.1.",
     "tasks": [
       {
         "name": "abishekvashok__cmatrix.5c082c6",
@@ -1416,1415 +1416,1415 @@
   {
     "name": "programbench",
     "version": "1.1",
-    "description": "ProgramBench 1.0's 201 tasks with a verifier allowlist (huggingface.co, cas-server.xethub.hf.co, us.gcp.cdn.hf.co, pypi.org, files.pythonhosted.org) and pytest-timeout pinned. A failed hidden-test download ends unscored, a branch that reports no tests counts its expected tests as failed, and processes a branch leaves running are stopped. Needs a BenchFlow release that enforces a task's verifier network allowlist.",
+    "description": "ProgramBench 1.0's tasks with a verifier allowlist (huggingface.co, cas-server.xethub.hf.co, us.gcp.cdn.hf.co, us.aws.cdn.hf.co, pypi.org, files.pythonhosted.org) and pytest-timeout pinned. Hidden tests that are missing or never report end unscored, never as a silent 0; test cases that reach the internet through the program under test aren't counted, and tasks left with nothing countable are left out. Needs a BenchFlow release that enforces a task's verifier network allowlist.",
     "bench_version": ">=0.9.PLACEHOLDER",
     "tasks": [
       {
         "name": "abishekvashok__cmatrix.5c082c6",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/abishekvashok__cmatrix.5c082c6",
-        "digest": "sha256:801ec99710374802abc294e6a3f309693748adb1cd6b10fa941adaf031f23581"
+        "digest": "sha256:013d4c99eb714fc62fc65373280b9ab62e8149e51f3315a32c3808a00c5e6ed4"
       },
       {
         "name": "agourlay__zip-password-finder.704700d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/agourlay__zip-password-finder.704700d",
-        "digest": "sha256:856c08e8721b141b026e414dad6d4989c1d589854b6cecacb9308aea7e8ab6cb"
+        "digest": "sha256:3cb111d946c04153440667f764c5ec4db00c33cec75efee9393370439a4f1fae"
       },
       {
         "name": "ajeetdsouza__zoxide.67ca1bc",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ajeetdsouza__zoxide.67ca1bc",
-        "digest": "sha256:fd3a0811452799505e7952803e0918c57ff6ee42e828a3ac88265bbb2bf90389"
+        "digest": "sha256:1d73cf2382b7035492e0158fdd68c3a8081d0f6f385f9a52ad34622d8f196c3f"
       },
       {
         "name": "alecthomas__chroma.8d04def",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/alecthomas__chroma.8d04def",
-        "digest": "sha256:2a95c7e96e2b0a5c61bb2abed53a735e2183f51af0785093ad5fa31cef51f469"
+        "digest": "sha256:46d0034997ac8a53c0cf2693604805effc21cdb29a2df0fd4de3e298c47c6ec0"
       },
       {
         "name": "alexpovel__srgn.89f943b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/alexpovel__srgn.89f943b",
-        "digest": "sha256:a10eef8b37f5a2c0069b1955e10c5b7965688f7e2c3724bc8e08f0a6895b44b2"
+        "digest": "sha256:12141a55d7aaf1b791dce22beb548c982690ac867daf4a6777eb71d94d36ebb3"
       },
       {
         "name": "altdesktop__i3-style.f93821b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/altdesktop__i3-style.f93821b",
-        "digest": "sha256:57ed71feabc17f0a863cd3885cf442df38a715a355d86f5274ce501ba35a017b"
+        "digest": "sha256:2b59681e6d4ca75bf7f9b822e981482b8df48c7bbcea3bb4882c4865de3f28db"
       },
       {
         "name": "ammarabouzor__tui-journal.2b4540d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ammarabouzor__tui-journal.2b4540d",
-        "digest": "sha256:00ba97d6db08881f283c107079222f2ff57b2b6c12f5be6c9d59bcc4ad924840"
+        "digest": "sha256:c42ee9fca42e26cd719f01e8c98aa7a80340cb5d2a693603d3a0c7ced9cc5f91"
       },
       {
         "name": "anordal__shellharden.6a6ffd4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/anordal__shellharden.6a6ffd4",
-        "digest": "sha256:c01e5fa0dcaa907c9cbf2df52d900c7e2e86cb87ab8ae1a6ce372ef657484fe6"
+        "digest": "sha256:c48f0d8e9b4d0c2eb3a32d87d178d4971788a59b48ab12c5820d0957536a6842"
       },
       {
         "name": "antonmedv__fx.86d0d34",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/antonmedv__fx.86d0d34",
-        "digest": "sha256:f7f53fe06b0bdff06ab69e55f2dc29e7487624df254f7092372a419f6b2e42da"
+        "digest": "sha256:0cec5e16479a2ebc22b7d734a19d72c2b1ff92a76973cbafe606b71c5e638a1e"
       },
       {
         "name": "antonmedv__walk.bf802ef",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/antonmedv__walk.bf802ef",
-        "digest": "sha256:fcdb8130d6b16ea3264ad6482a8d7dec6099ec905eb2271de57d0f51cf74c75f"
+        "digest": "sha256:dabdcaf2ac010a3bdf8d2f00f02edb4bfdbe19f60ce0914b8e1f6ceeb7b19105"
       },
       {
         "name": "ariga__atlas.6d81150",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ariga__atlas.6d81150",
-        "digest": "sha256:9f4c79eb17833a2aba542f9d2c5969f16715a72eb219579e9e169339a3611576"
+        "digest": "sha256:4800b98da7ce5d8ba4880c52054c9656671ac6d897387279df91cd04704a8bc5"
       },
       {
         "name": "arq5x__bedtools2.dd57059",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/arq5x__bedtools2.dd57059",
-        "digest": "sha256:1358d4d9619615819e28cf124ef97cfa46e88d639e07e2afc00bfd217bb3b6ae"
+        "digest": "sha256:ee0bbc4b0c2eafa2328359dfbea14c186124108d73bd77eb53668a35aba6d6f0"
       },
       {
         "name": "arthursonzogni__json-tui.17a22b6",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/arthursonzogni__json-tui.17a22b6",
-        "digest": "sha256:558906e645040f1ff35d8d9bae8f4da5f7479d2c83cdea54217d993e8b1e4add"
+        "digest": "sha256:5791c5eeee6a64c651e1f4e78a7979569580f7aea7c199f4ebac3ade11569d4c"
       },
       {
         "name": "ast-grep__ast-grep.dde0fe0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ast-grep__ast-grep.dde0fe0",
-        "digest": "sha256:458b8f0eb07b80905c60db26de2b09503a04401533bbce2bce5840ffb1f731af"
+        "digest": "sha256:3b879aba2dc10a2ddd5a3eb9d45b9df1a06b2443251652c0b9e4bcc558657d8a"
       },
       {
         "name": "astaxie__bat.17d1080",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/astaxie__bat.17d1080",
-        "digest": "sha256:6f2f5c7c9bacf6efeaa4c09d5eb23fb149cb32fb0a55b3e1b870d65baeffc06f"
+        "digest": "sha256:c05d8a6816466fe1629f0a638992f5b07470cd8431625df6b1c4446779f22119"
       },
       {
         "name": "astro__deadnix.d590041",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/astro__deadnix.d590041",
-        "digest": "sha256:8efe36807439750f354682d3b60a86bbbacd95773b995a6ef20b654855fe8cc8"
+        "digest": "sha256:1d48fa4642e03a48eae6235353f73d1c8a1361f9a58bd6a5bfc62846543212ba"
       },
       {
         "name": "axodotdev__oranda.27d60c7",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/axodotdev__oranda.27d60c7",
-        "digest": "sha256:10c0054ae56df0ac8de9c4b73b7baaf4b02426114da6254f200684fe285474fb"
+        "digest": "sha256:5837d8d163316c07252776535547eb2154452c352bde3684198650f9ccbd03ad"
       },
       {
         "name": "bellard__quickjs.d7ae12a",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/bellard__quickjs.d7ae12a",
-        "digest": "sha256:34c9835aa331989de253105fa4e36796ad6ac0aa7ff4e3bbf2f8d875f2f8a975"
+        "digest": "sha256:2ae370b8bab001fecad90d1c84855ea8ba7322c4383c0ac7101bb84d2ab81192"
       },
       {
         "name": "bensadeh__tailspin.6278437",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/bensadeh__tailspin.6278437",
-        "digest": "sha256:9d9b1c6e868a9a62419e45396125712ea218b7035a84da8fd347019f23dbf42a"
+        "digest": "sha256:26287d427017d9ce8702d58e3a949dcbe0d7f8f3bf81d67050967a81ffc90bd7"
       },
       {
         "name": "blacknon__hwatch.edfcb62",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/blacknon__hwatch.edfcb62",
-        "digest": "sha256:7e6b30dfa0ecc88be021f3e53c38748c8668671fa3791d55f9212d4acf6e8b9d"
+        "digest": "sha256:419b486ab5fe148ad9dba1c185da70893f65e2af26eb74e33c020911643185c4"
       },
       {
         "name": "blake3-team__blake3.15e83a5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/blake3-team__blake3.15e83a5",
-        "digest": "sha256:9e9d1b044f2bef3138ee19545e1020663b1e6ed6fe58328cd402f071d704df4b"
+        "digest": "sha256:793c429fcc630a79a2f96361977b644563f8dfef04431dac71a94a12c6f3c8c0"
       },
       {
         "name": "bootandy__dust.62bf1e1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/bootandy__dust.62bf1e1",
-        "digest": "sha256:4cc5676b297aef168930c829a0cc68a287ddeeacbc0b46a1b76b8f11735b93ea"
+        "digest": "sha256:876da99d42122367d8e2c0f5ab4c8ef9e87f27d9281d7ab54e41ad69011bf5c0"
       },
       {
         "name": "boyter__scc.515f91c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/boyter__scc.515f91c",
-        "digest": "sha256:93d7c58a7b6343b21edc8423ffb307f9a14c2cc158846006cb224e476d752b18"
+        "digest": "sha256:f3a1965bdae4b3681f640cc6da1deca62e622ac5d862cb851472175493f10514"
       },
       {
         "name": "brocode__fblog.3b54330",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/brocode__fblog.3b54330",
-        "digest": "sha256:8f052fdae2c6e355ed7d37c4f31b302d5e6e76533162e2729107e9fc5b2845cf"
+        "digest": "sha256:fc1b4e1891dd0b538387c70f2731975c77b6ff93fb09694f8b679e301c809e23"
       },
       {
         "name": "burntsushi__ripgrep.3b7fd44",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/burntsushi__ripgrep.3b7fd44",
-        "digest": "sha256:cfdb5749ee95aa449528c6a64ac54016dd227bca20da60f0a357e5a96e180762"
+        "digest": "sha256:2864a5938e2884d05082c95011eff73e508bee4f74a74eec3481600010a50fb8"
       },
       {
         "name": "burntsushi__xsv.f430466",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/burntsushi__xsv.f430466",
-        "digest": "sha256:c03c7c3a0cdf8873f5c67ee489f135301e43ce697dfbd5a9e722941d95e236a7"
+        "digest": "sha256:00d01f3930f3494cb5219c0de14208de9e82d98f239ae5a37262e4d559749862"
       },
       {
         "name": "byron__dua-cli.8570c15",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/byron__dua-cli.8570c15",
-        "digest": "sha256:e1e4d83b6cc0281af2f11449f1cdc5851e85d6ef0a571aa990283c278a682647"
+        "digest": "sha256:773fb38c72868422556be3c70f829c351e2a0ed83268ce7653d601044c6d5d55"
       },
       {
         "name": "canop__broot.d6c798e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/canop__broot.d6c798e",
-        "digest": "sha256:94857506bbebe05d24b2c0fff2503f8ebec4b2b3eb3eecd6bd3428b33d51b00c"
+        "digest": "sha256:9409cc9dfbc67052783b83d7bb6128b659b6bed268d0736c3b9d961c987b22c9"
       },
       {
         "name": "canop__rhit.ae90bcb",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/canop__rhit.ae90bcb",
-        "digest": "sha256:2ff4b252e85123f0fdd75fb787f3d630a3fe92e64be306fda102ca615c87327e"
+        "digest": "sha256:a264f0824d9d97911939755d57a1ae72dd3842e420fc0a5f7429bd43b29d996c"
       },
       {
         "name": "cheat__cheat.b8098dc",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/cheat__cheat.b8098dc",
-        "digest": "sha256:c0894207b12d1f72faba1c4c8e4eee244c095798e0c8e541c35b40c1c143ac93"
+        "digest": "sha256:6ee0b494904a704b6116f7ec744b5cd2b72c60a3d33829cf4b0fa5e4ee7c2c3d"
       },
       {
         "name": "chirlu__sox.42b3557",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/chirlu__sox.42b3557",
-        "digest": "sha256:d6998290b4c9b5f2eea3003e5e6ade0d8b0d0ef631f6ec3b10abf109f6757fa8"
+        "digest": "sha256:0844b1ffc8f382913f346ebe4c799455c40378eefb8ed7785a06904dee46280e"
       },
       {
         "name": "chmln__handlr.90e78ba",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/chmln__handlr.90e78ba",
-        "digest": "sha256:b1f34e438116c3bb983d239506a180cbfbfa48bf2deabe4b8671261aecff640e"
+        "digest": "sha256:e527e93a99194357bd23c21923305e5a5ad8705eda14b5c7f89a38d66e830ec9"
       },
       {
         "name": "chmln__sd.87d1ba5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/chmln__sd.87d1ba5",
-        "digest": "sha256:27319b7c7b58402b2b5fee4d34659e1df5c6346610fe4025923b377a895c9cfd"
+        "digest": "sha256:0f3682f32f6d5a15bed27cc11e26bf4a7f00d7990913bacb3f3d81f53fdb1480"
       },
       {
         "name": "clog-tool__clog-cli.7066cba",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/clog-tool__clog-cli.7066cba",
-        "digest": "sha256:7f7ff376233026926bc7732b8255e74952361ce4c46f5794d1f8219802cae30b"
+        "digest": "sha256:031634bbe71c5389eeed74a77ba7c52f03aec0235dfe8833a0072cbc50614668"
       },
       {
         "name": "cmatsuoka__figlet.202a0a8",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/cmatsuoka__figlet.202a0a8",
-        "digest": "sha256:a2158b6940cd77885a279f4551a2a50c248492f4e94fa647ea68e91bf856d8bf"
+        "digest": "sha256:b1a92ac731d06d6e15137df633b77a3a24317bbb38f2779079aab874c9ef27d1"
       },
       {
         "name": "codesnap-rs__codesnap.f81e4f3",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/codesnap-rs__codesnap.f81e4f3",
-        "digest": "sha256:e1bd6d3d615890e0554e1e259ced86eac668593404c90377da9ee66d6c2aedbb"
+        "digest": "sha256:9e216fb13847dd316fdc21f3d4301a9c3bd85bf02c7a23f3fe8687cbb2816e08"
       },
       {
         "name": "cordx56__rustowl.655bc5c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/cordx56__rustowl.655bc5c",
-        "digest": "sha256:79eb4b8d9d6e75ae91c80b8d25ce4e2527eb4b442371f6cce7d6f27cc61ebb36"
+        "digest": "sha256:f8440778bb838e1e3a958a0e029d7a002704a9b50819661728cdf204ee5a09f6"
       },
       {
         "name": "crowdagger__crowbook.ea214d7",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/crowdagger__crowbook.ea214d7",
-        "digest": "sha256:ad37d888a6df6d43e2256b9b9f4650ddb961c642ea7f6bfd0b5b680fd3511c7f"
+        "digest": "sha256:bd289da5608df4b6781b3c93e5c815253080b938d515bab773721380e5ca7ba9"
       },
       {
         "name": "cslarsen__jp2a.61d205f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/cslarsen__jp2a.61d205f",
-        "digest": "sha256:611df363566c6b86a9a4ec23a376e9bfee1579ff802c038b781008cd553bc34d"
+        "digest": "sha256:da2c70a9b4a039aed3c8bb0ef0853f8166a66acc3acbde8a3305a38518c311d5"
       },
       {
         "name": "cweill__gotests.2a672c5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/cweill__gotests.2a672c5",
-        "digest": "sha256:37dfb3910e801090d0594625a677f722a09376b3f8edf141eeb2a025d04c8001"
+        "digest": "sha256:30e587b71c85b78a673fb0fe3d42c65ff8d6d22e47dc28c8e73a9d8fd995cf08"
       },
       {
         "name": "dalance__amber.69a0f52",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/dalance__amber.69a0f52",
-        "digest": "sha256:6f5501bf7be1c8e71d697cedfe033925f2ed594c6be08a6cc735b1bd99876a0f"
+        "digest": "sha256:e31eec1af4ba2a53048da1357e225ac333a81a810d73e5217da93f986638a01d"
       },
       {
         "name": "dandavison__delta.acd758f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/dandavison__delta.acd758f",
-        "digest": "sha256:1d5a73b4e0cb32844dd81198b0b96367a7b85205d2064ae9b684f238785114d0"
+        "digest": "sha256:6090b1ca26f7a417d1e034e9a796d7e211e28fe68b2be4c884a9b37888665ebd"
       },
       {
         "name": "danmar__cppcheck.0a5b103",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/danmar__cppcheck.0a5b103",
-        "digest": "sha256:1ed2cca5a9fa992e6f503dd5e2f6f5d2104e932a988bf5960c3d4932d5455af8"
+        "digest": "sha256:8cdebb62c12a2c9467ab8c62e31950117ecce2a090c185f227cc796a3c9431c5"
       },
       {
         "name": "direnv__direnv.02040c7",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/direnv__direnv.02040c7",
-        "digest": "sha256:83c59818390b4c164c2cdca9e61db0c8833061cc39b46d704bf1843314238922"
+        "digest": "sha256:f38595566ed0b5d3904b3039f44d3c5f13a4a6e004067f249402426cb07820e6"
       },
       {
         "name": "doxygen__doxygen.966d98e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/doxygen__doxygen.966d98e",
-        "digest": "sha256:1cd0067ce8f825840171a452a3c3e455cb23f79d8184d6248495f8e5d18d715e"
+        "digest": "sha256:201c872c1b90c8a219505c36f798d24e36d2ae64a70ecc87e839cb66acff4cbe"
       },
       {
         "name": "drew-alleman__datasurgeon.d257cee",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/drew-alleman__datasurgeon.d257cee",
-        "digest": "sha256:75977fe3db650b087d8b20a76e696984f53118688e7a2c6a1e5cf46679f71f0b"
+        "digest": "sha256:2e2e598ad60241cb00c395a4be36ad20837e074c982d3532b27f5e9fc158fa19"
       },
       {
         "name": "ducaale__xh.4a6e44f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ducaale__xh.4a6e44f",
-        "digest": "sha256:cd917aa031710468c1af5cb84bf5dc9ec1ea0cbbf70a93fcff4929892d13a46b"
+        "digest": "sha256:433e65851b2ed4382fd9eaf3ec6aa7ddc997d84c007c566f042f175db19b26e6"
       },
       {
         "name": "duckdb__duckdb.bdb65ec",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/duckdb__duckdb.bdb65ec",
-        "digest": "sha256:437ba1537407f17d1f6e56db626e244a5620fb6025b2ee321fd072591e48dba0"
+        "digest": "sha256:84f9e7689635018b1278f8e842724c9f2a7725964322f3a2eba8dd1a46e51f29"
       },
       {
         "name": "dundee__gdu.ede21d2",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/dundee__gdu.ede21d2",
-        "digest": "sha256:38e766dab369d88b6c108cc28c21c0e44d0264791ca448cd466e3f92f0f91435"
+        "digest": "sha256:f45580e3d086706e978f5d1f2bd6024b4622ce73f5b9a091489e7c584ec84bf8"
       },
       {
         "name": "ecumene__rust-sloth.051c559",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ecumene__rust-sloth.051c559",
-        "digest": "sha256:7d2285d4ff1cdf26907e9d72aa477848aff8cd3f6d774f0d86c5c25a7079dc84"
+        "digest": "sha256:d921f9b8f9b2c39638f901cacf62c5f8347f4ea30bbccc599b7801dc6f5446e9"
       },
       {
         "name": "ekzhang__bore.8e059cd",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ekzhang__bore.8e059cd",
-        "digest": "sha256:f78bf7a0e14b5e6c93aaadc6f6b62e677bc1bbe50826ae84f6653c65d281cc95"
+        "digest": "sha256:c3852b707baf753a84439727a0bb9e9575897748dd3a7357787839b43099dbd4"
       },
       {
         "name": "eliukblau__pixterm.1a93fd5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/eliukblau__pixterm.1a93fd5",
-        "digest": "sha256:abd5b4c742aaf544344481b3b1b04946505da564bd7855a3ee8004e805230cf1"
+        "digest": "sha256:32a1be5357ecd9b7bbfdf502d5acd7039aa1a6c0063c75aa713e2fd8468ecf27"
       },
       {
         "name": "elkowar__pipr.fae0b17",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/elkowar__pipr.fae0b17",
-        "digest": "sha256:ed67694a9667fa2269ef7baf886db811707640c5a47ff33b8eae5842f74913c5"
+        "digest": "sha256:b83e4288e67abd845815f464430ee4da5378e968144416b6b162064f5a6b93b7"
       },
       {
         "name": "epistates__treemd.825c6dd",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/epistates__treemd.825c6dd",
-        "digest": "sha256:2cd3f2c5549649f8c86ed8a5167d87e8dcab5c1f6f453b7ba171d82809d36e0e"
+        "digest": "sha256:806f1fc179012dad54f9fb7e70f5add327b3b01675ccf5bf362bf42f73b67fbb"
       },
       {
         "name": "eradman__entr.8e2e8b4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/eradman__entr.8e2e8b4",
-        "digest": "sha256:7c1526a3105b1225be6bc6ca41f5bdd041e6c28629e02d3095ae4b070f49cfff"
+        "digest": "sha256:71cebea929d44cef2aebe7f105bce5ecd9a2b9842a0bfdeae0d8f2b03969b498"
       },
       {
         "name": "esubaalew__run.0fb9dec",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/esubaalew__run.0fb9dec",
-        "digest": "sha256:c1bdb2e648466609bad4df1a85dc2c8001c6b013ff0b8f49707400ada7348936"
+        "digest": "sha256:9e2b3507b984dba27d5f6c0d206f5e309169ea46517912e6985b72d8d9a988e0"
       },
       {
         "name": "eudoxia0__hashcards.48aa136",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/eudoxia0__hashcards.48aa136",
-        "digest": "sha256:e879423043ffa24028b2205abd5ce13e72e237e9b5534f392b9bb3bb81c32048"
+        "digest": "sha256:1a16e8d98dea2ee41aec4a667a645b750d6e63a8fdd6312f3282078de39adbf9"
       },
       {
         "name": "facebook__zstd.1168da0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/facebook__zstd.1168da0",
-        "digest": "sha256:f3b9911224afcf366253497c0faf43c667475c9ac243e8ce13bb4c6dbc48b195"
+        "digest": "sha256:9d6f2afe531d8fc768515bab917142ab429b9e234612d22aea0a7ffbdd653894"
       },
       {
         "name": "facebookresearch__fasttext.1142dc4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/facebookresearch__fasttext.1142dc4",
-        "digest": "sha256:4f1cbd898e6d0e03bea7906b46ae89b5e79d13269407ef21ee1000ceedda9d58"
+        "digest": "sha256:0410c0b26a28171e92d2f019b231bfc936435e5ff62331e37b1596223f0a70db"
       },
       {
         "name": "ffmpeg__ffmpeg.360a402",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ffmpeg__ffmpeg.360a402",
-        "digest": "sha256:a5735fef96e6158bb71bc4dd2b9079f2c4bef2ee67c669f4a2c924ce7049cd09"
+        "digest": "sha256:40e815df5a073fed6c4ed5c4f85b6e0815ae77af5f98c5bb9f8392d227b31dbf"
       },
       {
         "name": "filosottile__age.706dfc1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/filosottile__age.706dfc1",
-        "digest": "sha256:243719d5d1b3315d84d53224a6c6e99994c65cadef440579d72ec330b327d6a1"
+        "digest": "sha256:bd8b87dc9e8402a8d483d0f48413b7ca7b611ae3f2117c711888c6d586c0a930"
       },
       {
         "name": "foriequal0__git-trim.07c2f50",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/foriequal0__git-trim.07c2f50",
-        "digest": "sha256:c06eb13041422175637308aad61c3a250e2d2db1644a19216e03e9b90ebf2856"
+        "digest": "sha256:d85126bb650fb9f997277d6620b04015bd8e47225d47b14de6e48807509336b0"
       },
       {
         "name": "gabotechs__dep-tree.60a95a2",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/gabotechs__dep-tree.60a95a2",
-        "digest": "sha256:0c5130107d4cb83913818dbd3b0c4cb3dccad25ed10aeb1cdc73168fd4ab3174"
+        "digest": "sha256:fecd358f5ad9afb0c39a989e24b2802fba172471b613d935275f60fbf7e8fcdf"
       },
       {
         "name": "ggreer__the_silver_searcher.a61f178",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ggreer__the_silver_searcher.a61f178",
-        "digest": "sha256:ab43ab093dc1eccedf6d232cb7c53ba3c132a81ab80bdf39db0e706d4bccb66f"
+        "digest": "sha256:de42bcb21492f8722c249a7d52b0c1a5eab82c2cffd3548008a67c86685a60fb"
       },
       {
         "name": "git-bahn__git-graph.87b4473",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/git-bahn__git-graph.87b4473",
-        "digest": "sha256:4e63803b94a825f825ed58e1183cacc14e59c2b15ab256c51dbcd08aa25df61c"
+        "digest": "sha256:b3b56d3d7a88912d46caa31829628c6ada06277e0d44c0493d40494fa6fa0a9a"
       },
       {
         "name": "go-critic__go-critic.9aea378",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/go-critic__go-critic.9aea378",
-        "digest": "sha256:ff839459b668ad3a629850c4b44fc5bcd301f26b039b99ec09e03f5b8f0af670"
+        "digest": "sha256:71073720474bc6b59a003edc1fe0e158d57bff70ea85314439b3d99733141b3c"
       },
       {
         "name": "google__brotli.b3dc9cc",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/google__brotli.b3dc9cc",
-        "digest": "sha256:130dc1d9dea305ab3999bb6265cad76aeea813f24d38fc885762d350016df2d1"
+        "digest": "sha256:74c47323b7c6fe199326a58aba10fe42963f085233106905c73db0072189eb47"
       },
       {
         "name": "gromacs__gromacs.665ea4c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/gromacs__gromacs.665ea4c",
-        "digest": "sha256:acb3374fb3283df9a3a24663167f597bf12c45d53ce77dd634c51a364d8dabd1"
+        "digest": "sha256:e64318ec03fc724a3d550a13d015be0b8b8309b5b3c3e7d9fe4ff798a2380312"
       },
       {
         "name": "guumaster__hostctl.d6d9699",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/guumaster__hostctl.d6d9699",
-        "digest": "sha256:634fc87c4b5fefed296dfae0586888cea9556a6a345e136925ad806bafb33374"
+        "digest": "sha256:57673fe8c75775e2be2db1b59b046cba940e6b567be27d411fb651d6012c3a3f"
       },
       {
         "name": "hairyhenderson__gomplate.05eb3aa",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/hairyhenderson__gomplate.05eb3aa",
-        "digest": "sha256:075889e5f8dd393a0c1dd6b23e589d7fecbf690e3080910def5a80c75f74a12f"
+        "digest": "sha256:46a83b9faea6d27b2f4f1fd5e587397e05e142ab608be43e713825e7359d1e64"
       },
       {
         "name": "halitechallenge__halite.822cfb6",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/halitechallenge__halite.822cfb6",
-        "digest": "sha256:025fdc5e3e2b8f8957db85ed33795c61b95e9a7e7b1566bde60db77764d82d7e"
+        "digest": "sha256:70b667c829ecb4bdb561b0cc55a548f0718593ea5286d6b28346b67cedc6b352"
       },
       {
         "name": "hatoo__oha.8dc6349",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/hatoo__oha.8dc6349",
-        "digest": "sha256:2a6866d3ad022cd1058775597ba4f91adaa549fbadd6a0fe45a990c503115ef3"
+        "digest": "sha256:daf2e8d17aaf6f9310ace30d1cf846dfaba9bdd9155d87eff601a5d5516f7bec"
       },
       {
         "name": "hooklift__gowsdl.2a06cec",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/hooklift__gowsdl.2a06cec",
-        "digest": "sha256:f6d519ee8dd4f8326af2aab2a0269812ae448c0d75113e3bada433928f40fe4c"
+        "digest": "sha256:0b7c2f0af1658ee619ec0f9fd12d552db91b88266ba09878b14edfc15cc5e48a"
       },
       {
         "name": "hpjansson__chafa.dd4d4c1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/hpjansson__chafa.dd4d4c1",
-        "digest": "sha256:d2a3a5207d19d9acf4696a65b10a6ed5e738a53bb7dc199529da571fbcb96236"
+        "digest": "sha256:ddfb5edf4ae83172a6628d871e2e3bf8434b096e72cf6023ad9606f962a88f7a"
       },
       {
         "name": "htop-dev__htop.523600b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/htop-dev__htop.523600b",
-        "digest": "sha256:c6170fafaba4ee25493c268a1eb2718ac49460debc83a59dd05d028be8cbe09c"
+        "digest": "sha256:aea22436b774d68e8aaec099a91f536dedfd702fab9f218c6f015d635315ad6d"
       },
       {
         "name": "hush-shell__hush.560c33a",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/hush-shell__hush.560c33a",
-        "digest": "sha256:b6b2d4da8786230277ac5299a4e4c2a4790724ee8877b684345956b2563f3d3d"
+        "digest": "sha256:5ad81d80eff9b53d6504a36a9aacfee2fb7c6fcdb255eef29fae8cdfc57a75cf"
       },
       {
         "name": "incu6us__goimports-reviser.81bd549",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/incu6us__goimports-reviser.81bd549",
-        "digest": "sha256:0fe3a9900433b60c0e14ff3612d6c7be2c4b04fcf23023df066eb28f11d67b6a"
+        "digest": "sha256:657ffed463f690c3326776772b4cb5764af9b43f2b300522963e654768a5a69a"
       },
       {
         "name": "ip7z__7zip.839151e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ip7z__7zip.839151e",
-        "digest": "sha256:582ebda22a3ba6677d7a70b1184c2e8bcc6bcc9ebc6e35e1b83997c261857781"
+        "digest": "sha256:1034d2bdf3e38344561e9d48f03e71bb05eb19020644ec6879984432b2ef7e21"
       },
       {
         "name": "ismaelgv__rnr.fc0733b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ismaelgv__rnr.fc0733b",
-        "digest": "sha256:903d0495e3f2690be0d1c53627c7657fe4aef2ec7849130febc477c16099b4b1"
+        "digest": "sha256:101bbca2ae359390e807d0f0830c17321199bed7274e73114b9979ee020858da"
       },
       {
         "name": "isona__dirble.e2dea9f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/isona__dirble.e2dea9f",
-        "digest": "sha256:f77b2eb6835de399d0519a6f9b3ea9e5d769544a6fcb98fdf2ffa3f3a5a3b98b"
+        "digest": "sha256:22e5ea53f5e4ccc7d8e200d1adf4ca8d5245d15f411ac144ce0f9679d7768e7d"
       },
       {
         "name": "ivanceras__svgbob.6d00ad9",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ivanceras__svgbob.6d00ad9",
-        "digest": "sha256:90c46f89aba077d48535ddabc71606510be71cda113ff05d54a6f7049d20d772"
+        "digest": "sha256:90186f8d70329ac03966be8c8c14c4120933d66d4abed96ca7fbd349d6fd8ac8"
       },
       {
         "name": "jarun__nnn.cb2c535",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jarun__nnn.cb2c535",
-        "digest": "sha256:12d661f83408468fb18632d6d1141d9730e73423d7d48f17bab994bf45e84d32"
+        "digest": "sha256:0cbbc1e21520b1c9d349ad1282c056b9bee0d88562162156921b6df9ddb8b4ca"
       },
       {
         "name": "jesseduffield__lazygit.1d0db51",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jesseduffield__lazygit.1d0db51",
-        "digest": "sha256:0eff4b2aacb40d8d273143461ecd851230092f0418731ec95ae12975dbcdecba"
+        "digest": "sha256:fac2d72987face63a76d98fb5024e5a1174acda24ebb4d983bf9d372cce44bed"
       },
       {
         "name": "jgm__pandoc.5caad90",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jgm__pandoc.5caad90",
-        "digest": "sha256:ca9b96abf664879c0625f1249c09328c12b18d19131c9a94cbb35e5323cfbb57"
+        "digest": "sha256:aa8ae5aa4ae903fe07bccbbed491e1d7287cd050512f9144ca175e622be740a1"
       },
       {
         "name": "jhspetersson__fselect.c3559ca",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jhspetersson__fselect.c3559ca",
-        "digest": "sha256:174ab10f081dc9ab9a471162c3712926a047048a9a638b8dfb9073b51e871011"
+        "digest": "sha256:f4d9594b79177d35b478a06a184dc163cf078e39e5b9331afa8c87cc777b2f3d"
       },
       {
         "name": "johanneskaufmann__html-to-markdown.3006818",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/johanneskaufmann__html-to-markdown.3006818",
-        "digest": "sha256:d59e9354b2bea45b100a746d71414e01226ed3dc028bdc40e277ee1ec1306017"
+        "digest": "sha256:3833e9f225d1c981975d9139590bfc18766a74e370f992003449f27b4483e40b"
       },
       {
         "name": "johnkerl__miller.8d85b46",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/johnkerl__miller.8d85b46",
-        "digest": "sha256:af49aa258717ece75ff0f29ef852b0892c74bfc7928f1084ada813c8bdfb6954"
+        "digest": "sha256:394f61a7507e6d2d535bf76f738785afd83272ecd5144db9e491ef9ba0094e24"
       },
       {
         "name": "jonas__tig.8334123",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jonas__tig.8334123",
-        "digest": "sha256:24689983c8119f74caff86ea63bf960b7110de0832bd4b46531e69384c1c370b"
+        "digest": "sha256:cb3239abeedbb9afb40c3fd154e761255431cc5e75ab22172f76e028b2ed9d24"
       },
       {
         "name": "jqlang__jq.b33a763",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jqlang__jq.b33a763",
-        "digest": "sha256:2943d59eceb0453556f9d282b2da0ab7659cef5d9bff48ebe432c48076ebd04c"
+        "digest": "sha256:cfad8055e0b9defacc2277e60045b2747ad4c6588fda5f38c721f457b061682a"
       },
       {
         "name": "jrnxf__thokr.09375ef",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/jrnxf__thokr.09375ef",
-        "digest": "sha256:7f39fef0281a4bd830c4b920e6f81ea049a489a9647c44655d6267b3afa06069"
+        "digest": "sha256:f07733ee437ed1f95fb07e0c4d06b9a1c07dc0ebe44787a2604768e54d26ecc2"
       },
       {
         "name": "junegunn__fzf.b56d614",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/junegunn__fzf.b56d614",
-        "digest": "sha256:096b98cfd7cc7c270ff8e3ab53e0103fd67a58356448f199329170b04c330fe1"
+        "digest": "sha256:2d3bb6b1cc8bcd0ab172b705092d5cc818f6c5e76af03644e786fca975d04b96"
       },
       {
         "name": "kaushiksrini__parqeye.8072121",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/kaushiksrini__parqeye.8072121",
-        "digest": "sha256:32dc71e4e7b3be3cfddfbf1b6e612a63b0bd3e96ba4103a924f2aef99070edb6"
+        "digest": "sha256:e9557c183f1ab6d39e778ae9a541b3563df7f386ce261f277473c34f5c8e72ab"
       },
       {
         "name": "kisielk__errcheck.dacab89",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/kisielk__errcheck.dacab89",
-        "digest": "sha256:34552caf6aacbe5d62aae5ef3a610c843417e921025c5ed72a78893109d090df"
+        "digest": "sha256:c92edbfbd81ccd1d1833295a9cb237030fc172c52781261f6021e4b727d94fff"
       },
       {
         "name": "konradsz__igrep.aa75630",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/konradsz__igrep.aa75630",
-        "digest": "sha256:11f5d7b1dc718591d1b93444982ccbd1534c33226042614bb21ec6f58e86b0f2"
+        "digest": "sha256:76e2c3873ac143de9a339519bb2b612b8aae8329cead6415e019a7c0c4f060fc"
       },
       {
         "name": "ksxgithub__parallel-disk-usage.96978ed",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ksxgithub__parallel-disk-usage.96978ed",
-        "digest": "sha256:1f06130ec5a8f46cddee5d48ed50c8abacc24cd08280aad66607321073daa3d0"
+        "digest": "sha256:f1edfc60942ec40af3c2c5441afa7d8ede9ed0a0898760d626cdabe6f999e99d"
       },
       {
         "name": "kyoh86__richgo.313114f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/kyoh86__richgo.313114f",
-        "digest": "sha256:bafe3cd7c8004d382d9c3ba3dd7fbfe6a90247c7b25ebf8b080e96a5e69f3650"
+        "digest": "sha256:a4d007623919f1558a8d93cb13cb42a0680bce9f9816f1aebde9f26ab2e4c587"
       },
       {
         "name": "kyoheiu__felix.95df390",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/kyoheiu__felix.95df390",
-        "digest": "sha256:782e2b45837506886db8cdb7949ef8b2a8b65cbab1a0d81a92fef703fe9418a0"
+        "digest": "sha256:c544108e616d5377e1bb283dcf294b1044b3ee5e57d7280f5fc6bc5412a13949"
       },
       {
         "name": "lfos__calcurse.49180d5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/lfos__calcurse.49180d5",
-        "digest": "sha256:669714fb1e9f697970c662c1a4c3b7ed777b4284e6f7a65156c2e71bd2b323d0"
+        "digest": "sha256:7f0aebf154ca0cb8fcfb2733b90746b69910d1a68e7cf9b144d10f393a5999a3"
       },
       {
         "name": "lh3__seqtk.94e7070",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/lh3__seqtk.94e7070",
-        "digest": "sha256:12819ec36b0f07a77d9e5fdf0e520b9c7f651b906dba82f2822586fe3c53f797"
+        "digest": "sha256:4cc571185e6e59c08b672f3a3639000a7d198d1effabc06dfb77dbe40511a01b"
       },
       {
         "name": "lua__lua.c6b4848",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/lua__lua.c6b4848",
-        "digest": "sha256:3fca160aa3698b9b3f7e0bf83650d3e721867224d7e23dcfd0bf95e17e3c03ec"
+        "digest": "sha256:0a95f51cb7a1d7de8aa12ccbab53d3276c6803d6584759768eddd7a783c6171f"
       },
       {
         "name": "luajit__luajit.a553b3d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/luajit__luajit.a553b3d",
-        "digest": "sha256:80f4fe896dda5b1ef189f72fe9111ff98b8154c7425b4e5d9a69796e5344d423"
+        "digest": "sha256:50004898473c0e9a20debac8d8d775b6dd17e44ee2e343c240e49312d9c7d426"
       },
       {
         "name": "lymphatus__caesium-clt.a529b2e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/lymphatus__caesium-clt.a529b2e",
-        "digest": "sha256:68a19de3eb1a3cebcc59d4437aed7c62c29012c1f3768d456aaa3f0c35df9b75"
+        "digest": "sha256:7a5a84301e0d193cc576273f8db904b394035c9fb5a96485bc53047f3589a649"
       },
       {
         "name": "lz4__lz4.1519f46",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/lz4__lz4.1519f46",
-        "digest": "sha256:835076fce4ce87c3235788f0e65b0cf1fc97251d52434e7d69588467e9614651"
+        "digest": "sha256:c6d17e9678b405a0cc75caf8075661e35f8a9be7b59344a97932854ad5f0b92d"
       },
       {
         "name": "madler__pigz.fe4894f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/madler__pigz.fe4894f",
-        "digest": "sha256:b761c824c9d4c27b950742c62f54ec6168b0cd3fbd797d3c5927df1c5087667d"
+        "digest": "sha256:2b9e1c408c8f8c91824a2e0eede4b764a2f0bd8d5bd03994cc5f925115ec9281"
       },
       {
         "name": "mfridman__tparse.2416b4b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mfridman__tparse.2416b4b",
-        "digest": "sha256:8cafcb0fd04b8c9c640d99a42f7ca3938fc4a90d6925310af88e1229bc31d6f4"
+        "digest": "sha256:c94eeb57a1d3111f4d5da0a3ef78d2be8a8af3f7cc81998511761c8aabc0e848"
       },
       {
         "name": "mgdm__htmlq.6e31bc8",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mgdm__htmlq.6e31bc8",
-        "digest": "sha256:ca9797c2cdf8afe794444acb4610d6b6cb009e518c6c531291fa9fe9aaf909e5"
+        "digest": "sha256:ac43837094c54b203acf892c1173f11b65319a6315c3d01344672707f24fc88f"
       },
       {
         "name": "mgechev__revive.201451e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mgechev__revive.201451e",
-        "digest": "sha256:b3f635244953d9502b96dc24981a870bac5e113522440c82bc38ae94b86e524c"
+        "digest": "sha256:6bc1104d47407355942e29cd0535a53ee2f03483485e518c261fafb4c8feaead"
       },
       {
         "name": "mibk__dupl.1bf052b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mibk__dupl.1bf052b",
-        "digest": "sha256:0ef8eaf8b262549fe113ddb8013b032d91e0982d20e9e2a7ef2a511683a6c3bb"
+        "digest": "sha256:ab49c861ef31b5e0def742279932a02657d48893fe8b5d9dfc2f275438208129"
       },
       {
         "name": "mikefarah__yq.602586d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mikefarah__yq.602586d",
-        "digest": "sha256:676eaf4a3283a78cc32a6357ebf6598a782becded7742cf26d992339e18dc5f9"
+        "digest": "sha256:2f777c3894b2713eb0d2f51298a9dac39a5ac43f60b9dff4ca3ccc26a9dab35f"
       },
       {
         "name": "miserlou__loop.209927c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/miserlou__loop.209927c",
-        "digest": "sha256:d89a563c518993c8dc40913002a70d4f230324b44146882579453ca9a7d5d437"
+        "digest": "sha256:5e74e16c433ffe659aa4ac99a52bd7914b0878ab01cf8ed7f4ef89d43afad6d9"
       },
       {
         "name": "mkj__dropbear.75f699b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mkj__dropbear.75f699b",
-        "digest": "sha256:31cf99de1bdea2f867b23950a39e6d6bc5502668faab465ca3ad9ee6e4dda8ca"
+        "digest": "sha256:fede1eb2ace8e36e05cf05d3073a79825a47f95506593968fc31d80b5fb4c01f"
       },
       {
         "name": "mookid__diffr.2152742",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/mookid__diffr.2152742",
-        "digest": "sha256:e4d7b687d936264a26942c5a0c0cda5f094861b83dd7258b6a71179706acbaaa"
+        "digest": "sha256:f1f86b49a6d646196d9f219e42e804a610c1112cad9aaac18d8b305d16397516"
       },
       {
         "name": "multiprocessio__dsq.c3ae0ba",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/multiprocessio__dsq.c3ae0ba",
-        "digest": "sha256:e0ed3963cd03d546a360ccbee4e948ef658169dd4538a825e4e12038f363e68e"
+        "digest": "sha256:ef1264775df91065087233e1a4f72fdd689473563bd8c92442247f67a25916d5"
       },
       {
         "name": "nachoparker__dutree.44e877d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/nachoparker__dutree.44e877d",
-        "digest": "sha256:bd662662d2dc1b89f9d12d8277f173291444c7aa4bcd3f7da259bf603cb044fe"
+        "digest": "sha256:2878d01d1594fc98f9888e4df5fbe5757726dd78b9918349c28f7736da2b1305"
       },
       {
         "name": "naggie__dstask.ff57396",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/naggie__dstask.ff57396",
-        "digest": "sha256:ba37ed836100dd5b45b1180316d871af70bc7dc1e637e9dc6305faef85b24712"
+        "digest": "sha256:1c14f131ac8a79309758f5f3375464efa8dfa367a739c92a30bc8ca40e956be0"
       },
       {
         "name": "nikoladucak__caps-log.2cf2d1e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/nikoladucak__caps-log.2cf2d1e",
-        "digest": "sha256:df23fb651869c7b1438c0d4d393ca3cb6d6726e848f50cce4159a454c5d4cfd4"
+        "digest": "sha256:42814de4d8418f58522ba1f5e951215f14416acf07c3a917a2268b4648f040d8"
       },
       {
         "name": "nikolassv__bartib.6b9b5ce",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/nikolassv__bartib.6b9b5ce",
-        "digest": "sha256:f3c0ac4c2e76185bc584d6aa6cefbe0a704ddb7344d1aca3362097558753307a"
+        "digest": "sha256:a57e7dd9bdf18018534fcc58354178f806bfbaa9015c78a06cd05e2584214bc0"
       },
       {
         "name": "ninja-build__ninja.cc60300",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ninja-build__ninja.cc60300",
-        "digest": "sha256:2b6c54056cffda64804b8bb4441500f95bff1ac672748cbb3b8f9f097663a263"
+        "digest": "sha256:6e1cfec8c5c74ae9d2fb8041c584dd611fd8ad47fd5a7a55dfb657cc76ed7708"
       },
       {
         "name": "noborus__ov.b96c2ba",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/noborus__ov.b96c2ba",
-        "digest": "sha256:3268d688f17e31785c4ff4ae9915e6d8004243e0388a67548129e3146eb32c91"
+        "digest": "sha256:b14c4b2c74333c7d67e45796a16bad0aa834f5261c9d87d96c34dbc032650a96"
       },
       {
         "name": "noborus__trdsql.d8c5ff6",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/noborus__trdsql.d8c5ff6",
-        "digest": "sha256:7eda8682fba86530cbe5bcbd8e19794c07ca1dfdc296c7ebdd23439ea1b189b1"
+        "digest": "sha256:468fc49a80424b8c05bc8ebfa7dce78fec2d36ca890467347d38c868004ede7b"
       },
       {
         "name": "nukesor__pueue.8b9d6fe",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/nukesor__pueue.8b9d6fe",
-        "digest": "sha256:fde58d1025b4b97b9cecbddfa30ab36fa77fecdb96136b4678535abcf64fce21"
+        "digest": "sha256:fcd891c45adc2439bbfc4f76b30d273f9cdbb1b78f8bcf1f47409b2d1d09fdee"
       },
       {
         "name": "nuta__nsh.bdd0702",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/nuta__nsh.bdd0702",
-        "digest": "sha256:4e95ec316aed67dcfa9c40f385c6b3416f3d726ce0f9f99c063633d2de0a44cd"
+        "digest": "sha256:221facd426303659632c77b77eb7d911d9b237df061fa27966b77cb24cecfe24"
       },
       {
         "name": "o2sh__onefetch.e5958ce",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/o2sh__onefetch.e5958ce",
-        "digest": "sha256:9ca83e87425a563ba2987ab04ad60132d938620ee2b9e7a589ffcaa571cb0684"
+        "digest": "sha256:69608786458bc6974f23c1ea26f86e890196f9ad9a5cee1f76389b9eccaa16a9"
       },
       {
         "name": "ogham__dog.721440b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ogham__dog.721440b",
-        "digest": "sha256:94377fd9f12f4358031086cd8ef11e1953ab87ea2607557c2de46f647f09464c"
+        "digest": "sha256:806db2a42c6d2cb75c8ff2cb08ae18e826c33edb93124a4557aeb57ce9f244b0"
       },
       {
         "name": "oppiliappan__eva.41ae245",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/oppiliappan__eva.41ae245",
-        "digest": "sha256:3cbf20336a9c76e3712206e31871b7e90411b57e5e8df62ff201733c55fc9c8d"
+        "digest": "sha256:c8b749018dfcf2440c34bc2bee0bb73cb231109391eb0c4c576928eb3ba39b77"
       },
       {
         "name": "oppiliappan__statix.e9df54c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/oppiliappan__statix.e9df54c",
-        "digest": "sha256:abcbe10b6d425364fd4ef1e8633cee33e1e09152a584322b2ea4b3b1f6129483"
+        "digest": "sha256:7562b84af30cfb4798e4c317caf6798d5e0a8663d4b2af04082446d5d76e037b"
       },
       {
         "name": "orf__gping.26eb5b9",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/orf__gping.26eb5b9",
-        "digest": "sha256:dc355631c5e20349d844352040d7da74fae83d2face6f188b54e5dfac048f416"
+        "digest": "sha256:fd30134f75b402ff95225b15eb98e2866e82eb43f6c6bd784c3971855276cf1d"
       },
       {
         "name": "osgeo__gdal.0847f12",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/osgeo__gdal.0847f12",
-        "digest": "sha256:6fb81eb05ac666f8e0fdec30607ff88759583513d035b09ab6b7ca16f19cc975"
+        "digest": "sha256:9dbb611a8e55ba37f2c29697ac2961a4034f18bda845c55bf7b7cf5c913bc737"
       },
       {
         "name": "osgeo__proj.75d455c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/osgeo__proj.75d455c",
-        "digest": "sha256:efa82ca494376da98352c94deb714e12eaf8618034df16197be058965c0b3437"
+        "digest": "sha256:9242c9a529fd0a14651c534ce1e2283439ff41c631e8f614a232a28a7422ec53"
       },
       {
         "name": "paradigmxyz__solar.5190d0e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/paradigmxyz__solar.5190d0e",
-        "digest": "sha256:1c06bcdd169b68aee4deb469a25cd687ae452fea126ff5a68decf93aebd3f831"
+        "digest": "sha256:6d4e8d1fe69e320beb62c71ac6efebe71ee25fed9ef0f02b4ed9586dce27d0d4"
       },
       {
         "name": "parcel-bundler__lightningcss.aa2ed1e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/parcel-bundler__lightningcss.aa2ed1e",
-        "digest": "sha256:69c603fafa66cf226bee4fcf6644d55d2d48f800940f734b3f7daa1c53108c72"
+        "digest": "sha256:751d357bf0e1143c6c016ec21e512d344a196b0b3e20788d7cb98f32848813b4"
       },
       {
         "name": "peco__peco.4e58dad",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/peco__peco.4e58dad",
-        "digest": "sha256:5fb289d021df6b4ae1f29394f9ffba2a50c49f6b02f3362ce50f497c439f3bd6"
+        "digest": "sha256:bc05319fbb9462dc73f7e2cfeb41b34b2865f7eaf964a77b2adb1cf2da11d12e"
       },
       {
         "name": "pemistahl__grex.fa3e8ed",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/pemistahl__grex.fa3e8ed",
-        "digest": "sha256:a583c41938c7b45ec041f3e2858c9a9a12423982dab6652e28eb1e005cf0a158"
+        "digest": "sha256:42f18c6a0ee44faa218620d382dce839b27de65442c3cdf82d2617960c84d4eb"
       },
       {
         "name": "php__php-src.c891263",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/php__php-src.c891263",
-        "digest": "sha256:3a47efe1c2819d7b624f6b67fb48a122b7c8491924bf557c47cad401fbd5a568"
+        "digest": "sha256:da43e7bf527082141e7e1fb4aaf9f35382b50a8eda71b7fc072bd7cd1c857402"
       },
       {
         "name": "pier-cli__pier.5e1bde9",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/pier-cli__pier.5e1bde9",
-        "digest": "sha256:466646b1a0f0ace10075e3641d78d6824eebb0feea584adc8ed12b9f4fee24a8"
+        "digest": "sha256:f11fdfcbe8c9c710ef25a020b3fb55ce9e074408a8fbfb373512bce56b87536e"
       },
       {
         "name": "pls-rs__pls.4e1ae50",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/pls-rs__pls.4e1ae50",
-        "digest": "sha256:9f116b131b2909fa06a52322c1b218e75889b93df5d5e6d7a91f93b0851cae4a"
+        "digest": "sha256:dab932f826eac3f3ee67d8f70e94d7e6f7512b67462f80534490cee3d2089668"
       },
       {
         "name": "psampaz__go-mod-outdated.bb79367",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/psampaz__go-mod-outdated.bb79367",
-        "digest": "sha256:5e417d857abccbcffabb3ca43f07d70c295e57bc8fb44c9887834edd5e1c17c5"
+        "digest": "sha256:25f44a16203531d86e8b4a2a4a4586a0b83baf99eb63b7edd6345f9242487926"
       },
       {
         "name": "quinn-rs__quinn.bb359cc",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/quinn-rs__quinn.bb359cc",
-        "digest": "sha256:9612b18700a4ae25045d5f291fe670c13c8311393a8feb98de6e6859f544a821"
+        "digest": "sha256:3956efae048eb08d85b5b8d9b0989083b8a95f86a9c031adaa460ba3b997a497"
       },
       {
         "name": "raviqqe__muffet.a882908",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/raviqqe__muffet.a882908",
-        "digest": "sha256:c0581f5e220c16aaae22b88165f06bd33aa68ccbe4f3383cb76f59a5dbb6a40f"
+        "digest": "sha256:754d08a7582b079d15d1a238db478c18a8d18ed462627871099d1a0d14b7ae59"
       },
       {
         "name": "rbakbashev__elfcat.52f8cc7",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rbakbashev__elfcat.52f8cc7",
-        "digest": "sha256:e2fbcdf4a7ea2de5b6eda4d47dc78ae85e0b73829a1372122927adf75be4596a"
+        "digest": "sha256:951c9603ce43d121e3a963973c26336df72165f5b2d02ce085781533343c6106"
       },
       {
         "name": "rcoh__angle-grinder.9c2fc88",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rcoh__angle-grinder.9c2fc88",
-        "digest": "sha256:3d85b195813b9b362185c76dda19fa929404122b85fe98cb5efbd4bc4bbeceed"
+        "digest": "sha256:38638727cc1d2cef1de8f0c56036170433d728c14af8994a4d895a031b4ac054"
       },
       {
         "name": "rhysd__kiro-editor.4157485",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rhysd__kiro-editor.4157485",
-        "digest": "sha256:498d4b50c6d1702c6d0d8c5504034b1dcd1e6469187a7851604c527eb9342db3"
+        "digest": "sha256:9a1afbc5c65e6d720b59ae357895787f41695fdb0e01454183210202fbe42ec5"
       },
       {
         "name": "riquito__tuc.16fb471",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/riquito__tuc.16fb471",
-        "digest": "sha256:c3ebc79ab9ef36c3cb6aff5e3840d74c72b468c122ec2222d2bd4ad71e030970"
+        "digest": "sha256:8662405f6779844bdcabb6ce9ea22d2872e8427d6e2444ee5608242bc489e794"
       },
       {
         "name": "robertdavidgraham__masscan.b99d433",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/robertdavidgraham__masscan.b99d433",
-        "digest": "sha256:786e047a00a49053c313d1045c91a66531d6647e344c8bbca6dd518ac23508dc"
+        "digest": "sha256:1ae890257acde0dcef32783a84fddfe7b0fe9c73a9094c0e12130244b1bbef58"
       },
       {
         "name": "rochacbruno__marmite.7d4bc2d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rochacbruno__marmite.7d4bc2d",
-        "digest": "sha256:dddc109ad1dba6d3b35a1752a77839ba7321502423559b6912a7f97e8f32f2fe"
+        "digest": "sha256:b83b4a20b51e5b80cb64aabcc2b454a2d4739589f7931b514b09217860cf3653"
       },
       {
         "name": "rs__curlie.5dfcbb1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rs__curlie.5dfcbb1",
-        "digest": "sha256:146776fef5fdf55da600cd8bf4cc69a743e59c970fc3365d0d7f181ff06aab79"
+        "digest": "sha256:aac1b63984b54bb8d2866cf25a586dde05e04329cca0d0085380949d86483b67"
       },
       {
         "name": "rs__jplot.2a54bcc",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rs__jplot.2a54bcc",
-        "digest": "sha256:50f6488d994849d4290832e7aaeff7388bb133c7e6892289e42556ce3c01d283"
+        "digest": "sha256:6a0891946561f6595c24835ea1350e40d3de97f20e2982143deac1acfc94e8d1"
       },
       {
         "name": "rust-embedded__svd2rust.1760b5e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rust-embedded__svd2rust.1760b5e",
-        "digest": "sha256:b23547c8d312ef9a1b6984b931e6b3f5756d52f46c73af9b676d7e2b9e9a90ce"
+        "digest": "sha256:054bf7d9df1bbce38eda519bc2e4aed17a331ab5b8e9d8df6aa2a058d2415bcb"
       },
       {
         "name": "rust-ethereum__ethabi.b1710ad",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rust-ethereum__ethabi.b1710ad",
-        "digest": "sha256:395c8262171d7c2a7c11254219278a9ab29ffe50103b947cb2bb8c381a6448d6"
+        "digest": "sha256:bb9a0009758f724539d445f1fbd26b433e97c30691d6ab2bcfe6d79f5061474f"
       },
       {
         "name": "rust-lang__mdbook.37273ba",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rust-lang__mdbook.37273ba",
-        "digest": "sha256:366b87358c541106c9bd7a8eab8e944ab778f3edec9bbb9b2b9cb839aa4ca933"
+        "digest": "sha256:8da82b4f17956ac1c4af077325d9e7fd099365bf8e78b3f63cdb90e0b6f42367"
       },
       {
         "name": "rvben__rumdl.2d75c4d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/rvben__rumdl.2d75c4d",
-        "digest": "sha256:87d311f9dc89c1770103fae388ae3bebd2b8c3eb4e2d0a21269e5fb29939f08d"
+        "digest": "sha256:681143cdc24d420628e51c9248edb63732345dbb8a676ce61e8bcf4bcea5e8c8"
       },
       {
         "name": "samtools__samtools.aa823b5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/samtools__samtools.aa823b5",
-        "digest": "sha256:a937a6b72e009c61432d51f1e11e24c2e6b594d19ffa2228b21768b13074d4de"
+        "digest": "sha256:fb9c90ebc4651a3b6dff46827e81ae6f1763414441c124c9fa99c81943760d66"
       },
       {
         "name": "sayanarijit__xplr.1751065",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sayanarijit__xplr.1751065",
-        "digest": "sha256:031e1899b200625ee67da92ef9848a5cd8692856fdd11d01447f8fc10d03271e"
+        "digest": "sha256:466e7d134607defbbb7d7c5f4446fb5761b71193a8296004561da7c6c973f25e"
       },
       {
         "name": "sclevine__yj.8016400",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sclevine__yj.8016400",
-        "digest": "sha256:b32d9e2aa8ac189ab564253c1d5d15fe55caf5eee1378abb2612a3b01070872d"
+        "digest": "sha256:f6239b8b4a036045519cb04efb25c7c6d921e3431e33e666e5ede037d64890bd"
       },
       {
         "name": "segmentio__chamber.5f93f5f",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/segmentio__chamber.5f93f5f",
-        "digest": "sha256:2c6673482c2ed58087ae4cb899c5db506d707a2a600a67682f510ff3603d0532"
+        "digest": "sha256:e29b64a800ef7fd4718dfff99a4e5765bac4a13372120347c56827d0913ca5ae"
       },
       {
         "name": "sharkdp__bat.f822bd0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sharkdp__bat.f822bd0",
-        "digest": "sha256:9f2ff928505804b81390424f0a8cec9d6e2dec53fe3f3bc88d12a6f2b81ec0f0"
+        "digest": "sha256:3796034019516160a0d5e2a7b33afdbfdc27ce701e9868242a148179d6e21ef5"
       },
       {
         "name": "sharkdp__fd.40d8eb3",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sharkdp__fd.40d8eb3",
-        "digest": "sha256:d780af057925bcf2c5c145a2f469e83a6f242fea501cf179987bb213083b4757"
+        "digest": "sha256:e1b49c9c685a04307680750f73e60bb23119fadb0574ef62354024244aa2a9b8"
       },
       {
         "name": "sharkdp__hexyl.2e26437",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sharkdp__hexyl.2e26437",
-        "digest": "sha256:634763ab839efc8450dfc23524d96cf0cca950949140e3d488a2b20dd3f68f2c"
+        "digest": "sha256:1ca5eff3e0234df438ea369b21c41f0023e9faf57b5419ca91cbb9f3cd4a0547"
       },
       {
         "name": "sharkdp__hyperfine.327d5f4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sharkdp__hyperfine.327d5f4",
-        "digest": "sha256:25619f143d9dd2f79452309f4de5ed249ee5a431dfc3d21f98bc6cbe8a6b8fe9"
+        "digest": "sha256:c261f7792bea98c88318066377e026821c6664109b02573763dc046acd72281a"
       },
       {
         "name": "sharkdp__pastel.b60e899",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sharkdp__pastel.b60e899",
-        "digest": "sha256:e9cd59ca2146101c2359dfc230b93cfb28b9aa0e28c93debef609feb15f1bc69"
+        "digest": "sha256:10cae584fc098979af4d29e91f5a793bcfcbcaa5e8a59be443f68e264445da39"
       },
       {
         "name": "shashwatah__jot.a92aad8",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/shashwatah__jot.a92aad8",
-        "digest": "sha256:a87714e429be2b551a82cf602799da5a27b0d0d6bbc6874937f3002e444ad84a"
+        "digest": "sha256:213a4da9f3999508d479731b39b3ec28411fbd645e31e39c922f54b9dcd5e4ef"
       },
       {
         "name": "sheepla__pingu.926d475",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sheepla__pingu.926d475",
-        "digest": "sha256:96ef09419ef207d91b6a7c54dcab80cd9ef4bb2e651b55561678b09b330c2b65"
+        "digest": "sha256:7d8c1d7d03b42b7dc154647f0430c405c17861cb030559fa052feacc60af2c16"
       },
       {
         "name": "sibprogrammer__xq.b89f681",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sibprogrammer__xq.b89f681",
-        "digest": "sha256:ce7dc29ee04e9e2625c2c3d3babde14cc5f15a616cb520693d6ab5cae128dd97"
+        "digest": "sha256:6933b2241af68b6c3dc6f75a7f0472565e7f547c31a6356b84d873ccc51d9098"
       },
       {
         "name": "sigoden__argc.04a08f1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sigoden__argc.04a08f1",
-        "digest": "sha256:9aa673a732338f8dbe9d8ae258fb5a00f8b36a4b8ab9c59f3ea3c65ac228084e"
+        "digest": "sha256:dd48f5a6798c184980766abd688cd7aa6fc0b5014f440eb08c5aaa30ab82ff17"
       },
       {
         "name": "simeg__eureka.df3796c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/simeg__eureka.df3796c",
-        "digest": "sha256:41b70a13b1520e32c2ffbb907ad8035868c55d9fb86778b6ad2640330f65083f"
+        "digest": "sha256:7784080c579ee81065a71272cfcef7d5637890ceef5368811cc0e0bf8c6010e2"
       },
       {
         "name": "sirwart__ripsecrets.34c9e03",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sirwart__ripsecrets.34c9e03",
-        "digest": "sha256:f9ae5d98a32ddcd5c82aa5a53e0f5eeb11578dadf868e399f5636ab70be4005f"
+        "digest": "sha256:0ce768a3406190bd2ee280a53b5fc7f4eaaf5b46676e843f3396ea81dfc57510"
       },
       {
         "name": "sitkevij__hex.61ae69b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sitkevij__hex.61ae69b",
-        "digest": "sha256:f988152ea857d906b04e6647dfca01d8b30eef576005d75fe38e75aa6d446998"
+        "digest": "sha256:4efa6da8b5107a5dba5fda41828749f28ec1d1e7dcd9c395d6067c4ca28c6b4c"
       },
       {
         "name": "skeema__skeema.6a76243",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/skeema__skeema.6a76243",
-        "digest": "sha256:28954744f7ca2d6466ea8584d4ca9b679dbc547719a9062589335846acda9357"
+        "digest": "sha256:a61a4ba3a27e581056476c4d4eaa52a4a7baf870db0b2c9bdd7dbfd03f9b9d3d"
       },
       {
         "name": "sqlite__sqlite.839433d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sqlite__sqlite.839433d",
-        "digest": "sha256:a85313595eb68be1919e9ead19f4abec2315058b45d00d68d178d313c34624bc"
+        "digest": "sha256:19be21f1bb94acc6b7cb7a4ac6a6037c21909a466f67c56baa3735963c9a4081"
       },
       {
         "name": "sstadick__hck.b66c751",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/sstadick__hck.b66c751",
-        "digest": "sha256:a1c41c14862fc90a88f3241e3848825cb924d67438559d85a6cd250b10edc8b8"
+        "digest": "sha256:c294e46f4249b52d0d3892fea48d8e18642dba8a923c7f3b4c90a251968fae45"
       },
       {
         "name": "stacked-git__stgit.430027d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/stacked-git__stgit.430027d",
-        "digest": "sha256:4632d5477ca4e310402148889d8663b214ff31e063d227a7128d5917d3d2c60d"
+        "digest": "sha256:66723d650699c833f7dbd653540e5ff8a7141cc6c43442db91b11f756212b95a"
       },
       {
         "name": "stathissideris__ditaa.f2286c4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/stathissideris__ditaa.f2286c4",
-        "digest": "sha256:b756542e2b215e52f7b0fffeb2439f62aad2dd30b18961694c57c4eb953c51f7"
+        "digest": "sha256:df28c1ec1568599c7fcaf9f8bda577678cb0bcc840f68628fcb770f67b986cda"
       },
       {
         "name": "stranger6667__jsonschema.d52e881",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/stranger6667__jsonschema.d52e881",
-        "digest": "sha256:d682044ee313ba3cc80dc52be787f5b952519cc3a87118927dbb4990067d44eb"
+        "digest": "sha256:09b4282d2cf13e0314b331d672e43a02d3dddc58ba44d722be32ddbdf1166883"
       },
       {
         "name": "svenstaro__genact.16f96e3",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/svenstaro__genact.16f96e3",
-        "digest": "sha256:87c9177ae0dce573067c0f44b37ce73db4dc0f10934ad64bc0757d85c8cf6faa"
+        "digest": "sha256:77e2ccd36b816e5d91b0c55522a167362977c24f58f706431897ac062d8c14d3"
       },
       {
         "name": "svenstaro__miniserve.8449e8b",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/svenstaro__miniserve.8449e8b",
-        "digest": "sha256:a210eb3a41576615332ad7ac73d8682016ddaf5240cceb991733419fd02aeaf8"
+        "digest": "sha256:1cda2d85bf66a80f839c364117cafbdfc0a7d5f2d482eec84a83f1f8a6a3391c"
       },
       {
         "name": "tarka__xcp.5e5b448",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tarka__xcp.5e5b448",
-        "digest": "sha256:f26644cdbf0aa8747c562abbe4301273080fb9a7d9a243b6d130e008fe038bca"
+        "digest": "sha256:25ae7809f5b502b3a5b594296063042c19ea7a53edbeb8d88f9618131a4a3f7e"
       },
       {
         "name": "testorg__calculator.abc1234",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/testorg__calculator.abc1234",
-        "digest": "sha256:f8fc8f79fab6d2c841d9e7f95f6e64baf309064a1ca2f0aa04963dc67c01df43"
+        "digest": "sha256:781fcb0771c57b08eacb9e08661d79e0e9f79fbd7d16b5d24accb1bde3ebfdb9"
       },
       {
         "name": "thezoraiz__ascii-image-converter.d05a757",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/thezoraiz__ascii-image-converter.d05a757",
-        "digest": "sha256:4ca037125882123f0411f73bca9585b39095ff9e184467e599f483855a76c3e6"
+        "digest": "sha256:279f95fa2916651dc64626b54bf306fbad5023568c553235cea057854e434ed6"
       },
       {
         "name": "tinycc__tinycc.9b8765d",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tinycc__tinycc.9b8765d",
-        "digest": "sha256:51031b298f0585ed2714f36a34e8674057e788b7e92899e6ebf8efa6742fbe5f"
+        "digest": "sha256:bb48b5e12a696ac39383bf67d52706992208a57aaafd3145d0ff60545195feb0"
       },
       {
         "name": "tomarrell__wrapcheck.c058da1",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tomarrell__wrapcheck.c058da1",
-        "digest": "sha256:80f3532e4c4e52e8150dfbc11f5c64914b2d90e3d4a6f226385db66716451d81"
+        "digest": "sha256:0dbe8539ab1c9a8b5139b9db5091b74a34958cc50f033964ef6c9e4f41b45012"
       },
       {
         "name": "tomnomnom__gron.88a6234",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tomnomnom__gron.88a6234",
-        "digest": "sha256:fda12ce987a595eef1ab4855ed7cd0bd90a665913072939aa8b2c825c9fa34ce"
+        "digest": "sha256:62330fb35973e68ef4ec6655eb4699fcdf814042682f16def974c939e84afe94"
       },
       {
         "name": "trasta298__keifu.3331426",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/trasta298__keifu.3331426",
-        "digest": "sha256:0d282817f71599ac914656d134236fa223c9c381dc84d2220b264abebe3f1335"
+        "digest": "sha256:28b95ddea038e527dede73efa4cbd3b267adfe5669337004b46df20d87492ff3"
       },
       {
         "name": "tree-sitter__tree-sitter.5e23cca",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tree-sitter__tree-sitter.5e23cca",
-        "digest": "sha256:0d9f435ef7df1ef61a91b9621c2a4b53369d15bf0dc04396580b377061c3d884"
+        "digest": "sha256:b137d9d007a02f872d9cbee9fd66963437649261037f499191505f6d23ebb369"
       },
       {
         "name": "tstack__lnav.ee34494",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tstack__lnav.ee34494",
-        "digest": "sha256:111fa8375a23000a9e33aa361e641c7d91cd423c9a6f64e7b7b78aa61794e2e4"
+        "digest": "sha256:84cfa62fbed9ec8fca8b00d788ad4217b13a41c585590a96e52b0d2befef4269"
       },
       {
         "name": "tukaani-project__xz.1007bf0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/tukaani-project__xz.1007bf0",
-        "digest": "sha256:d657a335de96e78a16e2ac2f0331bd42ce11b6c6a97e5dd5e48adf1c3daccb2d"
+        "digest": "sha256:f2a71f5914a21668853372e4f31ab8c17da52902c3c5987f933c28e7a0ab1620"
       },
       {
         "name": "typst__typst.88356d0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/typst__typst.88356d0",
-        "digest": "sha256:0b22ad5816945e3b6de957d0d0fc8255b49770d481f7c696dacecd79f72e24d5"
+        "digest": "sha256:a2ee63d21912ba89ea4791c3f2a46a4103207c7bb0d714fc5460094a0a0fc7cd"
       },
       {
         "name": "unhappychoice__gittype.34b72d0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/unhappychoice__gittype.34b72d0",
-        "digest": "sha256:4839c2f7c975a53b35f76dc347fe4e48e489e9137af6154b271309630beddec2"
+        "digest": "sha256:2458c98a3237553b186e5c23ecfbef65666ffdac67bd32f779e569613709497c"
       },
       {
         "name": "universal-ctags__ctags.243595e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/universal-ctags__ctags.243595e",
-        "digest": "sha256:9de517e06d67916fbf26f1130599ebdecb6c73ce7a9c9a2618645bae4756e774"
+        "digest": "sha256:11098a4a695770761f4f042dff16d57f5240f9f5dcd8f0cfdd64a0c02541ee4e"
       },
       {
         "name": "wfxr__code-minimap.0ddeea5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/wfxr__code-minimap.0ddeea5",
-        "digest": "sha256:f42622c09ad0b82ab3d40f33b9a90bc08a25db3c46400b54706fcdb5548a2f5d"
+        "digest": "sha256:bb7ed6c110bedf92a446dd641af8a0631c9f6a362fe17d998d8c7d7b8c99508b"
       },
       {
         "name": "wfxr__csview.8ac4de0",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/wfxr__csview.8ac4de0",
-        "digest": "sha256:9edef61f3b7e5bf2bfaff400fac1b5e644edbea3a88cd3bf053dbd378f614c77"
+        "digest": "sha256:8d4cc1b66b63180cf104323b2603c18787153e7b9c4f2eb7e42605168281b480"
       },
       {
         "name": "wgunderwood__tex-fmt.3f1aef6",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/wgunderwood__tex-fmt.3f1aef6",
-        "digest": "sha256:228925853d511c2e4c4ed625b1cbe9e4e75ffbd2a7b5f3c4de2ca882a9ccdcb4"
+        "digest": "sha256:bba55a0e12cbf49d76a2dbabe4ad0ef8761722ea0f42bcd8a4465f3060c201da"
       },
       {
         "name": "wintermute-cell__ngrrram.8ea13c3",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/wintermute-cell__ngrrram.8ea13c3",
-        "digest": "sha256:d8ff3741f31a7482cc17000ad24cb993d8483f6cf8a6a6e7320461ad8b8f54ef"
+        "digest": "sha256:c15297f9274ba2e11787baf40abcc32d5e0d25f319f8154625305a15558e1163"
       },
       {
         "name": "xampprocky__tokei.505d648",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/xampprocky__tokei.505d648",
-        "digest": "sha256:966b5ae9c563480e0ed213528b5bf2fa8c5e9bcb5b4ed401cd2198253dd4ce13"
+        "digest": "sha256:81c05b0da7fe14a66c6947327e81d71fc5b9ba5a9e7dedf96bc7030235bee5b6"
       },
       {
         "name": "xorg62__tty-clock.f2f847c",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/xorg62__tty-clock.f2f847c",
-        "digest": "sha256:78d6ef0703872a9c70bc6e7960995f78b3f4b1afcadeca4fb9959fff07b99858"
+        "digest": "sha256:469437012162a738bc7cce143ee5e30cfbf847081d41db190fc0429fe345f129"
       },
       {
         "name": "y2z__monolith.8702e66",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/y2z__monolith.8702e66",
-        "digest": "sha256:0ec64f74aba417dde5901f61665207405d9df2576e5b3ce280d997628bb7c914"
+        "digest": "sha256:bc4948ef295273efb2e79d0a4810da9b7b337b8c41d692334a9ec34dfea17679"
       },
       {
         "name": "yaa110__nomino.f892499",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/yaa110__nomino.f892499",
-        "digest": "sha256:7a17aabc661bf4b95d605d2cac8ecdc0d50e32e6a37303db1f94d8774c0f26dc"
+        "digest": "sha256:f5fb80945ca25fe788f9fbaa24cf3648e8d19d203adb423664c21e225f64bff0"
       },
       {
         "name": "yassinebridi__serpl.c48a9d7",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/yassinebridi__serpl.c48a9d7",
-        "digest": "sha256:fbf3160904b19be74ebb08961ddab71664ddd9556ccc140c59e2fb73d8ba0daf"
+        "digest": "sha256:e0c74c1d81055b3f83f74a0575f35280769a7e863f6c0dc2d1c163d7b33e0846"
       },
       {
         "name": "yoav-lavi__melody.f4af9b4",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/yoav-lavi__melody.f4af9b4",
-        "digest": "sha256:533372272b8adf7dd25c6eab89d18d371efdce13154167bc3b003df3428a452c"
+        "digest": "sha256:938de973586de0432402318592d2ac1fd2cd8e97ad1db31695344881f1262d77"
       },
       {
         "name": "ys-l__flamelens.0b4dc33",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/ys-l__flamelens.0b4dc33",
-        "digest": "sha256:f2a6ef4b06561b44bab2e6a4a625dd416f07106abc5974bf0c122aae01a7bd6c"
+        "digest": "sha256:e4a92b41b69c203a440476ad34ee701348fd25cdafe57cb92b4c70824dcb0c07"
       },
       {
         "name": "zevv__duc.a58fa4e",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/zevv__duc.a58fa4e",
-        "digest": "sha256:085b2df0c8c3f996fffb723ed1e45be5fb4299b2be2bea36c4c8665887062aef"
+        "digest": "sha256:2b2cd645241ee5b9087c54c46ac39a7cf0b94cd2892539cfc9ca3fcb7e5c6180"
       },
       {
         "name": "zk-org__zk.10d93d5",
         "git_url": "https://github.com/benchflow-ai/benchmarks.git",
-        "git_commit_id": "c434389b29cabc7cc1cd5f153aeb6c81014614a6",
+        "git_commit_id": "a77c830f20b0adc3d1d9ba9f10d49aa80c359a09",
         "path": "datasets/programbench/tasks/zk-org__zk.10d93d5",
-        "digest": "sha256:3e2f4d05ff1c682357388ad580302d7ba568b0801519a70ae026b1386a951997"
+        "digest": "sha256:9b232bd88268f4bb764c18b38961da1de04dd2a4b903a819c593a19ae8bb901e"
       }
     ]
   }
