@@ -4,9 +4,5 @@
   ],
   "94c38132ca06": [
     "eval.tests.test_config_and_cli_options.test_image_provider_option"
-  ],
-  "bc732e3d7e65": [
-    "eval.tests.test_site_edge_cases.test_search_index_generated_when_enabled",
-    "eval.tests.test_tera_functions.test_group_items_as_string"
   ]
 }

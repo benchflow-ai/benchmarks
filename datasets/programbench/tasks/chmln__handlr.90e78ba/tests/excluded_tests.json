@@ -1,8 +1,5 @@
 {
   "08a92821049f": [
-    "tests.test_launch.test_launch_returns_immediately_handler_runs_in_background",
-    "tests.test_launch.test_launch_with_exec_without_field_codes",
-    "tests.test_launch.test_launch_with_long_argument_list",
     "tests.test_open.test_open_file_url_scheme",
     "tests.test_open.test_open_file_with_extension_mime_detection",
     "tests.test_open.test_open_mixed_urls_and_files",

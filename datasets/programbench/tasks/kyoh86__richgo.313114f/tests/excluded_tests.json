@@ -1,7 +1,6 @@
 {
   "aedc381a5a8d": [
-    "tests.test_config.test_config_coverage_threshold_setting",
-    "tests.test_config.test_label_type_long",
-    "tests.test_config.test_style_apply_with_only_nil_flags_no_colors_returns_unmodified"
+    "tests.test_config_loading.test_empty_config_uses_defaults",
+    "tests.test_config_loading.test_malformed_yaml_logs_error_continues"
   ]
 }

@@ -1,6 +1,5 @@
 {
   "8557934c32db": [
-    "tests.test_harvest.test_internal_complete_all",
     "tests.test_harvest.test_internal_engine_all",
     "tests.test_harvest.test_internal_fuzzy_all",
     "tests.test_harvest.test_internal_jsonpath_all",

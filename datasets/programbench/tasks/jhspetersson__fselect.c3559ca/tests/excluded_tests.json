@@ -12,6 +12,7 @@
     "tests.test_path_options.test_archive_search_lists_contents",
     "tests.test_path_options.test_archives_option_short_form",
     "tests.test_path_options.test_mindepth_with_archives",
-    "tests.test_path_options.test_nested_archive_search"
+    "tests.test_path_options.test_nested_archive_search",
+    "tests.test_query_gaps.test_root_option_archives"
   ]
 }
