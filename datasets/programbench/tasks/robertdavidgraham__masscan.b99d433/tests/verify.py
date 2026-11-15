@@ -116,19 +116,24 @@ def _compile(workspace: Path) -> bool:
     return True
 
 
-def _remove_hashed_files(workspace: Path, hashes: list[str]) -> None:
-    """Remove files whose SHA-256 matches any of the given hashes.
+def _remove_hashed_files(roots: list[Path], hashes: list[str]) -> None:
+    """Remove files whose SHA-256 matches any of the given hashes, in the
+    workspace and in the other places the agent could write (a copy moved to
+    /tmp is removed too).
 
     Prevents trivial solutions that just copy the original binary.
     """
     if not hashes:
         return
     hash_set = set(hashes)
+    existing = [str(r) for r in roots if r.is_dir()]
+    if not existing:
+        return
     result = subprocess.run(
-        ["find", str(workspace), "-type", "f", "-exec", "sha256sum", "{}", "+"],
+        ["find", *existing, "-xdev", "-type", "f", "-exec", "sha256sum", "{}", "+"],
         capture_output=True,
         text=True,
-        timeout=120,
+        timeout=600,
     )
     for line in result.stdout.strip().splitlines():
         parts = line.split("  ", 1)
@@ -516,6 +521,11 @@ def main() -> None:
         "--stash-path", default="/opt/benchflow-stashed-executable", type=Path
     )
     parser.add_argument("--pip-timeout", default=900, type=int)
+    parser.add_argument(
+        "--scan-dirs",
+        default="/tmp,/var/tmp,/dev/shm,/home",
+        help="Where else the original binary is looked for (comma-separated)",
+    )
     args = parser.parse_args()
 
     reward_file: Path = args.reward_file
@@ -568,7 +578,8 @@ def main() -> None:
     # before compile prevents trivial copies while allowing a legitimate
     # rebuild that happens to produce a byte-identical executable.
     print("=== Step 1: Checking for copied binaries ===")
-    _remove_hashed_files(args.workspace, clean_hashes)
+    scan = [args.workspace] + [Path(d) for d in args.scan_dirs.split(",") if d]
+    _remove_hashed_files(scan, clean_hashes)
 
     # Step 2: Compile
     print("=== Step 2: Compiling submission ===")
