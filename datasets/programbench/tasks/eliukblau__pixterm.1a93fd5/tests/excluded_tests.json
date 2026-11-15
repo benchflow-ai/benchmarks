@@ -1,0 +1,6 @@
+{
+  "c0ff9908837a": [
+    "tests.test_ansimage_api.test_url_invalid_image_data",
+    "tests.test_url_loading.test_invalid_domain_error"
+  ]
+}

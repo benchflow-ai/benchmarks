@@ -387,8 +387,33 @@ def _preinstall(archives: dict[str, tuple[str, dict[str, str]]], timeout: int) -
             )
 
 
+def _pin_installed(directory: str) -> Path | None:
+    """A pip constraints file pinning every distribution installed now, after
+    Step 0. run.sh gets it as PIP_CONSTRAINT: it can install what's missing
+    but can't upgrade what's there, so a later PyPI release (a new pytest
+    that an installed plugin can't load) can't break the tests."""
+    result = subprocess.run(
+        ["python3", "-m", "pip", "list", "--format=freeze", "--disable-pip-version-check", "--exclude", "pip"],
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    pins = [
+        line.strip()
+        for line in (result.stdout or "").splitlines()
+        if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*==\S+", line.strip())
+    ]
+    if result.returncode != 0 or not pins:
+        return None
+    path = Path(directory) / "constraints.txt"
+    path.write_text("\n".join(pins) + "\n")
+    return path
+
+
 def _load_excluded(path: Path) -> dict[str, set[str]]:
-    """Branch -> test cases not counted (they need hosts the verifier refuses)."""
+    """Branch -> test cases not counted (they need hosts the verifier refuses).
+    "*" marks a branch whose run.sh itself can't run without them (an apt or
+    wget fetch under set -e): the branch isn't run or counted."""
     if not path.exists():
         return {}
     data = json.loads(path.read_text())
@@ -401,6 +426,7 @@ def _run_test_branch(
     blob_path: Path,
     stash: Path,
     excluded: set[str],
+    constraints: Path | None,
 ) -> tuple[int, int] | None:
     """Run one test branch: (passed, total) over its counted test cases, or
     None when its tests reported no results."""
@@ -426,8 +452,11 @@ def _run_test_branch(
         run_sh.chmod(0o755)
         # Run tests in a session of their own, so what they leave running
         # can be stopped before the next branch copies the executable back.
+        env = dict(os.environ)
+        if constraints is not None:
+            env["PIP_CONSTRAINT"] = str(constraints)
         proc = subprocess.Popen(
-            ["bash", str(run_sh)], cwd=str(workspace), start_new_session=True
+            ["bash", str(run_sh)], cwd=str(workspace), start_new_session=True, env=env
         )
         try:
             proc.wait(timeout=3600)
@@ -531,6 +560,7 @@ def main() -> None:
                 DOWNLOAD_FAILED_EXIT,
             )
     _preinstall(archives, args.pip_timeout)
+    constraints = _pin_installed(tempfile.mkdtemp(prefix="programbench-pins-"))
 
     # Step 1: Remove hash-matched files from submission (anti-cheat).
     # Must happen BEFORE compile — matches ProgramBench's eval order.
@@ -556,13 +586,21 @@ def main() -> None:
 
     for i, branch in enumerate(active_branches):
         print(f"  Branch {i + 1}/{len(active_branches)}: {branch}")
+        if "*" in excluded.get(branch, set()):
+            print("    not run: its run.sh needs hosts the verifier refuses")
+            continue
         result = _run_test_branch(
             args.workspace,
             branch,
             blobs[branch],
             stash,
             excluded.get(branch, set()),
+            constraints,
         )
+        if result is None and not branches[branch].get("tests"):
+            # tests.json expects nothing from this branch: nothing to count.
+            print("    the branch has no expected tests")
+            continue
         if result is None:
             _fail(
                 [

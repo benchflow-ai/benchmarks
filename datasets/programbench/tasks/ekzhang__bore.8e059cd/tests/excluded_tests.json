@@ -1,0 +1,6 @@
+{
+  "8f4b78a7e9eb": [
+    "tests.test_client.test_dns_lookup_failure",
+    "tests.test_edge_cases.test_local_nonexistent_hostname@server_tests"
+  ]
+}

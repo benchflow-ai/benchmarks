@@ -1,0 +1,7 @@
+{
+  "0ebc9d9a5f1c": [
+    "tests.test_retriever.test_combined_timeout_options",
+    "tests.test_retriever.test_http_timeout_with_unreachable_host",
+    "tests.test_retriever.test_insecure_flag_bypasses_cert_validation"
+  ]
+}

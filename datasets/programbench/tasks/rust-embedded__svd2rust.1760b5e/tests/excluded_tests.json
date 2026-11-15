@@ -1,0 +1,15 @@
+{
+  "dce0cad7649f": [
+    "tests.test_advanced.test_atomics_feature_gates_atomic_code_compiles",
+    "tests.test_advanced.test_atomics_generates_atomic_operations_compiles",
+    "tests.test_advanced.test_atomics_with_riscv_target_compiles",
+    "tests.test_advanced.test_atomics_without_generic_mod_inlines_all_compiles",
+    "tests.test_advanced.test_generic_mod_creates_separate_file_compiles",
+    "tests.test_advanced.test_generic_mod_with_atomics_compiles",
+    "tests.test_advanced.test_generic_mod_with_atomics_feature_compiles",
+    "tests.test_advanced.test_generic_mod_with_none_target_compiles",
+    "tests.test_advanced.test_make_mod_with_generic_mod_compiles",
+    "tests.test_advanced.test_multiple_peripherals_with_atomics_compiles",
+    "tests.test_advanced.test_without_generic_mod_inlines_generic_compiles"
+  ]
+}

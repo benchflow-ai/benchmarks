@@ -1,0 +1,33 @@
+{
+  "1040f6b8a219": [
+    "tests.test_aws_functions.test_ec2info_cache_persistence",
+    "tests.test_functions_net_file.test_net_lookupcname_valid_domain",
+    "tests.test_functions_net_file.test_net_lookupip_invalid_domain",
+    "tests.test_functions_net_file.test_net_lookupip_valid_domain",
+    "tests.test_functions_net_file.test_net_lookupips_returns_array",
+    "tests.test_functions_net_file.test_net_lookuptxt_returns_array",
+    "tests.test_net_gaps.test_lookupcname_basic",
+    "tests.test_net_gaps.test_lookupcname_invalid_domain",
+    "tests.test_net_gaps.test_lookupcname_returns_canonical_name",
+    "tests.test_net_gaps.test_lookupcname_with_alias",
+    "tests.test_net_gaps.test_lookupip_error_handling",
+    "tests.test_net_gaps.test_lookupip_with_multiple_ips",
+    "tests.test_net_gaps.test_lookupsrv_all_fields_present",
+    "tests.test_net_gaps.test_lookupsrv_basic",
+    "tests.test_net_gaps.test_lookupsrv_invalid_service",
+    "tests.test_net_gaps.test_lookupsrv_returns_first_record",
+    "tests.test_net_gaps.test_lookupsrvs_basic",
+    "tests.test_net_gaps.test_lookupsrvs_invalid_service",
+    "tests.test_net_gaps.test_lookupsrvs_returns_all_records",
+    "tests.test_net_gaps.test_lookupsrvs_structure",
+    "tests.test_net_gaps.test_lookuptxt_basic",
+    "tests.test_net_gaps.test_lookuptxt_invalid_domain",
+    "tests.test_net_gaps.test_lookuptxt_returns_multiple_records"
+  ],
+  "8c56af240bad": [
+    "eval.tests.test_focused_coverage.test_net_lookupcname",
+    "eval.tests.test_focused_coverage.test_net_lookuptxt",
+    "eval.tests.test_surgical_coverage.test_net_lookupcname_function",
+    "eval.tests.test_surgical_coverage.test_net_lookuptxt_function"
+  ]
+}

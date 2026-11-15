@@ -1,0 +1,14 @@
+{
+  "33e8ee22886e": [
+    "tests.test_netio_gap.test_invalid_bind_address_dns_failure",
+    "tests.test_netio_gap.test_invalid_hostname_resolution",
+    "tests.test_netio_gap.test_invalid_ip_address_format",
+    "tests.test_netio_gap.test_server_invalid_hostname_resolution",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_dec",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_encoding_decoding",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_internal_functions",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_kex_verbose",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_keypair",
+    "tests.test_sntrup761_client.test_dbclient_sntrup761_multiple_connections"
+  ]
+}

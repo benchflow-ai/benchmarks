@@ -1,0 +1,15 @@
+{
+  "642420bd4df9": [
+    "tests.test_export_fetchurl_edges.test_fetchurl_empty_file_hash",
+    "tests.test_export_fetchurl_edges.test_fetchurl_hash_validation_mismatch",
+    "tests.test_export_fetchurl_edges.test_fetchurl_http_404_status_code_error",
+    "tests.test_export_fetchurl_edges.test_fetchurl_large_file_and_permissions",
+    "tests.test_export_fetchurl_edges.test_fetchurl_non_200_status_codes",
+    "tests.test_export_fetchurl_edges.test_fetchurl_url_with_query_parameters",
+    "tests.test_export_fetchurl_edges.test_fetchurl_with_valid_sri_hash_success",
+    "tests.test_secondary.test_fetchurl_cas_directory_creation",
+    "tests.test_secondary.test_fetchurl_http_404_error",
+    "tests.test_secondary.test_fetchurl_underscore_replacement_in_hash",
+    "tests.test_shell_exporters.test_systemd_dump_format"
+  ]
+}

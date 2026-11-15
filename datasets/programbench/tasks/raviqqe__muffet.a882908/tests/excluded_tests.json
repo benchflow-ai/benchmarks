@@ -1,0 +1,22 @@
+{
+  "d6003e5f008b": [
+    "tests.test_filtering.test_scheme_filtering_non_http_schemes_ignored",
+    "tests.test_link_checking.test_external_links_checked_not_crawled",
+    "tests.test_link_checking.test_json_verbose_includes_successful_links",
+    "tests.test_link_checking.test_one_page_only_flag_prevents_crawling",
+    "tests.test_link_checking.test_recursive_crawling_follows_internal_links",
+    "tests.test_output_formats.test_color_always_includes_ansi_codes",
+    "tests.test_output_formats.test_deprecated_json_flag_works",
+    "tests.test_output_formats.test_json_format_structure_errors_only",
+    "tests.test_output_formats.test_json_format_verbose_includes_successful_links",
+    "tests.test_output_formats.test_junit_xml_format_structure",
+    "tests.test_output_formats.test_text_format_all_success_no_output",
+    "tests.test_output_formats.test_text_format_explicit",
+    "tests.test_output_formats.test_text_format_shows_only_errors_by_default",
+    "tests.test_output_formats.test_text_format_verbose_shows_successful_links"
+  ],
+  "dda39182dfd1": [
+    "eval.tests.test_argparse_validation.test_deprecated_json_sets_format_json_and_allows_verbose_json",
+    "eval.tests.test_argparse_validation.test_deprecated_junit_sets_format_junit"
+  ]
+}
