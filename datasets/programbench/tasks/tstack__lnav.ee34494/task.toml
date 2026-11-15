@@ -14,8 +14,11 @@ timeout_sec = 5400
 
 [verifier]
 timeout_sec = 1800
+network_mode = "allowlist"
+allowed_hosts = ["huggingface.co", "cas-server.xethub.hf.co", "us.gcp.cdn.hf.co", "us.aws.cdn.hf.co", "pypi.org", "files.pythonhosted.org"]
+pytest_plugin_releases = ["pytest-timeout==2.4.0"]
 
-[environment]
+[sandbox]
 cpus = 2
 memory_mb = 4096
 storage_mb = 20480

@@ -1,0 +1,24 @@
+{
+  "14b17ef91067": [
+    "eval.tests.test_config_env.test_cli_overrides_config_file",
+    "eval.tests.test_config_env.test_dotcurlrc_is_loaded_by_default_and_affects_request_headers",
+    "eval.tests.test_config_env.test_explicit_config_file_overrides_dotcurlrc",
+    "eval.tests.test_config_env.test_missing_config_file_warns_but_still_runs_request",
+    "eval.tests.test_config_env.test_q_disable_ignores_dotcurlrc",
+    "eval.tests.test_config_env.test_unknown_option_in_config_file_warns_but_still_runs_request"
+  ],
+  "b0101c1377da": [
+    "eval.tests.test_flags_and_output.test_output_flag_writes_body_to_file_and_stdout_empty",
+    "eval.tests.test_http_behavior.test_get_outputs_json_and_default_accept_header",
+    "eval.tests.test_http_behavior.test_header_item_is_sent",
+    "eval.tests.test_http_behavior.test_invalid_request_item_becomes_extra_host_and_causes_resolve_error",
+    "eval.tests.test_http_behavior.test_post_json_items_string_and_typed_int",
+    "eval.tests.test_http_behavior.test_post_typed_values_bool_null_float",
+    "eval.tests.test_http_behavior.test_post_unicode_json_value_preserved",
+    "eval.tests.test_http_behavior.test_querystring_item_double_equals_encodes_value_with_equals"
+  ],
+  "e9e6a7ad1507": [
+    "tests.test_special_commands.test_version_command_case_sensitive",
+    "tests.test_special_commands.test_version_command_only_with_exact_arg"
+  ]
+}

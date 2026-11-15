@@ -1,0 +1,6 @@
+{
+  "aedc381a5a8d": [
+    "tests.test_config_loading.test_empty_config_uses_defaults",
+    "tests.test_config_loading.test_malformed_yaml_logs_error_continues"
+  ]
+}

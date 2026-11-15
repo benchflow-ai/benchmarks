@@ -59,6 +59,17 @@ Each task directory follows the BenchFlow task format:
 | [harvey-lab](datasets/harvey-lab/) | 1,251 | LLM-as-judge | 25/25 (100%) | [Harvey LAB](https://github.com/harveyai/harvey-labs) |
 | [programbench](datasets/programbench/) | 201 | compile + unit tests | 4/5 exact match | [ProgramBench](https://github.com/facebookresearch/programbench) |
 
+## Dataset versions
+
+`registry.json` lists each dataset version in BenchFlow's registry format: every task is pinned to a commit and a content digest, and `bench_version` gives the BenchFlow releases a version needs.
+
+| Dataset | Version | Tasks | BenchFlow (`bench_version`) | Notes |
+|---|---|---|---|---|
+| programbench | 1.0 | 201 | any | The first conversion (commit `c65af83`), unchanged. **1.0 does not produce scores on any BenchFlow release; use 1.1.** BenchFlow runs test.sh with `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`, so the pytest-timeout that 1.0's run.sh installs isn't loaded and every branch scores 0/0. |
+| programbench | 1.1 | 197 | `>=0.9.PLACEHOLDER`: the first releases, on the 0.9 and 0.10 lines, that enforce a task's verifier network allowlist (to be filled in) | The verifier reaches only `huggingface.co`, `cas-server.xethub.hf.co`, `us.gcp.cdn.hf.co`, `us.aws.cdn.hf.co`, `pypi.org` and `files.pythonhosted.org`, with pytest-timeout pinned. Hidden tests that are missing or never report end the run unscored (exit 3 or 5), never as a silent 0. Test cases that reach the internet through the program under test aren't counted (`tests/excluded_tests.json`, 794 cases in 31 tasks, measured), and two branches whose run.sh can't run under the allowlist aren't run. Left out: `ogham__dog.721440b`, `hatoo__oha.8dc6349`, `raviqqe__muffet.a882908` and `ekzhang__bore.8e059cd`: the program under test opens its own network connections; not gradable offline. |
+
+Run a version with `bench run -d programbench@1.0 --registry https://raw.githubusercontent.com/benchflow-ai/benchmarks/main/registry.json`.
+
 ## Usage
 
 ```bash

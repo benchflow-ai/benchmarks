@@ -1,0 +1,11 @@
+{
+  "08a92821049f": [
+    "tests.test_open.test_open_file_url_scheme",
+    "tests.test_open.test_open_file_with_extension_mime_detection",
+    "tests.test_open.test_open_mixed_urls_and_files",
+    "tests.test_open.test_open_multiple_files_different_handlers",
+    "tests.test_open.test_open_multiple_files_same_handler_batching",
+    "tests.test_open.test_open_multiple_files_without_batch_support",
+    "tests.test_open.test_open_single_text_file"
+  ]
+}

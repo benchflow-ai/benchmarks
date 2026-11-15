@@ -1,0 +1,11 @@
+{
+  "1acdffe4f7e9": [
+    "tests.test_regex101.test_regex101_import_nonexistent_permalink",
+    "tests.test_regex101.test_regex101_import_short_permalink",
+    "tests.test_regex101.test_regex101_import_url_with_version",
+    "tests.test_remote_files.test_http_unreachable_host",
+    "tests.test_remote_files.test_http_with_default_port",
+    "tests.test_remote_files.test_https_with_auth_in_url",
+    "tests.test_remote_files.test_https_with_default_port"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "37dab9afaf6b": [
+    "eval.tests.test_nsh.test_script_stdout[oneliners]",
+    "eval.tests.test_nsh.test_script_stdout[pipelines]"
+  ],
+  "7a4302453af8": [
+    "tests.test_harvest.test_fixture[test/oneliners.sh]",
+    "tests.test_harvest.test_fixture[test/pipelines.sh]",
+    "tests.test_harvest.test_fixture[test/proc-subst.sh]",
+    "tests.test_harvest.test_fixture[test/redirections.sh]"
+  ]
+}

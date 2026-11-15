@@ -1,0 +1,18 @@
+{
+  "06dabfabaea7": [
+    "tests.test_metadata_handlers_gaps.test_check_file_mode_from_zip_file_info_mode",
+    "tests.test_metadata_handlers_gaps.test_formatted_size_from_zip_archive_file_info",
+    "tests.test_metadata_handlers_gaps.test_is_empty_from_zip_file_info_size_zero",
+    "tests.test_metadata_handlers_gaps.test_is_file_from_zip_archive_no_slash",
+    "tests.test_metadata_handlers_gaps.test_is_hidden_from_zip_file_info_name_prefix",
+    "tests.test_metadata_handlers_gaps.test_is_symlink_false_for_zip_archive_entries",
+    "tests.test_metadata_handlers_gaps.test_modified_from_zip_file_info_datetime_conversion",
+    "tests.test_metadata_handlers_gaps.test_size_from_zip_archive_file_info_path",
+    "tests.test_path_options.test_archive_search_disabled_by_default",
+    "tests.test_path_options.test_archive_search_lists_contents",
+    "tests.test_path_options.test_archives_option_short_form",
+    "tests.test_path_options.test_mindepth_with_archives",
+    "tests.test_path_options.test_nested_archive_search",
+    "tests.test_query_gaps.test_root_option_archives"
+  ]
+}
