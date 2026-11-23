@@ -1,0 +1,6 @@
+{
+  "98c8763e38d2": [
+    "tests.test_harvest.test_exec_using_shell_option",
+    "tests.test_harvest.test_exec_using_utility_substitution"
+  ]
+}

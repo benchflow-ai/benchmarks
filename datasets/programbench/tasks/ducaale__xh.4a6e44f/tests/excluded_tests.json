@@ -1,0 +1,31 @@
+{
+  "06aaf86cdfa9": [
+    "tests.test_error_reporting.test_dns_lookup_error_exit_code_1",
+    "tests.test_error_reporting.test_expired_certificate_error_includes_formatted_timestamp",
+    "tests.test_error_reporting.test_http_500_exit_code_5",
+    "tests.test_error_reporting.test_redirect_count_boundary_at_limit",
+    "tests.test_error_reporting.test_redirect_count_boundary_beyond_limit",
+    "tests.test_error_reporting.test_redirect_count_boundary_within_limit",
+    "tests.test_error_reporting.test_timeout_error_exit_code_2",
+    "tests.test_error_reporting.test_timeout_with_connect_timeout_flag",
+    "tests.test_error_reporting.test_too_many_redirects_exit_code_6",
+    "tests.test_harvest_cli_1.test_override_dns_resolution",
+    "tests.test_http_features.test_accept_encoding_header_automatic",
+    "tests.test_http_features.test_cross_scheme_redirect_http_to_https",
+    "tests.test_http_features.test_download_flag_enables_follow_automatically",
+    "tests.test_http_features.test_http_version_1_0",
+    "tests.test_http_features.test_http_version_1_1_default",
+    "tests.test_http_features.test_relative_redirect_location",
+    "tests.test_http_features.test_status_code_5xx_with_check_status",
+    "tests.test_http_features.test_stream_flag_chunked_transfer",
+    "tests.test_http_features.test_zero_timeout_means_no_timeout",
+    "tests.test_request_basics.test_error_dns_resolution_failure",
+    "tests.test_request_basics.test_https_url_scheme"
+  ],
+  "60afd7adc502": [
+    "eval.tests.test_help_usage.test_help_after_double_dash_treated_as_argument_error"
+  ],
+  "c27e9aadadbe": [
+    "eval.tests.test_subcommand_dispatch.test_unknown_git_style_subcommand_is_not_treated_as_subcommand"
+  ]
+}

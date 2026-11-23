@@ -1,0 +1,9 @@
+{
+  "0d1aa95caca2": [
+    "tests.test_additional_coverage.test_build_with_wasm_and_output",
+    "tests.test_final_coverage_push.test_build_all_output_formats"
+  ],
+  "40cb72101fde": [
+    "*"
+  ]
+}

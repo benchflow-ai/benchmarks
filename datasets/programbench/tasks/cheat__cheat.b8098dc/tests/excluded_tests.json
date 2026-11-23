@@ -1,0 +1,7 @@
+{
+  "06dabfabaea7": [
+    "tests.test_clone_installer.test_clone_network_timeout_handling",
+    "tests.test_clone_installer.test_installer_clone_yes",
+    "tests.test_clone_installer.test_installer_creates_all_expected_dirs"
+  ]
+}
