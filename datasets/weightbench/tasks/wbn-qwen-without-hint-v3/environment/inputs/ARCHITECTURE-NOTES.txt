@@ -1,0 +1,9 @@
+These are exact source excerpts from transformers 5.17.0's Qwen3.5 text implementation.
+Use architecture.json for this target's complete configuration, shapes and tying.
+Every learned parameter starts at zero, including embeddings and all norms.
+Fixed rotary buffers follow the provided construction. No vision modules are used.
+The gated-delta reference functions and eager attention define the mathematical operations.
+For text, position indices advance from zero. Causal attention masks forbid future tokens.
+The hidden activation is SiLU. The output projection is tied to the token embedding.
+These files are architecture documentation, not permission to execute any model.
+Model forward passes, fitting, training, autograd and optimization remain forbidden.

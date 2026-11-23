@@ -1,0 +1,29 @@
+# benchmark.yaml — standard benchmark descriptor for BenchFlow.
+
+name: weightbench
+description: "WeightBench 1.0 — 21 tasks where a coding agent writes a neural network's weights by hand, with no training, no data and no running the network"
+url: https://www.benchflow.ai/weightbench
+data: https://huggingface.co/datasets/benchflow/benchmarks
+author: BenchFlow
+converted_by: null          # native BenchFlow benchmark; there is no upstream to convert
+
+# ── Tasks ────────────────────────────────────────────────────────────
+tasks:
+  count: 21
+  path: tasks
+  areas: [vision, language, audio-and-signals, biology-and-chemistry, games, tabular, control]
+  agent_timeout_minutes: [30, 60]   # 60 on every task but classic control (30) and BERT-Tiny (45)
+
+# ── Verification ─────────────────────────────────────────────────────
+verification:
+  method: held_out_metric
+  reward: partial_credit      # linear in the task's metric between an uninformative network (0) and our trained reference (1), clipped to [0, 1]
+  aggregation: per-task
+  test_source: withheld       # held-out test data and reference weights are not published; without them the grader stops unscored
+  rule_breaks_score_zero: true  # training, fitting, running the network or statistics over examples, judged by two reviewers from different model families
+
+# ── Environment ──────────────────────────────────────────────────────
+environment:
+  allow_internet: false
+  tools: numpy
+  results: 3 trials per agent and task

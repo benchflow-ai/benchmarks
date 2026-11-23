@@ -1,0 +1,315 @@
+{
+ "task": "wbp-d-covertype",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   128,
+   54
+  ],
+  "fc1.bias": [
+   128
+  ],
+  "fc2.weight": [
+   64,
+   128
+  ],
+  "fc2.bias": [
+   64
+  ],
+  "fc3.weight": [
+   7,
+   64
+  ],
+  "fc3.bias": [
+   7
+  ]
+ },
+ "architecture": "MLP 54 -> 128 relu -> 64 relu -> 7",
+ "classes": [
+  "Spruce/Fir",
+  "Lodgepole Pine",
+  "Ponderosa Pine",
+  "Cottonwood/Willow",
+  "Aspen",
+  "Douglas-fir",
+  "Krummholz"
+ ],
+ "class_note": "index k is cover type k + 1 of the dataset",
+ "features": [
+  {
+   "index": 0,
+   "name": "elevation_km",
+   "value": "Elevation / 1000 (elevation in metres above sea level)"
+  },
+  {
+   "index": 1,
+   "name": "aspect",
+   "value": "Aspect / 360 (aspect in degrees azimuth: 0 north, 90 east, 180 south, 270 west)"
+  },
+  {
+   "index": 2,
+   "name": "slope",
+   "value": "Slope / 90 (slope in degrees)"
+  },
+  {
+   "index": 3,
+   "name": "water_dx_km",
+   "value": "Horizontal_Distance_To_Hydrology / 1000 (horizontal distance to the nearest surface water, metres)"
+  },
+  {
+   "index": 4,
+   "name": "water_dz_km",
+   "value": "Vertical_Distance_To_Hydrology / 1000 (height above (+) or below (-) the nearest surface water, metres)"
+  },
+  {
+   "index": 5,
+   "name": "road_dx_km",
+   "value": "Horizontal_Distance_To_Roadways / 1000 (horizontal distance to the nearest road, metres)"
+  },
+  {
+   "index": 6,
+   "name": "hillshade_9am",
+   "value": "Hillshade_9am / 255 (hillshade index 0-255 at 9am on the summer solstice)"
+  },
+  {
+   "index": 7,
+   "name": "hillshade_noon",
+   "value": "Hillshade_Noon / 255 (hillshade index at noon on the summer solstice)"
+  },
+  {
+   "index": 8,
+   "name": "hillshade_3pm",
+   "value": "Hillshade_3pm / 255 (hillshade index at 3pm on the summer solstice)"
+  },
+  {
+   "index": 9,
+   "name": "fire_dx_km",
+   "value": "Horizontal_Distance_To_Fire_Points / 1000 (horizontal distance to the nearest wildfire ignition point, metres)"
+  },
+  {
+   "index": 10,
+   "name": "wilderness_1",
+   "value": "1 if the cell is in the Rawah Wilderness Area, else 0"
+  },
+  {
+   "index": 11,
+   "name": "wilderness_2",
+   "value": "1 if the cell is in the Neota Wilderness Area, else 0"
+  },
+  {
+   "index": 12,
+   "name": "wilderness_3",
+   "value": "1 if the cell is in the Comanche Peak Wilderness Area, else 0"
+  },
+  {
+   "index": 13,
+   "name": "wilderness_4",
+   "value": "1 if the cell is in the Cache la Poudre Wilderness Area, else 0"
+  },
+  {
+   "index": 14,
+   "name": "soil_1",
+   "value": "1 if the soil is type 1 (USFS ELU 2702: Cathedral family - Rock outcrop complex, extremely stony.), else 0"
+  },
+  {
+   "index": 15,
+   "name": "soil_2",
+   "value": "1 if the soil is type 2 (USFS ELU 2703: Vanet - Ratake families complex, very stony.), else 0"
+  },
+  {
+   "index": 16,
+   "name": "soil_3",
+   "value": "1 if the soil is type 3 (USFS ELU 2704: Haploborolis - Rock outcrop complex, rubbly.), else 0"
+  },
+  {
+   "index": 17,
+   "name": "soil_4",
+   "value": "1 if the soil is type 4 (USFS ELU 2705: Ratake family - Rock outcrop complex, rubbly.), else 0"
+  },
+  {
+   "index": 18,
+   "name": "soil_5",
+   "value": "1 if the soil is type 5 (USFS ELU 2706: Vanet family - Rock outcrop complex complex, rubbly.), else 0"
+  },
+  {
+   "index": 19,
+   "name": "soil_6",
+   "value": "1 if the soil is type 6 (USFS ELU 2717: Vanet - Wetmore families - Rock outcrop complex, stony.), else 0"
+  },
+  {
+   "index": 20,
+   "name": "soil_7",
+   "value": "1 if the soil is type 7 (USFS ELU 3501: Gothic family.), else 0"
+  },
+  {
+   "index": 21,
+   "name": "soil_8",
+   "value": "1 if the soil is type 8 (USFS ELU 3502: Supervisor - Limber families complex.), else 0"
+  },
+  {
+   "index": 22,
+   "name": "soil_9",
+   "value": "1 if the soil is type 9 (USFS ELU 4201: Troutville family, very stony.), else 0"
+  },
+  {
+   "index": 23,
+   "name": "soil_10",
+   "value": "1 if the soil is type 10 (USFS ELU 4703: Bullwark - Catamount families - Rock outcrop complex, rubbly.), else 0"
+  },
+  {
+   "index": 24,
+   "name": "soil_11",
+   "value": "1 if the soil is type 11 (USFS ELU 4704: Bullwark - Catamount families - Rock land complex, rubbly.), else 0"
+  },
+  {
+   "index": 25,
+   "name": "soil_12",
+   "value": "1 if the soil is type 12 (USFS ELU 4744: Legault family - Rock land complex, stony.), else 0"
+  },
+  {
+   "index": 26,
+   "name": "soil_13",
+   "value": "1 if the soil is type 13 (USFS ELU 4758: Catamount family - Rock land - Bullwark family complex, rubbly.), else 0"
+  },
+  {
+   "index": 27,
+   "name": "soil_14",
+   "value": "1 if the soil is type 14 (USFS ELU 5101: Pachic Argiborolis - Aquolis complex.), else 0"
+  },
+  {
+   "index": 28,
+   "name": "soil_15",
+   "value": "1 if the soil is type 15 (USFS ELU 5151: unspecified in the USFS Soil and ELU Survey.), else 0"
+  },
+  {
+   "index": 29,
+   "name": "soil_16",
+   "value": "1 if the soil is type 16 (USFS ELU 6101: Cryaquolis - Cryoborolis complex.), else 0"
+  },
+  {
+   "index": 30,
+   "name": "soil_17",
+   "value": "1 if the soil is type 17 (USFS ELU 6102: Gateview family - Cryaquolis complex.), else 0"
+  },
+  {
+   "index": 31,
+   "name": "soil_18",
+   "value": "1 if the soil is type 18 (USFS ELU 6731: Rogert family, very stony.), else 0"
+  },
+  {
+   "index": 32,
+   "name": "soil_19",
+   "value": "1 if the soil is type 19 (USFS ELU 7101: Typic Cryaquolis - Borohemists complex.), else 0"
+  },
+  {
+   "index": 33,
+   "name": "soil_20",
+   "value": "1 if the soil is type 20 (USFS ELU 7102: Typic Cryaquepts - Typic Cryaquolls complex.), else 0"
+  },
+  {
+   "index": 34,
+   "name": "soil_21",
+   "value": "1 if the soil is type 21 (USFS ELU 7103: Typic Cryaquolls - Leighcan family, till substratum complex.), else 0"
+  },
+  {
+   "index": 35,
+   "name": "soil_22",
+   "value": "1 if the soil is type 22 (USFS ELU 7201: Leighcan family, till substratum, extremely bouldery.), else 0"
+  },
+  {
+   "index": 36,
+   "name": "soil_23",
+   "value": "1 if the soil is type 23 (USFS ELU 7202: Leighcan family, till substratum - Typic Cryaquolls complex.), else 0"
+  },
+  {
+   "index": 37,
+   "name": "soil_24",
+   "value": "1 if the soil is type 24 (USFS ELU 7700: Leighcan family, extremely stony.), else 0"
+  },
+  {
+   "index": 38,
+   "name": "soil_25",
+   "value": "1 if the soil is type 25 (USFS ELU 7701: Leighcan family, warm, extremely stony.), else 0"
+  },
+  {
+   "index": 39,
+   "name": "soil_26",
+   "value": "1 if the soil is type 26 (USFS ELU 7702: Granile - Catamount families complex, very stony.), else 0"
+  },
+  {
+   "index": 40,
+   "name": "soil_27",
+   "value": "1 if the soil is type 27 (USFS ELU 7709: Leighcan family, warm - Rock outcrop complex, extremely stony.), else 0"
+  },
+  {
+   "index": 41,
+   "name": "soil_28",
+   "value": "1 if the soil is type 28 (USFS ELU 7710: Leighcan family - Rock outcrop complex, extremely stony.), else 0"
+  },
+  {
+   "index": 42,
+   "name": "soil_29",
+   "value": "1 if the soil is type 29 (USFS ELU 7745: Como - Legault families complex, extremely stony.), else 0"
+  },
+  {
+   "index": 43,
+   "name": "soil_30",
+   "value": "1 if the soil is type 30 (USFS ELU 7746: Como family - Rock land - Legault family complex, extremely stony.), else 0"
+  },
+  {
+   "index": 44,
+   "name": "soil_31",
+   "value": "1 if the soil is type 31 (USFS ELU 7755: Leighcan - Catamount families complex, extremely stony.), else 0"
+  },
+  {
+   "index": 45,
+   "name": "soil_32",
+   "value": "1 if the soil is type 32 (USFS ELU 7756: Catamount family - Rock outcrop - Leighcan family complex, extremely stony.), else 0"
+  },
+  {
+   "index": 46,
+   "name": "soil_33",
+   "value": "1 if the soil is type 33 (USFS ELU 7757: Leighcan - Catamount families - Rock outcrop complex, extremely stony.), else 0"
+  },
+  {
+   "index": 47,
+   "name": "soil_34",
+   "value": "1 if the soil is type 34 (USFS ELU 7790: Cryorthents - Rock land complex, extremely stony.), else 0"
+  },
+  {
+   "index": 48,
+   "name": "soil_35",
+   "value": "1 if the soil is type 35 (USFS ELU 8703: Cryumbrepts - Rock outcrop - Cryaquepts complex.), else 0"
+  },
+  {
+   "index": 49,
+   "name": "soil_36",
+   "value": "1 if the soil is type 36 (USFS ELU 8707: Bross family - Rock land - Cryumbrepts complex, extremely stony.), else 0"
+  },
+  {
+   "index": 50,
+   "name": "soil_37",
+   "value": "1 if the soil is type 37 (USFS ELU 8708: Rock outcrop - Cryumbrepts - Cryorthents complex, extremely stony.), else 0"
+  },
+  {
+   "index": 51,
+   "name": "soil_38",
+   "value": "1 if the soil is type 38 (USFS ELU 8771: Leighcan - Moran families - Cryaquolls complex, extremely stony.), else 0"
+  },
+  {
+   "index": 52,
+   "name": "soil_39",
+   "value": "1 if the soil is type 39 (USFS ELU 8772: Moran family - Cryorthents - Leighcan family complex, extremely stony.), else 0"
+  },
+  {
+   "index": 53,
+   "name": "soil_40",
+   "value": "1 if the soil is type 40 (USFS ELU 8776: Moran family - Cryorthents - Rock land complex, extremely stony.), else 0"
+  }
+ ],
+ "elu_note": "ELU code: the first digit is the climatic zone (1 lower montane dry, 2 lower montane, 3 montane dry, 4 montane, 5 montane dry and montane, 6 montane and subalpine, 7 subalpine, 8 alpine), the second the geologic zone (1 alluvium, 2 glacial, 3 shale, 4 sandstone, 5 mixed sedimentary, 6 unspecified, 7 igneous and metamorphic, 8 volcanic); the last two digits only identify the mapping unit.",
+ "dataset_facts": "UCI Covertype (Blackard and Dean 1999): 30 x 30 m cells in four wilderness areas of the Roosevelt National Forest in northern Colorado, areas with minimal human disturbance, so the cover types mostly follow ecological processes. Cover type is the dominant tree cover from US Forest Service (USFS) Region 2 Resource Information System data; the other variables are from US Geological Survey and USFS data. Every cell has exactly one wilderness area and exactly one soil type.",
+ "forward": "h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; prediction = argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on 50,000 held-out cells, a uniform random sample of the 581,012 cells of the dataset",
+ "baseline": 0.49066
+}

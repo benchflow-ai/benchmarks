@@ -1,0 +1,58 @@
+{
+ "task": "wbp-f-ecg",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   64,
+   120
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   32,
+   64
+  ],
+  "fc2.bias": [
+   32
+  ],
+  "fc3.weight": [
+   4,
+   32
+  ],
+  "fc3.bias": [
+   4
+  ]
+ },
+ "architecture": "MLP 120 -> 64 relu -> 32 relu -> 4",
+ "classes": [
+  "N (normal and bundle branch block beats)",
+  "S (supraventricular ectopic)",
+  "V (ventricular ectopic)",
+  "F (fusion of ventricular and normal)"
+ ],
+ "inputs": [
+  {
+   "index": "0..116",
+   "value": "the beat: lead MLII in millivolts after baseline removal; value k is the mean of the two samples at (2k - 90)/360 s and (2k - 89)/360 s from the beat's annotation position (the R peak in most beats), so the window runs from 250 ms before it to about 397 ms after it in steps of 1/180 s and the R peak falls between values 44 and 45"
+  },
+  {
+   "index": 117,
+   "value": "RR before: seconds since the previous beat of the record"
+  },
+  {
+   "index": 118,
+   "value": "RR after: seconds to the next beat of the record"
+  },
+  {
+   "index": 119,
+   "value": "local RR: mean of the up to 10 most recent RR intervals, ending with the one just before this beat (so it includes input 117; fewer near the start of a record)"
+  }
+ ],
+ "baseline_removal": "the raw MLII signal (360 Hz) minus its baseline, where the baseline is the signal median-filtered with a 200 ms window (71 samples) and then a 600 ms window (215 samples), as de Chazal et al. 2004",
+ "aami_classes": "N: normal beats, left and right bundle branch block beats, atrial and nodal (junctional) escape beats; S: atrial premature beats, aberrated atrial premature beats, nodal premature beats, supraventricular premature beats; V: premature ventricular contractions, ventricular escape beats; F: fusions of ventricular and normal beats",
+ "dataset_facts": "MIT-BIH Arrhythmia Database (Moody and Mark 2001, PhysioNet): 48 half-hour two-lead ambulatory ECG recordings of 47 subjects, 360 Hz, 11-bit over 10 mV, every beat annotated by two or more cardiologists. The four records with paced beats (102, 104, 107, 217) are excluded; the other 44 all have lead MLII. Beats within 250 ms of a record's start or 400 ms of its end, and the first and last beat of each record, are excluded. The held-out beats were drawn at random from all 44 records, so the reference was trained on other beats of the same patients.",
+ "forward": "h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "balanced accuracy: the mean, over the four classes, of the share of that class's held-out beats predicted correctly; 2,850 held-out beats (1,000 N, 600 S, 1,000 V, 250 F)",
+ "baseline": 0.3
+}

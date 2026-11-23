@@ -1,0 +1,40 @@
+{
+ "task": "wbp-d-pycode",
+ "dtype": "float32",
+ "tensors": {
+  "emb": [
+   96,
+   16
+  ],
+  "hidden.weight": [
+   512,
+   128
+  ],
+  "hidden.bias": [
+   512
+  ],
+  "out.weight": [
+   96,
+   512
+  ],
+  "out.bias": [
+   96
+  ]
+ },
+ "architecture": "character-level MLP language model, 8-character context (Bengio et al. 2003 style)",
+ "symbols": "\n !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~",
+ "symbols_note": "96 symbols: index 0 is the newline, index 1 + k is chr(32 + k) for k = 0..94 (the printable ASCII characters, space to tilde)",
+ "context": 8,
+ "padding": "positions before the first character of a file are the newline (index 0); every file starts fresh",
+ "normalization_python": "def normalize(text):\n    text = text.replace('\\r\\n', '\\n').replace('\\r', '\\n').replace('\\t', '    ')\n    return ''.join(c for c in text if c == '\\n' or ' ' <= c <= '~')\n",
+ "normalization_examples": [
+  {
+   "raw": "def f(x):\r\n\tif x > 1:  # caf\u00e9\n\t\treturn x\n",
+   "normalized": "def f(x):\n    if x > 1:  # caf\n        return x\n"
+  }
+ ],
+ "forward": "x = concat(emb[c1], ..., emb[c8]) for the eight previous characters, oldest first (128 values); h = tanh(hidden.weight @ x + hidden.bias); logits = out.weight @ h + out.bias; p(next) = softmax(logits). See FORWARD.md.",
+ "evaluation": "mean bits per character, -log2 p(text[i] | text[i-8:i]), over every character of 33 Python 3 source files (about 220,500 characters) added to the CPython repository between August and November 2026: tests, build and inspection tools, a PEG parser generator's modules and library modules (not in the sandbox)",
+ "metric": "bits_per_character",
+ "baseline_uniform": 6.584962500721156
+}

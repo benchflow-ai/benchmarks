@@ -1,0 +1,119 @@
+{
+ "task": "wbp-f-eurosat",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   16,
+   7,
+   5,
+   5
+  ],
+  "conv1.bias": [
+   16
+  ],
+  "conv2.weight": [
+   32,
+   16,
+   5,
+   5
+  ],
+  "conv2.bias": [
+   32
+  ],
+  "conv3.weight": [
+   64,
+   32,
+   3,
+   3
+  ],
+  "conv3.bias": [
+   64
+  ],
+  "fc1.weight": [
+   64,
+   64
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   10,
+   64
+  ],
+  "fc2.bias": [
+   10
+  ]
+ },
+ "architecture": "small CNN: conv5x5(7->16, pad 2) relu maxpool2, conv5x5(16->32, pad 2) relu maxpool2, conv3x3(32->64, pad 1) relu, global average pool, fc 64->64 relu, fc 64->10",
+ "classes": [
+  "AnnualCrop",
+  "Forest",
+  "HerbaceousVegetation",
+  "Highway",
+  "Industrial",
+  "Pasture",
+  "PermanentCrop",
+  "Residential",
+  "River",
+  "SeaLake"
+ ],
+ "input": {
+  "shape": [
+   7,
+   32,
+   32
+  ],
+  "bands": [
+   {
+    "channel": 0,
+    "band": "B02",
+    "name": "blue",
+    "centre_nm": 490
+   },
+   {
+    "channel": 1,
+    "band": "B03",
+    "name": "green",
+    "centre_nm": 560
+   },
+   {
+    "channel": 2,
+    "band": "B04",
+    "name": "red",
+    "centre_nm": 665
+   },
+   {
+    "channel": 3,
+    "band": "B05",
+    "name": "red edge",
+    "centre_nm": 705
+   },
+   {
+    "channel": 4,
+    "band": "B08",
+    "name": "near infrared",
+    "centre_nm": 842
+   },
+   {
+    "channel": 5,
+    "band": "B11",
+    "name": "short-wave infrared",
+    "centre_nm": 1610
+   },
+   {
+    "channel": 6,
+    "band": "B12",
+    "name": "short-wave infrared",
+    "centre_nm": 2190
+   }
+  ],
+  "layout": "channel (band), row (north at the top), column (west at the left); 20 m pixels, 640 x 640 m",
+  "scaling": "x = value / 10000, where value is the mean of a 2 x 2 block of Sentinel-2 Level-1C digital numbers (top-of-atmosphere reflectance x 10000) rounded to an integer; so x is top-of-atmosphere reflectance, mostly between 0 and 0.5 (bright clouds, snow and roofs can exceed it)"
+ },
+ "dataset_facts": "EuroSAT (Helber et al. 2019): 27,000 labelled 64 x 64 patches at 10 m from Sentinel-2 Level-1C images over 34 European countries, 2,000 to 3,000 per class, all 13 bands resampled to 10 m. Here 7 bands are kept and each 2 x 2 block is averaged, giving 32 x 32 pixels at 20 m. Each patch shows one land use or cover class; the dataset's authors selected the patches with reference land-use data and checked them by hand; scenes are mostly cloud-free and cover all seasons.",
+ "conv": "cross-correlation as in PyTorch Conv2d: out[o, i, j] = bias[o] + sum_c sum_u sum_v weight[o, c, u, v] * in[c, i + u, j + v] (after zero padding)",
+ "global_average_pool": "g[c] = the mean of the 64 values of channel c of the [64, 8, 8] map",
+ "output": "10 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on 4,000 held-out patches, 400 per class",
+ "baseline": 0.15
+}

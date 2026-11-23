@@ -1,0 +1,293 @@
+{
+  "attempt_aggregation": "arithmetic mean over every prespecified draw, never valid-only mean or median",
+  "clarification": "Requested before new subject calls: make the primary outcome a deterministic end-to-end benchmark score. Numeric anchors, metric units and target weights are unchanged. Completed submission failures receive zero index credit, without inventing raw capability scores. Held, unstarted and infrastructure-invalid outcomes remain unscored.",
+  "created_at": "2026-11-06T21:14:48.221331+00:00",
+  "historical": "Closed cohorts retain their original statuses, raw nulls, protocol and primary interpretations. Their v1.1 posthoc capability bounds can remain in details. Do not silently recast old infrastructure/numerical-gate failures as v1.2 model failures or relabel earlier cohorts as fresh control arms.",
+  "implementation_bindings": {
+    "end_to_end_math.py": "7f476ae32c99f82835c7e7474a8cf3523cb13fb37e3d2659d3dd0edf246a36a4",
+    "index_math.py": "3e032453be932cdb420e97478cec750b0ebe0f073b17b4cd7f9a16f1ff1cce4a",
+    "test_end_to_end_math.py": "e26c302b0be24b2144e23b124b13fc19a79d727a61a904523ba59353e68eb3cc",
+    "test_index_math.py": "51fb4752b85f78b311e54cb439cd5db6f57aa6b0f251f5a9217a02d72d9b0e1c"
+  },
+  "interpretation": "Defined end-to-end benchmark index; not fraction of intelligence, pure artifact capability, proof of cross-cohort comparability, or a guarantee of server-level deterministic model generation.",
+  "metrics": [
+    {
+      "anchor": 0.8589833127714179,
+      "anchor_role": "released Qwen reference, not a ceiling",
+      "baseline": 4.114479261916929,
+      "display_multiplier": 1,
+      "display_unit": "bits/byte",
+      "id": "wikitext103",
+      "lower_is_better": true,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "bits/byte",
+      "target": "qwen",
+      "within_target_weight_fraction": [
+        1,
+        4
+      ]
+    },
+    {
+      "anchor": 0.6907429666335397,
+      "anchor_role": "released Qwen reference, not a ceiling",
+      "baseline": 4.300599441775437,
+      "display_multiplier": 1,
+      "display_unit": "bits/byte",
+      "id": "tinystories",
+      "lower_is_better": true,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "bits/byte",
+      "target": "qwen",
+      "within_target_weight_fraction": [
+        1,
+        4
+      ]
+    },
+    {
+      "anchor": 80.45746268656715,
+      "anchor_role": "released Qwen reference, not a ceiling",
+      "baseline": 51.10895522388059,
+      "display_multiplier": 1,
+      "display_unit": "%",
+      "id": "blimp",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "%",
+      "target": "qwen",
+      "within_target_weight_fraction": [
+        1,
+        4
+      ]
+    },
+    {
+      "anchor": 43.62507277314186,
+      "anchor_role": "released Qwen reference, not a ceiling",
+      "baseline": 0.0,
+      "display_multiplier": 1,
+      "display_unit": "%",
+      "id": "lambada",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "%",
+      "target": "qwen",
+      "within_target_weight_fraction": [
+        1,
+        4
+      ]
+    },
+    {
+      "anchor": 1.0,
+      "anchor_role": "metric upper bound; accuracy/F1 stored as fractions",
+      "baseline": 0.5091743119266054,
+      "display_multiplier": 100,
+      "display_unit": "%",
+      "id": "sst2.accuracy",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "fraction",
+      "target": "bert",
+      "within_target_weight_fraction": [
+        1,
+        3
+      ]
+    },
+    {
+      "anchor": 1.0,
+      "anchor_role": "metric upper bound; accuracy/F1 stored as fractions",
+      "baseline": 0.6838235294117647,
+      "display_multiplier": 100,
+      "display_unit": "%",
+      "id": "mrpc.accuracy",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "fraction",
+      "target": "bert",
+      "within_target_weight_fraction": [
+        1,
+        6
+      ]
+    },
+    {
+      "anchor": 1.0,
+      "anchor_role": "metric upper bound; accuracy/F1 stored as fractions",
+      "baseline": 0.8122270742358079,
+      "display_multiplier": 100,
+      "display_unit": "%",
+      "id": "mrpc.f1",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "fraction",
+      "target": "bert",
+      "within_target_weight_fraction": [
+        1,
+        6
+      ]
+    },
+    {
+      "anchor": 1.0,
+      "anchor_role": "metric upper bound; accuracy/F1 stored as fractions",
+      "baseline": 0.0,
+      "display_multiplier": 1,
+      "display_unit": "mcc",
+      "id": "cola.matthews_correlation",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "mcc",
+      "target": "bert",
+      "within_target_weight_fraction": [
+        1,
+        3
+      ]
+    },
+    {
+      "anchor": 500.0,
+      "anchor_role": "return upper bound under frozen default rewards/time limits; not necessarily attainable",
+      "baseline": 9.37890625,
+      "display_multiplier": 1,
+      "display_unit": "return",
+      "id": "CartPole-v1",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "return",
+      "target": "rl",
+      "within_target_weight_fraction": [
+        1,
+        3
+      ]
+    },
+    {
+      "anchor": 0.0,
+      "anchor_role": "return upper bound under frozen default rewards/time limits; not necessarily attainable",
+      "baseline": -500.0,
+      "display_multiplier": 1,
+      "display_unit": "return",
+      "id": "Acrobot-v1",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "return",
+      "target": "rl",
+      "within_target_weight_fraction": [
+        1,
+        3
+      ]
+    },
+    {
+      "anchor": 0.0,
+      "anchor_role": "return upper bound under frozen default rewards/time limits; not necessarily attainable",
+      "baseline": -1196.7882447156035,
+      "display_multiplier": 1,
+      "display_unit": "return",
+      "id": "Pendulum-v1",
+      "lower_is_better": false,
+      "normalization_input": "raw stored estimate, before display multiplier",
+      "stored_unit": "return",
+      "target": "rl",
+      "within_target_weight_fraction": [
+        1,
+        3
+      ]
+    }
+  ],
+  "mrpc_formula": "0.5 * clip((accuracy - accuracy_baseline)/(1 - accuracy_baseline),0,1) + 0.5 * clip((f1 - f1_baseline)/(1 - f1_baseline),0,1)",
+  "name": "WeightBench end-to-end score",
+  "normalization": "clip((estimate - baseline) / (anchor - baseline), 0, 1)",
+  "paired_gain": {
+    "formula": "with_hint.score - without_hint.score",
+    "incomplete": null,
+    "scope": "same fixed requested writer, target/draw allocation and matched fresh arms; scalar only when both arms have complete scoreable outcomes",
+    "unit": "index points"
+  },
+  "primary": {
+    "aggregation": "Arithmetic mean over every prespecified draw per target, then equal one-third weight for each target. No valid-only denominator, no best draw, no averaging only the targets that ran.",
+    "classification_gate": "Common protocol must enumerate source-event-to-status rules and freeze mock cases before first subject. Both leads must use the identical registered map; do not invent per-outcome exemptions.",
+    "determinism": "Fixed artifact, evaluator/runtime, test items and episode seeds determine the reported point estimate subject to the stated runtime reproducibility qualification. Bootstrap/sample uncertainty does not replace the point estimate.",
+    "failure_distinction": "Ordinary request timeout after admitted execution and invalid action/schema output are end-to-end failures; explicit provider service/auth/quota errors, invalid admission, owned kernel/evaluator malfunction or lost artifact capture are infrastructure outcomes. Classify from frozen event rules and retained evidence, never from the achieved score. Unknown causes stay infrastructure/unresolved until evidence resolves them.",
+    "infrastructure_reasons": [
+      "artifact_capture_or_transport_failure",
+      "invalid_admission",
+      "kernel_or_evaluator_failure",
+      "provider_auth_or_quota",
+      "provider_service_error",
+      "unresolved_execution_failure"
+    ],
+    "meaning": "Ability of the writer and its registered execution route to deliver valid useful weights within the fixed budget; not pure conditional artifact capability.",
+    "overall_score": "One 0\u2013100 point value only when every allocated target/draw has a verified score or registered submission failure; otherwise null with coverage/status. No headline lower\u2013upper range and no official rank of incomplete rows.",
+    "paired_gain": "One arithmetic difference when both complete arms have identical model/target/draw allocations; otherwise null.",
+    "raw_scores": "Preserve all original raw task results, verification statuses, failures and method evidence separately.",
+    "submission_failed": {
+      "end_to_end_points": 0,
+      "raw_capability": null,
+      "registered_reasons": [
+        "budget_exhausted_no_submission",
+        "construction_rule_violation",
+        "invalid_action_protocol",
+        "invalid_tensor_submission",
+        "nonfinite_authoritative_execution",
+        "request_timeout_no_submission"
+      ],
+      "requires": "A registered terminal reason plus retained attempt evidence. Failure consumes its allocated draw; no replacement, rescue or hidden drop."
+    },
+    "successful_submission": "Use verified raw benchmark point estimates with the unchanged clipped normalization and weights.",
+    "unscored_statuses": [
+      "not_started",
+      "held",
+      "in_progress",
+      "infrastructure_failed"
+    ]
+  },
+  "primary_new": "one pair per requested model per target; no writer-population CI or significant improvement claim from one paired replicate",
+  "scale": [
+    0,
+    100
+  ],
+  "schema": "weightbench-index-v1.2",
+  "secondary_capability_missing": {
+    "display": "incomplete index shown as lower\u2013upper with weighted verified coverage; do not display lower alone as capability or rank incomplete rows",
+    "includes": [
+      "not run",
+      "held",
+      "no artifact",
+      "infrastructure invalid",
+      "numerical verification failed"
+    ],
+    "normalized_lower": 0,
+    "normalized_upper": 1,
+    "semantics": "logical bounds on a hypothetical complete bounded index; not imputed scores, confidence intervals or population uncertainty",
+    "verified_capability": null
+  },
+  "secondary_only": [
+    "v1.1 conditional capability bounds",
+    "raw benchmark metrics and their intervals",
+    "copy",
+    "induction",
+    "operational submission counts and failure causes"
+  ],
+  "secondary_paired_gain_bounds": {
+    "formula": "[with.lower - without.upper, with.upper - without.lower]",
+    "scope": "identical allocated model/target/draw cells; both arms fresh; report scalar only when both fully observed",
+    "unit": "index points, not percent relative improvement"
+  },
+  "source_bindings": {
+    "bert_references_002_sha256": "485a8d63f128109f171bf0553af04b1c1f41a5d46abb2e4a522264842e18264d",
+    "public_leaderboard_sha256": "2ff8bf4ff143588dd2fa5307e41d0704a4f0680a8f4b343ad9b09d3a6f9aba8e",
+    "required_prelaunch_check": "leads verify anchors and evaluated dataset/task inventory against original reference receipts; no adaptive anchor changes after outcomes",
+    "rl_bounds": "frozen smallbench/spec.py Gymnasium1.2.2: CartPole +1 at most500 steps; Acrobot -1 or0; Pendulum negative nonnegative cost, at most0",
+    "rl_references_001_sha256": "e8159b294034cbe1a25433d27b3d05949a04ee4d1c0790b4f60144e43c299b9d"
+  },
+  "status": "prospective scoring contract; bind exact status mapping, source and evidence into the shared freeze before subjects",
+  "supersedes_sha256": "1353d5c42374e2bf5b840f876d33f0a4562e2bf4d5bee5db29173398f30fcf6e",
+  "target_weights_fraction": {
+    "bert": [
+      1,
+      3
+    ],
+    "qwen": [
+      1,
+      3
+    ],
+    "rl": [
+      1,
+      3
+    ]
+  }
+}

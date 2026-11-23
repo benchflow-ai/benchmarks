@@ -1,0 +1,65 @@
+{
+ "CartPole-v1.0.weight": [
+  64,
+  4
+ ],
+ "CartPole-v1.0.bias": [
+  64
+ ],
+ "CartPole-v1.1.weight": [
+  64,
+  64
+ ],
+ "CartPole-v1.1.bias": [
+  64
+ ],
+ "CartPole-v1.2.weight": [
+  2,
+  64
+ ],
+ "CartPole-v1.2.bias": [
+  2
+ ],
+ "Acrobot-v1.0.weight": [
+  64,
+  6
+ ],
+ "Acrobot-v1.0.bias": [
+  64
+ ],
+ "Acrobot-v1.1.weight": [
+  64,
+  64
+ ],
+ "Acrobot-v1.1.bias": [
+  64
+ ],
+ "Acrobot-v1.2.weight": [
+  3,
+  64
+ ],
+ "Acrobot-v1.2.bias": [
+  3
+ ],
+ "Pendulum-v1.0.weight": [
+  64,
+  3
+ ],
+ "Pendulum-v1.0.bias": [
+  64
+ ],
+ "Pendulum-v1.1.weight": [
+  64,
+  64
+ ],
+ "Pendulum-v1.1.bias": [
+  64
+ ],
+ "Pendulum-v1.2.weight": [
+  1,
+  64
+ ],
+ "Pendulum-v1.2.bias": [
+  1
+ ]
+}

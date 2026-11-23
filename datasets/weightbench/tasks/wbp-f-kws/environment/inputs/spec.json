@@ -1,0 +1,162 @@
+{
+ "task": "wbp-f-kws",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   16,
+   1,
+   5,
+   5
+  ],
+  "conv1.bias": [
+   16
+  ],
+  "conv2.weight": [
+   32,
+   16,
+   5,
+   5
+  ],
+  "conv2.bias": [
+   32
+  ],
+  "conv3.weight": [
+   64,
+   32,
+   3,
+   3
+  ],
+  "conv3.bias": [
+   64
+  ],
+  "fc1.weight": [
+   64,
+   64
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   10,
+   64
+  ],
+  "fc2.bias": [
+   10
+  ]
+ },
+ "architecture": "small CNN on a log-mel spectrogram: conv5x5(1->16, pad 2) relu maxpool2, conv5x5(16->32, pad 2) relu maxpool2, conv3x3(32->64, pad 1) relu, global max pool, fc 64->64 relu, fc 64->10",
+ "classes": [
+  "yes",
+  "no",
+  "up",
+  "down",
+  "left",
+  "right",
+  "on",
+  "off",
+  "stop",
+  "go"
+ ],
+ "input": {
+  "shape": [
+   1,
+   40,
+   49
+  ],
+  "layout": "channel, mel band (row 0 lowest frequency, row 39 highest), frame (column 0 is the start of the clip; frame t covers samples 320 t .. 320 t + 399, i.e. 20 t to 20 t + 25 ms)",
+  "scaling": "per clip: 1.0 at the loudest band and frame of the clip, falling linearly to 0.0 at 80 dB below it; anything quieter is 0.0",
+  "mel_band_centres_hz": [
+   64.2,
+   111.2,
+   161.0,
+   213.9,
+   270.1,
+   329.7,
+   393.0,
+   460.1,
+   531.4,
+   607.1,
+   687.4,
+   772.6,
+   863.1,
+   959.1,
+   1061.1,
+   1169.3,
+   1284.1,
+   1406.0,
+   1535.4,
+   1672.8,
+   1818.6,
+   1973.3,
+   2137.6,
+   2311.9,
+   2497.0,
+   2693.4,
+   2901.9,
+   3123.2,
+   3358.1,
+   3607.4,
+   3872.1,
+   4153.0,
+   4451.2,
+   4767.7,
+   5103.6,
+   5460.2,
+   5838.7,
+   6240.5,
+   6666.9,
+   7119.6
+  ],
+  "mel_band_edges_hz": [
+   20.0,
+   64.2,
+   111.2,
+   161.0,
+   213.9,
+   270.1,
+   329.7,
+   393.0,
+   460.1,
+   531.4,
+   607.1,
+   687.4,
+   772.6,
+   863.1,
+   959.1,
+   1061.1,
+   1169.3,
+   1284.1,
+   1406.0,
+   1535.4,
+   1672.8,
+   1818.6,
+   1973.3,
+   2137.6,
+   2311.9,
+   2497.0,
+   2693.4,
+   2901.9,
+   3123.2,
+   3358.1,
+   3607.4,
+   3872.1,
+   4153.0,
+   4451.2,
+   4767.7,
+   5103.6,
+   5460.2,
+   5838.7,
+   6240.5,
+   6666.9,
+   7119.6,
+   7600.0
+  ],
+  "features_python": "import numpy as np\n\nSR, N_FFT, WIN, HOP, N_MELS, FMIN, FMAX, FRAMES = 16000, 512, 400, 320, 40, 20.0, 7600.0, 49\n\n\ndef mel_filters():\n    hz2mel = lambda f: 2595.0 * np.log10(1.0 + f / 700.0)\n    mel2hz = lambda m: 700.0 * (10.0 ** (m / 2595.0) - 1.0)\n    edges = mel2hz(np.linspace(hz2mel(FMIN), hz2mel(FMAX), N_MELS + 2))\n    freqs = np.arange(N_FFT // 2 + 1) * SR / N_FFT\n    fb = np.zeros((N_MELS, len(freqs)))\n    for m in range(N_MELS):\n        lo, c, hi = edges[m], edges[m + 1], edges[m + 2]\n        fb[m] = np.clip(np.minimum((freqs - lo) / (c - lo), (hi - freqs) / (hi - c)), 0, None)\n    return fb\n\n\ndef features(samples):  # samples: 16-bit PCM at 16 kHz\n    x = np.zeros(SR)\n    x[:min(SR, len(samples))] = samples[:SR] / 32768.0   # one second; shorter clips padded with silence at the end\n    win = np.hanning(WIN + 1)[:-1]                        # periodic Hann window\n    frames = np.stack([x[i * HOP:i * HOP + WIN] * win for i in range(FRAMES)])\n    power = np.abs(np.fft.rfft(frames, N_FFT, axis=1)) ** 2\n    db = 10 * np.log10(power @ mel_filters().T + 1e-12)   # [49 frames, 40 bands]\n    return np.clip((db - db.max() + 80.0) / 80.0, 0.0, 1.0).T   # [40 bands (low to high), 49 frames]\n"
+ },
+ "dataset_facts": "Speech Commands v0.02 (Warden 2018, Google): one-second recordings of single words spoken by about 2,600 volunteers through their own computers and phones, so microphones, rooms, accents and background noise vary; 16 kHz, 16-bit mono. The word can sit anywhere in the second, and clips shorter than a second are padded with silence at the end. The held-out clips are the dataset's official test list for these ten words (its speakers are not in the training clips).",
+ "conv": "cross-correlation as in PyTorch Conv2d: out[o, i, j] = bias[o] + sum_c sum_u sum_v weight[o, c, u, v] * in[c, i + u, j + v] (after zero padding)",
+ "pooling": "maxpool2: maximum of each non-overlapping 2 x 2 block, stride 2; an odd last row or column is dropped (49 frames -> 24 -> 12, 40 bands -> 20 -> 10); global max pool: the maximum of each conv3 channel over its 10 x 12 positions",
+ "output": "10 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 4,074 held-out clips (396 to 425 per word)",
+ "baseline": 0.15
+}

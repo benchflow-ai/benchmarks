@@ -1,0 +1,73 @@
+{
+ "task": "wbp-d-quickdraw",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   6,
+   1,
+   5,
+   5
+  ],
+  "conv1.bias": [
+   6
+  ],
+  "conv2.weight": [
+   16,
+   6,
+   5,
+   5
+  ],
+  "conv2.bias": [
+   16
+  ],
+  "fc1.weight": [
+   120,
+   400
+  ],
+  "fc1.bias": [
+   120
+  ],
+  "fc2.weight": [
+   84,
+   120
+  ],
+  "fc2.bias": [
+   84
+  ],
+  "fc3.weight": [
+   10,
+   84
+  ],
+  "fc3.bias": [
+   10
+  ]
+ },
+ "architecture": "LeNet-5 style CNN: conv5x5(1->6, pad 2) relu maxpool2, conv5x5(6->16) relu maxpool2, fc 400->120 relu, fc 120->84 relu, fc 84->10",
+ "classes": [
+  "airplane",
+  "bicycle",
+  "cat",
+  "clock",
+  "envelope",
+  "fish",
+  "house",
+  "star",
+  "tree",
+  "umbrella"
+ ],
+ "input": {
+  "shape": [
+   1,
+   28,
+   28
+  ],
+  "layout": "channel, row (top to bottom), column (left to right)",
+  "scaling": "x = pixel / 255: 0.0 is the empty background, 1.0 full ink",
+  "dataset_facts": "Quick, Draw! doodles (Google Creative Lab): drawings made in at most 20 seconds by players of an online game who were told which object to draw. Each drawing's strokes were simplified, the drawing scaled so its bounding box fits a 256 x 256 frame (aspect ratio kept), rendered and reduced to 28 x 28 grey levels with the bounding box centred. Strokes are bright (up to 255) on a zero background, about one to two pixels wide at this size, with grey edges. The published bitmaps keep every drawing, including ones the game's own classifier did not recognise."
+ },
+ "conv": "cross-correlation as in PyTorch Conv2d: out[o, i, j] = bias[o] + sum_c sum_u sum_v weight[o, c, u, v] * in[c, i + u, j + v] (after zero padding)",
+ "flatten": "the [16, 5, 5] map is flattened in (channel, row, column) order to 400 values",
+ "output": "10 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on 10,000 held-out drawings, 1,000 per class",
+ "baseline": 0.15
+}

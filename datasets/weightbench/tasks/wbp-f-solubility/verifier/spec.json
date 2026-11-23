@@ -1,0 +1,645 @@
+{
+ "task": "wbp-f-solubility",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   64,
+   105
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   32,
+   64
+  ],
+  "fc2.bias": [
+   32
+  ],
+  "fc3.weight": [
+   1,
+   32
+  ],
+  "fc3.bias": [
+   1
+  ]
+ },
+ "architecture": "MLP 105 -> 64 relu -> 32 relu -> 1 (regression)",
+ "features": [
+  {
+   "index": 0,
+   "name": "fr_Al_COO",
+   "value": "count of: Number of aliphatic carboxylic acids",
+   "smarts": "C-C(=O)[O;H1,-]"
+  },
+  {
+   "index": 1,
+   "name": "fr_Al_OH",
+   "value": "count of: Number of aliphatic hydroxyl groups",
+   "smarts": "[C!$(C=O)]-[OH]"
+  },
+  {
+   "index": 2,
+   "name": "fr_Al_OH_noTert",
+   "value": "count of: Number of aliphatic hydroxyl groups excluding tert-OH",
+   "smarts": "[$(C-[OX2H]);!$([CX3](-[OX2H])=[OX1]);!$([CD4]-[OX2H])]"
+  },
+  {
+   "index": 3,
+   "name": "fr_ArN",
+   "value": "count of: Number of N functional groups attached to aromatics",
+   "smarts": "[$(a-[NX3H2]),$(a-[NH1][NH2]),$(a-C(=[OX1])[NH1][NH2]),$(a-C(=[NH])[NH2])]"
+  },
+  {
+   "index": 4,
+   "name": "fr_Ar_COO",
+   "value": "count of: Number of Aromatic carboxylic acide",
+   "smarts": "c-C(=O)[O;H1,-]"
+  },
+  {
+   "index": 5,
+   "name": "fr_Ar_N",
+   "value": "count of: Number of aromatic nitrogens",
+   "smarts": "n"
+  },
+  {
+   "index": 6,
+   "name": "fr_Ar_NH",
+   "value": "count of: Number of aromatic amines",
+   "smarts": "[nH]"
+  },
+  {
+   "index": 7,
+   "name": "fr_Ar_OH",
+   "value": "count of: Number of aromatic hydroxyl groups",
+   "smarts": "c[OH1]"
+  },
+  {
+   "index": 8,
+   "name": "fr_COO",
+   "value": "count of: Number of carboxylic acids",
+   "smarts": "[#6]C(=O)[O;H,-1]"
+  },
+  {
+   "index": 9,
+   "name": "fr_COO2",
+   "value": "count of: Number of carboxylic acids",
+   "smarts": "[CX3](=O)[OX1H0-,OX2H1]"
+  },
+  {
+   "index": 10,
+   "name": "fr_C_O",
+   "value": "count of: Number of carbonyl O",
+   "smarts": "[CX3]=[OX1]"
+  },
+  {
+   "index": 11,
+   "name": "fr_C_O_noCOO",
+   "value": "count of: Number of carbonyl O, excluding COOH",
+   "smarts": "[C!$(C-[OH])]=O"
+  },
+  {
+   "index": 12,
+   "name": "fr_C_S",
+   "value": "count of: Number of thiocarbonyl",
+   "smarts": "C=[SX1]"
+  },
+  {
+   "index": 13,
+   "name": "fr_HOCCN",
+   "value": "count of: Number of C(OH)CCN-Ctert-alkyl or  C(OH)CCNcyclic",
+   "smarts": "[$([OX2H1][CX4][CX4H2][NX3&R1]),$([OH1][CX4][CX4H2][NX3][CX4](C)(C)C)]"
+  },
+  {
+   "index": 14,
+   "name": "fr_Imine",
+   "value": "count of: Number of Imines",
+   "smarts": "[Nv3](=C)-[#6]"
+  },
+  {
+   "index": 15,
+   "name": "fr_NH0",
+   "value": "count of: Number of Tertiary amines",
+   "smarts": "[NH0,nH0]"
+  },
+  {
+   "index": 16,
+   "name": "fr_NH1",
+   "value": "count of: Number of Secondary amines",
+   "smarts": "[NH1,nH1]"
+  },
+  {
+   "index": 17,
+   "name": "fr_NH2",
+   "value": "count of: Number of Primary amines",
+   "smarts": "[NH2,nH2]"
+  },
+  {
+   "index": 18,
+   "name": "fr_N_O",
+   "value": "count of: Number of hydroxylamine groups",
+   "smarts": "[N!$(N=O)](-O)-C"
+  },
+  {
+   "index": 19,
+   "name": "fr_Ndealkylation1",
+   "value": "count of: Number of XCCNR groups",
+   "smarts": "[$(N(-[CH3])-C-[$(C~O),$(C-a),$(C-N),$(C=C)]),$(N(-[CH2][CH3])-C-[$(C~O),$(C-a),$(C-N),$(C=C)])]"
+  },
+  {
+   "index": 20,
+   "name": "fr_Ndealkylation2",
+   "value": "count of: Number of tert-alicyclic amines (no heteroatoms, not quinine-like bridged N)",
+   "smarts": "[$([N&R1]1(-C)CCC1),$([N&R1]1(-C)CCCC1),$([N&R1]1(-C)CCCCC1),$([N&R1]1(-C)CCCCCC1),$([N&R1]1(-C)CCCCCCC1)]"
+  },
+  {
+   "index": 21,
+   "name": "fr_Nhpyrrole",
+   "value": "count of: Number of H-pyrrole nitrogens",
+   "smarts": "[nH]"
+  },
+  {
+   "index": 22,
+   "name": "fr_SH",
+   "value": "count of: Number of thiol groups",
+   "smarts": "[SH]"
+  },
+  {
+   "index": 23,
+   "name": "fr_aldehyde",
+   "value": "count of: Number of aldehydes",
+   "smarts": "[CX3H1](=O)[#6]"
+  },
+  {
+   "index": 24,
+   "name": "fr_alkyl_carbamate",
+   "value": "count of: Number of alkyl carbamates (subject to hydrolysis)",
+   "smarts": "C[NH1]C(=O)OC"
+  },
+  {
+   "index": 25,
+   "name": "fr_alkyl_halide",
+   "value": "count of: Number of alkyl halides",
+   "smarts": "[CX4]-[Cl,Br,I,F]"
+  },
+  {
+   "index": 26,
+   "name": "fr_allylic_oxid",
+   "value": "count of: Number of allylic oxidation sites excluding steroid dienone",
+   "smarts": "[$(C=C-C);!$(C=C-C-[N,O,S]);!$(C=C-C-C-[N,O]);!$(C12=CC(=O)CCC1C3C(C4C(CCC4)CC3)CC2)]"
+  },
+  {
+   "index": 27,
+   "name": "fr_amide",
+   "value": "count of: Number of amides",
+   "smarts": "C(=O)-N"
+  },
+  {
+   "index": 28,
+   "name": "fr_amidine",
+   "value": "count of: Number of amidine groups",
+   "smarts": "C(=N)(-N)-[!#7]"
+  },
+  {
+   "index": 29,
+   "name": "fr_aniline",
+   "value": "count of: Number of anilines",
+   "smarts": "c-[NX3;!$(N=*)]"
+  },
+  {
+   "index": 30,
+   "name": "fr_aryl_methyl",
+   "value": "count of: Number of aryl methyl sites for hydroxylation",
+   "smarts": "[$(a-[CH3]),$(a-[CH2]-[CH3]),$(a-[CH2]-[CH2]~[!N;!O]);!$(a(:a!:*):a!:*)]"
+  },
+  {
+   "index": 31,
+   "name": "fr_azide",
+   "value": "count of: Number of azide groups",
+   "smarts": "[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]"
+  },
+  {
+   "index": 32,
+   "name": "fr_azo",
+   "value": "count of: Number of azo groups",
+   "smarts": "[#6]-N=N-[#6]"
+  },
+  {
+   "index": 33,
+   "name": "fr_barbitur",
+   "value": "count of: Number of barbiturate groups",
+   "smarts": "C1C(=O)NC(=O)NC1=O"
+  },
+  {
+   "index": 34,
+   "name": "fr_benzene",
+   "value": "count of: Number of benzene rings",
+   "smarts": "c1ccccc1"
+  },
+  {
+   "index": 35,
+   "name": "fr_benzodiazepine",
+   "value": "count of: Number of benzodiazepines with no additional fused rings",
+   "smarts": "[c&R2]12[c&R1][c&R1][c&R1][c&R1][c&R2]1[N&R1][C&R1][C&R1][N&R1]=[C&R1]2"
+  },
+  {
+   "index": 36,
+   "name": "fr_bicyclic",
+   "value": "count of: Bicyclic",
+   "smarts": "[R2][R2]"
+  },
+  {
+   "index": 37,
+   "name": "fr_diazo",
+   "value": "count of: Number of diazo groups",
+   "smarts": "[N+]#N"
+  },
+  {
+   "index": 38,
+   "name": "fr_dihydropyridine",
+   "value": "count of: Number of dihydropyridines",
+   "smarts": "[$([NX3H1]1-C=C-C-C=C1),$([Nv3]1=C-C-C=C-C1),$([Nv3]1=C-C=C-C-C1),$([NX3H1]1-C-C=C-C=C1)]"
+  },
+  {
+   "index": 39,
+   "name": "fr_epoxide",
+   "value": "count of: Number of epoxide rings",
+   "smarts": "O1CC1"
+  },
+  {
+   "index": 40,
+   "name": "fr_ester",
+   "value": "count of: Number of esters",
+   "smarts": "[#6][CX3](=O)[OX2H0][#6]"
+  },
+  {
+   "index": 41,
+   "name": "fr_ether",
+   "value": "count of: Number of ether oxygens (including phenoxy)",
+   "smarts": "[OD2]([#6])[#6]"
+  },
+  {
+   "index": 42,
+   "name": "fr_furan",
+   "value": "count of: Number of furan rings",
+   "smarts": "o1cccc1"
+  },
+  {
+   "index": 43,
+   "name": "fr_guanido",
+   "value": "count of: Number of guanidine groups",
+   "smarts": "C(=N)(N)N"
+  },
+  {
+   "index": 44,
+   "name": "fr_halogen",
+   "value": "count of: Number of halogens",
+   "smarts": "[#9,#17,#35,#53]"
+  },
+  {
+   "index": 45,
+   "name": "fr_hdrzine",
+   "value": "count of: Number of hydrazine groups",
+   "smarts": "[NX3]-[NX3]"
+  },
+  {
+   "index": 46,
+   "name": "fr_hdrzone",
+   "value": "count of: Number of hydrazone groups",
+   "smarts": "C=N-[NX3]"
+  },
+  {
+   "index": 47,
+   "name": "fr_imidazole",
+   "value": "count of: Number of imidazole rings",
+   "smarts": "n1cncc1"
+  },
+  {
+   "index": 48,
+   "name": "fr_imide",
+   "value": "count of: Number of imide groups",
+   "smarts": "N(-C(=O))-C=O"
+  },
+  {
+   "index": 49,
+   "name": "fr_isocyan",
+   "value": "count of: Number of isocyanates",
+   "smarts": "N=C=O"
+  },
+  {
+   "index": 50,
+   "name": "fr_isothiocyan",
+   "value": "count of: Number of isothiocyanates",
+   "smarts": "N=C=S"
+  },
+  {
+   "index": 51,
+   "name": "fr_ketone",
+   "value": "count of: Number of ketones",
+   "smarts": "[#6][CX3](=O)[#6]"
+  },
+  {
+   "index": 52,
+   "name": "fr_ketone_Topliss",
+   "value": "count of: Number of ketones excluding diaryl, a,b-unsat. dienones, heteroatom on Calpha",
+   "smarts": "[$([CX3](=[OX1])(C)([c,C]));!$([CX3](=[OX1])([CH1]=C)[c,C])]"
+  },
+  {
+   "index": 53,
+   "name": "fr_lactam",
+   "value": "count of: Number of beta lactams",
+   "smarts": "N1C(=O)CC1"
+  },
+  {
+   "index": 54,
+   "name": "fr_lactone",
+   "value": "count of: Number of cyclic esters (lactones)",
+   "smarts": "[C&R1](=O)[O&R1][C&R1]"
+  },
+  {
+   "index": 55,
+   "name": "fr_methoxy",
+   "value": "count of: Number of methoxy groups -OCH3",
+   "smarts": "[OX2](-[#6])-[CH3]"
+  },
+  {
+   "index": 56,
+   "name": "fr_morpholine",
+   "value": "count of: Number of morpholine rings",
+   "smarts": "O1CCNCC1"
+  },
+  {
+   "index": 57,
+   "name": "fr_nitrile",
+   "value": "count of: Number of nitriles",
+   "smarts": "[NX1]#[CX2]"
+  },
+  {
+   "index": 58,
+   "name": "fr_nitro",
+   "value": "count of: Number of nitro groups",
+   "smarts": "[$([NX3](=O)=O),$([NX3+](=O)[O-])][!#8]"
+  },
+  {
+   "index": 59,
+   "name": "fr_nitro_arom",
+   "value": "count of: Number of nitro benzene ring substituents",
+   "smarts": "[$(c1(-[$([NX3](=O)=O),$([NX3+](=O)[O-])])ccccc1)]"
+  },
+  {
+   "index": 60,
+   "name": "fr_nitro_arom_nonortho",
+   "value": "count of: Number of non-ortho nitro benzene ring substituents",
+   "smarts": "[$(c1(-[$([NX3](=O)=O),$([NX3+](=O)[O-])])ccccc1);!$(cc-!:*)]"
+  },
+  {
+   "index": 61,
+   "name": "fr_nitroso",
+   "value": "count of: Number of nitroso groups, excluding NO2",
+   "smarts": "[N!$(N-O)]=O"
+  },
+  {
+   "index": 62,
+   "name": "fr_oxazole",
+   "value": "count of: Number of oxazole rings",
+   "smarts": "c1ocnc1"
+  },
+  {
+   "index": 63,
+   "name": "fr_oxime",
+   "value": "count of: Number of oxime groups",
+   "smarts": "[CX3]=[NX2]-[OX2]"
+  },
+  {
+   "index": 64,
+   "name": "fr_para_hydroxylation",
+   "value": "count of: Number of para-hydroxylation sites",
+   "smarts": "[$([cH]1[cH]cc(c[cH]1)~[$([#8,$([#8]~[H,c,C])])]),$([cH]1[cH]cc(c[cH]1)~[$([#7X3,$([#7](~[H,c,C])~[H,c,C])])]),$([cH]1[cH]cc(c[cH]1)-!:[$([NX3H,$(NC(=O)[H,c,C])])])]"
+  },
+  {
+   "index": 65,
+   "name": "fr_phenol",
+   "value": "count of: Number of phenols",
+   "smarts": "[OX2H]-c1ccccc1"
+  },
+  {
+   "index": 66,
+   "name": "fr_phenol_noOrthoHbond",
+   "value": "count of: Number of phenolic OH excluding ortho intramolecular Hbond substituents",
+   "smarts": "[$(c1(-[OX2H])ccccc1);!$(cc-!:[CH2]-[OX2H]);!$(cc-!:C(=O)[O;H1,-]);!$(cc-!:C(=O)-[NH2])]"
+  },
+  {
+   "index": 67,
+   "name": "fr_phos_acid",
+   "value": "count of: Number of phosphoric acid groups",
+   "smarts": "[$(P(=[OX1])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)]),$([P+]([OX1-])([$([OX2H]),$([OX1-]),$([OX2]P)])([$([OX2H]),$([OX1-]),$([OX2]P)])[$([OX2H]),$([OX1-]),$([OX2]P)])]"
+  },
+  {
+   "index": 68,
+   "name": "fr_phos_ester",
+   "value": "count of: Number of phosphoric ester groups",
+   "smarts": "[$(P(=[OX1])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)]),$([P+]([OX1-])([OX2][#6])([$([OX2H]),$([OX1-]),$([OX2][#6])])[$([OX2H]),$([OX1-]),$([OX2][#6]),$([OX2]P)])]"
+  },
+  {
+   "index": 69,
+   "name": "fr_piperdine",
+   "value": "count of: Number of piperdine rings",
+   "smarts": "N1CCCCC1"
+  },
+  {
+   "index": 70,
+   "name": "fr_piperzine",
+   "value": "count of: Number of piperzine rings",
+   "smarts": "N1CCNCC1"
+  },
+  {
+   "index": 71,
+   "name": "fr_priamide",
+   "value": "count of: Number of primary amides",
+   "smarts": "C(=O)-[NH2]"
+  },
+  {
+   "index": 72,
+   "name": "fr_prisulfonamd",
+   "value": "count of: Number of primary sulfonamides",
+   "smarts": "[NH2]-S(=,-[OX1;+0;-1])(=,-[OX1;+0;-1])-[#6]"
+  },
+  {
+   "index": 73,
+   "name": "fr_pyridine",
+   "value": "count of: Number of pyridine rings",
+   "smarts": "n1ccccc1"
+  },
+  {
+   "index": 74,
+   "name": "fr_quatN",
+   "value": "count of: Number of quaternary nitrogens",
+   "smarts": "[$([NX4+]),$([NX4]=*)]"
+  },
+  {
+   "index": 75,
+   "name": "fr_sulfide",
+   "value": "count of: Number of thioether",
+   "smarts": "[SX2](-[#6])-C"
+  },
+  {
+   "index": 76,
+   "name": "fr_sulfonamd",
+   "value": "count of: Number of sulfonamides",
+   "smarts": "N-S(=,-[OX1;+0,-1])(=,-[OX1;+0,-1])-[#6]"
+  },
+  {
+   "index": 77,
+   "name": "fr_sulfone",
+   "value": "count of: Number of sulfone groups",
+   "smarts": "S(=,-[OX1;+0,-1])(=,-[OX1;+0,-1])(-[#6])-[#6]"
+  },
+  {
+   "index": 78,
+   "name": "fr_term_acetylene",
+   "value": "count of: Number of terminal acetylenes",
+   "smarts": "C#[CH]"
+  },
+  {
+   "index": 79,
+   "name": "fr_tetrazole",
+   "value": "count of: Number of tetrazole rings",
+   "smarts": "c1nnnn1"
+  },
+  {
+   "index": 80,
+   "name": "fr_thiazole",
+   "value": "count of: Number of thiazole rings",
+   "smarts": "c1scnc1"
+  },
+  {
+   "index": 81,
+   "name": "fr_thiocyan",
+   "value": "count of: Number of thiocyanates",
+   "smarts": "S-C#N"
+  },
+  {
+   "index": 82,
+   "name": "fr_thiophene",
+   "value": "count of: Number of thiophene rings",
+   "smarts": "s1cccc1"
+  },
+  {
+   "index": 83,
+   "name": "fr_unbrch_alkane",
+   "value": "count of: Number of unbranched alkanes  of at least 4 members (excludes halogenated alkanes)",
+   "smarts": "[CR0;D2,D1][CR0;D2][CR0;D2][CR0;D2,D1]"
+  },
+  {
+   "index": 84,
+   "name": "fr_urea",
+   "value": "count of: Number of urea groups",
+   "smarts": "C(=O)(-N)-N"
+  },
+  {
+   "index": 85,
+   "name": "n_C",
+   "value": "number of C atoms"
+  },
+  {
+   "index": 86,
+   "name": "n_N",
+   "value": "number of N atoms"
+  },
+  {
+   "index": 87,
+   "name": "n_O",
+   "value": "number of O atoms"
+  },
+  {
+   "index": 88,
+   "name": "n_S",
+   "value": "number of S atoms"
+  },
+  {
+   "index": 89,
+   "name": "n_P",
+   "value": "number of P atoms"
+  },
+  {
+   "index": 90,
+   "name": "n_F",
+   "value": "number of F atoms"
+  },
+  {
+   "index": 91,
+   "name": "n_Cl",
+   "value": "number of Cl atoms"
+  },
+  {
+   "index": 92,
+   "name": "n_Br",
+   "value": "number of Br atoms"
+  },
+  {
+   "index": 93,
+   "name": "n_I",
+   "value": "number of I atoms"
+  },
+  {
+   "index": 94,
+   "name": "n_other_heavy",
+   "value": "number of heavy atoms of any other element (metals, B, Si, Se, As, ...)"
+  },
+  {
+   "index": 95,
+   "name": "heavy_atoms",
+   "value": "number of heavy (non-hydrogen) atoms"
+  },
+  {
+   "index": 96,
+   "name": "rings",
+   "value": "number of rings (smallest set of smallest rings)"
+  },
+  {
+   "index": 97,
+   "name": "aromatic_rings",
+   "value": "number of aromatic rings"
+  },
+  {
+   "index": 98,
+   "name": "h_donors",
+   "value": "hydrogen-bond donors: RDKit Lipinski.NumHDonors, the number of atoms matching [$([N&!H0&v3]),$([N&!H0&+&v4]),$([O,S;H1;+0]),$([n&H1&+0])] (N-H, charged N-H, O-H, S-H, aromatic n-H)"
+  },
+  {
+   "index": 99,
+   "name": "h_acceptors",
+   "value": "hydrogen-bond acceptors: RDKit Lipinski.NumHAcceptors, the number of atoms matching [$([O,S;H1;v2]-[!$(*=[O,N,P,S])]),$([O,S;H0;v2]),$([O,S;-]),$([N&v3&!$(N-*=&!@[O,N,P,S])]),$([n&H0,o,s;+0])] (hydroxyl, ether and thioether O and S, anionic O and S, amine N that is not next to a double bond to O, N, P or S, aromatic n, o and s without H)"
+  },
+  {
+   "index": 100,
+   "name": "rotatable_bonds",
+   "value": "rotatable bonds: RDKit CalcNumRotatableBonds with its default, strict definition (single, non-ring bonds between non-terminal heavy atoms, not counting amide C-N and similar bonds)"
+  },
+  {
+   "index": 101,
+   "name": "fraction_csp3",
+   "value": "fraction of carbon atoms that are sp3, 0 to 1"
+  },
+  {
+   "index": 102,
+   "name": "abs_charge",
+   "value": "sum over atoms of the absolute formal charge (0 for a neutral molecule; 2 for a salt such as sodium acetate written as [Na+].CC(=O)[O-]; also 2 for each nitro group, which AqSolDB writes as [N+](=O)[O-], and for other zwitterionic drawings)"
+  },
+  {
+   "index": 103,
+   "name": "components",
+   "value": "number of disconnected parts of the structure (1 for one molecule; 2 or more for a salt, a hydrate or a mixture)"
+  },
+  {
+   "index": 104,
+   "name": "mol_weight_100",
+   "value": "molecular weight in g/mol divided by 100 (all parts, hydrogens included)"
+  }
+ ],
+ "features_note": "Computed with RDKit 2024.09.6 from each compound's SMILES as given in AqSolDB (hydrogens implicit). Features 0-84 are RDKit's fragment counts (rdkit.Chem.Fragments; the SMARTS patterns and descriptions are RDKit's FragmentDescriptors.csv, BSD licence): each is the number of matches of its pattern in the whole structure. Counts are not scaled.",
+ "target": "log10 of the aqueous solubility in mol/L (log S), at room temperature",
+ "dataset_facts": "AqSolDB (Sorkun, Khetan and Er 2019): 9,982 compounds with aqueous solubility values curated from nine public datasets (where several sources disagreed, the authors selected one value). It holds drugs, pesticides, industrial chemicals, dyes, salts and some inorganic and organometallic compounds. The held-out set is 1,500 compounds drawn at random from the 9,980 that RDKit parses.",
+ "forward": "h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); prediction = fc3.weight @ h2 + fc3.bias (one number: the predicted log S; it is not clipped)",
+ "metric": "mean squared error of the predicted log S over the 1,500 held-out compounds"
+}
