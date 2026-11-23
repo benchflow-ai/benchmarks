@@ -4,6 +4,8 @@ Ready-to-run benchmark task directories and parity experiments for [BenchFlow](h
 
 This repo contains **converted tasks** and **parity results** — the output of running each benchmark's converter and validation pipeline. Conversion code, parity tests, and `benchmark.yaml` descriptors live in the main [benchflow](https://github.com/benchflow-ai/benchflow) repo under `benchmarks/<name>/`.
 
+Native benchmarks such as [weightbench](datasets/weightbench/) are written as BenchFlow tasks from the start. They have no converter or parity step; their tasks use `task.md`, and their README and `benchmark.yaml` sit in `datasets/<name>/`.
+
 ## Structure
 
 ```
@@ -66,9 +68,9 @@ Each task directory follows the BenchFlow task format:
 # Clone and run with BenchFlow
 git clone https://github.com/benchflow-ai/benchmarks.git
 cd benchmarks
-benchflow run -t datasets/harvey-lab/tasks/<task-id>
-benchflow run -t datasets/programbench/tasks/<task-id>
-benchflow run -t datasets/weightbench/tasks/<task-id>
+bench run datasets/harvey-lab/tasks/<task-id>
+bench run datasets/programbench/tasks/<task-id>
+bench run datasets/weightbench/tasks/<task-id>
 
 # Or use from the benchflow repo with auto-download
 python benchmarks/harvey-lab/run_harvey_lab.py
