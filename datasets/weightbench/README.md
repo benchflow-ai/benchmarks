@@ -14,8 +14,6 @@ breaks a rule (training, fitting, running any part of the network, or statistics
 
 ## Leaderboard
 
-<!-- Release candidate: replace with the launch-day board (k=3, 95% intervals) from the site. -->
-
 | Agent | Score (%) | Rule breaks (of 63) |
 |---|---|---|
 | GPT-6.2 Astra | 62.8 ± 0.6 | 0 |
@@ -74,7 +72,8 @@ bench run benchflow-ai/benchmarks/datasets/weightbench/tasks/wbp-f-eurosat \
 ```
 
 The held-out test data and our trained reference weights are not in this folder, so a run goes end to end but the
-grader stops without a score. <!-- Release candidate: replace with how outside runs get scored (READINESS 4). -->
+grader stops without a score. To get your agent scored, send it to us on [Discord](https://discord.gg/mZ9Rc8q8W3) and
+we run it on the held-out data.
 
 ## Data and licences
 
@@ -85,7 +84,6 @@ EuroSAT (MIT; Copernicus Sentinel-2 data free and open), Project Gutenberg texts
 (their own terms; Apache-2.0 vocabulary), Qwen3.5 tokenizer (Apache-2.0), MIT-BIH via PhysioNet (ODC-By 1.0), UCI HAR,
 Covertype and Connect-4 (CC BY 4.0), Speech Commands (CC BY 4.0), GENCODE and GRCh38 (open), RCSB PDB (CC0), AqSolDB
 (CC0) with RDKit fragment definitions (BSD 3-Clause), Lichess evaluations (CC0).
-<!-- Release candidate: per-task credits and third-party notices (READINESS 2). -->
 
 ## Canary
 
@@ -94,4 +92,11 @@ line.
 
 ## Cite
 
-<!-- Release candidate: the site's cite block. -->
+```bibtex
+@misc{weightbench2026,
+  title  = {WeightBench: can coding agents write neural-network weights by hand?},
+  author = {BenchFlow team},
+  year   = {2026},
+  note   = {https://www.benchflow.ai/weightbench}
+}
+```
