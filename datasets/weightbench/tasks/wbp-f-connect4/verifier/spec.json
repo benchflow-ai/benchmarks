@@ -1,0 +1,39 @@
+{
+ "task": "wbp-f-connect4",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   64,
+   84
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   32,
+   64
+  ],
+  "fc2.bias": [
+   32
+  ],
+  "fc3.weight": [
+   3,
+   32
+  ],
+  "fc3.bias": [
+   3
+  ]
+ },
+ "architecture": "MLP 84 -> 64 relu -> 32 relu -> 3",
+ "classes": [
+  "0 win for x",
+  "1 draw",
+  "2 loss for x"
+ ],
+ "board": "7 columns a..g (left to right) x 6 rows 1..6 (row 1 at the bottom); pieces fall to the lowest empty cell of their column; four in a row horizontally, vertically or diagonally wins",
+ "encoding": "cell index c = 6 * column + (row - 1), column a = 0 .. g = 6, so a1 = 0, a6 = 5, b1 = 6, g6 = 41; input c is 1 if x (the first player) has a piece on cell c, input 42 + c is 1 if o has one; an empty cell has both 0",
+ "dataset_facts": "UCI Connect-4 (John Tromp, 1995): in its documentation's words, \"all legal 8-ply positions in the game of connect-4 in which neither player has won yet, and in which the next move is not forced\" (67,557 positions, 4 pieces each), each labelled with its game-theoretic value for the first player x under perfect play by both sides (x is to move: it is x's fifth move). Over all positions: win 65.8%, loss 24.6%, draw 9.5%. The held-out set is 1,000 positions of each value drawn at random.",
+ "forward": "h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 3,000 held-out positions (1,000 per class, so accuracy is the mean of the three per-class recalls)",
+ "baseline": 0.3333333333333333
+}

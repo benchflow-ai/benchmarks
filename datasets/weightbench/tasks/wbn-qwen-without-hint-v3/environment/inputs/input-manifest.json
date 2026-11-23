@@ -1,0 +1,40 @@
+{
+  "allowed_scope": "target architecture and tokenizer only",
+  "architecture_implementation_sha256": "762feb6c7426a7f15b5bf830df54c07438bf9e7c27b8cdb23179045920412c3b",
+  "corpus": false,
+  "files": {
+    "ARCHITECTURE-NOTES.txt": "50a71c40730bbe4c9a86c5f3778e9d8bdd994c5253cbfec8b7794952859ca317",
+    "architecture.json": "05b87f6db21da8ef82f676ff6cfad47009d4737b0fb2268eb5734a7bb874f216",
+    "chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+    "text-architecture.py.txt": "ecef712b87a8acdf405be3171b476ef8e7347353ac7f374f34735a5219d3eb93",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "49e2b6e395f959f077f1e992b338919c0d4a9732fc6e613995e06557f843500c",
+    "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+  },
+  "predecessor_manifest_sha256": "006bde3c971d4d2401eb12b5f03780e9f26abad77cd3ef826a5edc1e46bedab5",
+  "source_definitions": [
+    "Qwen3_5TextRotaryEmbedding",
+    "Qwen3_5RMSNormGated",
+    "apply_mask_to_padding_states",
+    "causal_conv1d_update",
+    "causal_conv1d_fn",
+    "l2norm",
+    "torch_chunk_gated_delta_rule",
+    "torch_recurrent_gated_delta_rule",
+    "Qwen3_5GatedDeltaNet",
+    "rotate_half",
+    "apply_rotary_pos_emb",
+    "repeat_kv",
+    "eager_attention_forward",
+    "Qwen3_5Attention",
+    "Qwen3_5MLP",
+    "Qwen3_5RMSNorm",
+    "Qwen3_5DecoderLayer",
+    "Qwen3_5TextModel",
+    "Qwen3_5ForCausalLM"
+  ],
+  "source_sha256": "f6df59ceb8b0e555b9cc7f493e67ef73d869d0e1bf75d57e9f54d26795faf91c",
+  "track": "K",
+  "weights": false
+}

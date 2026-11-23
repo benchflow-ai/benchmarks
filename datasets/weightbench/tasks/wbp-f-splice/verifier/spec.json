@@ -1,0 +1,43 @@
+{
+ "task": "wbp-f-splice",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   128,
+   320
+  ],
+  "fc1.bias": [
+   128
+  ],
+  "fc2.weight": [
+   32,
+   128
+  ],
+  "fc2.bias": [
+   32
+  ],
+  "fc3.weight": [
+   2,
+   32
+  ],
+  "fc3.bias": [
+   2
+  ]
+ },
+ "architecture": "MLP on a one-hot 80-nucleotide window: 320 -> 128 relu -> 32 relu -> 2",
+ "window": "80 nucleotides of the gene's sense (transcribed) strand, 5' to 3', positions 0..79; the candidate dinucleotide (GT or AG) is at positions 40 and 41",
+ "encoding": "input index = 4 * p + b for position p = 0..79 and base b in the order A, C, G, T (one-hot; no held-out window contains another letter)",
+ "classes": [
+  "0 decoy",
+  "1 real splice site"
+ ],
+ "donor": "a real donor window has the intron's first two bases GT at 40-41: positions 0..39 are the 40 bases before the junction (position 39 is exon position -1; when the exon is shorter than 40 bases, the window reaches back into the intron before it), positions 42..79 are intron positions +3 .. +40 (or beyond the intron's end when the intron is shorter)",
+ "acceptor": "a real acceptor window has the intron's last two bases AG at 40-41: positions 0..39 are the 40 bases before them (position 39 is intron position -3; when the intron is shorter, the window reaches back into the exon before it), positions 42..79 are the 38 bases after the junction (position 42 is exon position +1; when the exon is shorter, the window runs on into the next intron)",
+ "decoys": "a decoy is a GT or AG at positions 40-41 inside the pre-mRNA of the same set of genes (exon or intron), at least 100 nucleotides from every splice site annotated in any GENCODE basic transcript, on the sense strand",
+ "decoy_matching": "Decoys were drawn so that their agreement with the textbook consensus has exactly the same distribution as the real sites'. GT windows: the number of the 7 positions 37, 38, 39, 42, 43, 44, 45 (donor -3, -2, -1, +3, +4, +5, +6) that match M A G | G T R A G T (M = A or C, R = A or G). AG windows: the number of pyrimidines (C, T) at positions 27..38 (acceptor -15 .. -4), plus one if position 39 (-3) is C or T, plus one if position 42 (exon +1) is G. For every value of that count there are as many decoys as real sites, so the count alone cannot tell them apart.",
+ "held_out": "8,000 windows: 2,000 real donors, 2,000 real acceptors, 2,000 GT decoys and 2,000 AG decoys, from chromosomes 1, 7, 13 and 19 (genes on other chromosomes were used to train the reference)",
+ "dataset_facts": "Human genome GRCh38 (UCSC hg38) and GENCODE release 46 basic annotation. Real sites are the introns of the Ensembl canonical transcript of every protein-coding gene (chromosomes 1-22 and X) whose intron starts with GT and ends with AG; each site once. Real donors and acceptors were drawn at random from those on the held-out chromosomes.",
+ "forward": "x = the 320 one-hot values; h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 8,000 held-out windows (half real, half decoy)",
+ "baseline": 0.5
+}

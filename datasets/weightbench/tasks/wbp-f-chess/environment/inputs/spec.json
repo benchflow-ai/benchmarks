@@ -1,0 +1,78 @@
+{
+ "task": "wbp-f-chess",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   128,
+   773
+  ],
+  "fc1.bias": [
+   128
+  ],
+  "fc2.weight": [
+   32,
+   128
+  ],
+  "fc2.bias": [
+   32
+  ],
+  "fc3.weight": [
+   2,
+   32
+  ],
+  "fc3.bias": [
+   2
+  ]
+ },
+ "architecture": "MLP 773 -> 128 relu -> 32 relu -> 2",
+ "classes": [
+  "0 Black is better",
+  "1 White is better"
+ ],
+ "encoding_python": "PIECES = 'PNBRQKpnbrqk'\n\n\ndef encode(fen):\n    \"\"\"773 values: 12 planes x 64 squares (piece index * 64 + square, square = 8 * rank + file, a1 = 0, h1 = 7,\n    a8 = 56), then 1 if White is to move, then the castling rights K, Q, k, q.\"\"\"\n    board, side, castling = fen.split(' ')[:3]\n    x = [0.0] * 773\n    rank = 7\n    for row in board.split('/'):\n        file = 0\n        for ch in row:\n            if ch.isdigit():\n                file += int(ch)\n            else:\n                x[PIECES.index(ch) * 64 + 8 * rank + file] = 1.0\n                file += 1\n        rank -= 1\n    x[768] = 1.0 if side == 'w' else 0.0\n    for i, right in enumerate('KQkq'):\n        x[769 + i] = 1.0 if right in castling else 0.0\n    return x\n",
+ "encoding": "input index = 64 * piece + square for piece in the order P N B R Q K p n b r q k (upper case White, lower case Black) and square = 8 * rank + file (a1 = 0, b1 = 1, ..., h1 = 7, a2 = 8, ..., h8 = 63); index 768 is 1 if White is to move; 769-772 are the castling rights K, Q, k, q (1 if still held). The en passant square is not encoded.",
+ "example": {
+  "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq -",
+  "nonzero_inputs": [
+   8,
+   9,
+   10,
+   11,
+   13,
+   14,
+   15,
+   28,
+   65,
+   85,
+   130,
+   154,
+   192,
+   197,
+   259,
+   326,
+   420,
+   432,
+   433,
+   434,
+   435,
+   437,
+   438,
+   439,
+   490,
+   493,
+   546,
+   570,
+   632,
+   639,
+   699,
+   764,
+   771,
+   772
+  ]
+ },
+ "selection": "Positions whose two sides have exactly the same material (the same number of pawns, knights, bishops, rooks and queens each) and whose engine evaluation gives one side a clear advantage: at least +150 centipawns or a forced mate for White (class 1), at most -150 centipawns or a forced mate for Black (class 0). The evaluation is the one with the greatest search depth for the position, first line. Within each class, half the positions have White to move and half Black, so having the move tells nothing on its own (among all positions that pass the selection, the side to move is the better side 62% of the time).",
+ "dataset_facts": "Lichess evaluation database (lichess.org, CC0): positions that Lichess users analysed, from real games, studies and puzzles, each with Stockfish evaluations from the browser or server (the export downloaded on 2026-11-12, 22.5 GB, about 395 million positions). Every 20th line of the export was read; the held-out set is 20,000 of the positions that pass the selection, drawn at random, 5,000 for each combination of class and side to move. Positions come from every phase of the game, mostly middlegames.",
+ "forward": "h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 20,000 held-out positions (10,000 per class)",
+ "baseline": 0.5
+}

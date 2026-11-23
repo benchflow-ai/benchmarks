@@ -1,0 +1,121 @@
+{
+ "task": "wbp-d-langid",
+ "dtype": "float32",
+ "tensors": {
+  "embedding": [
+   12726,
+   16
+  ],
+  "fc.weight": [
+   12,
+   16
+  ],
+  "fc.bias": [
+   12
+  ]
+ },
+ "architecture": "fastText-style bag of character trigrams (Joulin et al. 2016), mean of 16-dimensional embeddings, one linear layer, no hidden layer",
+ "classes": [
+  {
+   "index": 0,
+   "code": "spa",
+   "language": "Spanish"
+  },
+  {
+   "index": 1,
+   "code": "por",
+   "language": "Portuguese"
+  },
+  {
+   "index": 2,
+   "code": "glg",
+   "language": "Galician"
+  },
+  {
+   "index": 3,
+   "code": "cat",
+   "language": "Catalan"
+  },
+  {
+   "index": 4,
+   "code": "dan",
+   "language": "Danish"
+  },
+  {
+   "index": 5,
+   "code": "nob",
+   "language": "Norwegian Bokmål"
+  },
+  {
+   "index": 6,
+   "code": "nno",
+   "language": "Norwegian Nynorsk"
+  },
+  {
+   "index": 7,
+   "code": "swe",
+   "language": "Swedish"
+  },
+  {
+   "index": 8,
+   "code": "ces",
+   "language": "Czech"
+  },
+  {
+   "index": 9,
+   "code": "slk",
+   "language": "Slovak"
+  },
+  {
+   "index": 10,
+   "code": "ind",
+   "language": "Indonesian"
+  },
+  {
+   "index": 11,
+   "code": "zsm",
+   "language": "Malay (Standard Malay)"
+  }
+ ],
+ "normalization_python": "import re\nimport unicodedata\n\n\ndef normalize(text):\n    text = unicodedata.normalize('NFC', text).lower()\n    text = ''.join(c if c.isalpha() else ' ' for c in text)\n    return ' ' + re.sub(r' +', ' ', text).strip() + ' '\n\n\ndef trigrams(text):\n    t = normalize(text)\n    return [t[i:i + 3] for i in range(len(t) - 2)]\n",
+ "normalization": "Unicode NFC, lower-cased; every character that is not a letter (str.isalpha) becomes a space; runs of spaces become one; one space is added at each end. The trigrams are every window of three consecutive characters of that string, so word boundaries appear as spaces.",
+ "vocabulary": {
+  "file": "vocab.txt",
+  "size": 12726,
+  "rule": "every trigram that occurs in at least 3 sentences of the training split (5,000 sentences per language, disjoint from the held-out ones), sorted by Python string order; line i (0-based) is embedding row i; a line is exactly three characters"
+ },
+ "oov": "trigrams not in vocab.txt are dropped; a repeated trigram counts every time it occurs",
+ "forward": "h = mean of embedding[t] over the in-vocabulary trigrams (the zero vector when there are none); logits = fc.weight @ h + fc.bias; prediction = argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "example": {
+  "text": "Não sei, mas acho que sim!",
+  "trigrams": [
+   " nã",
+   "não",
+   "ão ",
+   "o s",
+   " se",
+   "sei",
+   "ei ",
+   "i m",
+   " ma",
+   "mas",
+   "as ",
+   "s a",
+   " ac",
+   "ach",
+   "cho",
+   "ho ",
+   "o q",
+   " qu",
+   "que",
+   "ue ",
+   "e s",
+   " si",
+   "sim",
+   "im "
+  ]
+ },
+ "dataset_facts": "Tatoeba (tatoeba.org): short everyday sentences contributed by volunteers, many of them translations of the same English sentences (so the same names, such as Tom and Mary, recur in every language). Only sentences in Latin script with at least 12 characters after normalisation are used; a sentence whose normalised text occurs in two of the twelve languages is removed from both.",
+ "metric": "accuracy on 6,000 held-out sentences, 500 per language",
+ "baseline": 0.08333333333333333
+}

@@ -1,0 +1,63 @@
+{
+ "task": "wbp-f-ss3",
+ "dtype": "float32",
+ "tensors": {
+  "fc1.weight": [
+   128,
+   315
+  ],
+  "fc1.bias": [
+   128
+  ],
+  "fc2.weight": [
+   64,
+   128
+  ],
+  "fc2.bias": [
+   64
+  ],
+  "fc3.weight": [
+   3,
+   64
+  ],
+  "fc3.bias": [
+   3
+  ]
+ },
+ "architecture": "MLP over a 15-residue window: 315 -> 128 relu -> 64 relu -> 3",
+ "symbols": [
+  "A",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "K",
+  "L",
+  "M",
+  "N",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "V",
+  "W",
+  "Y",
+  "other"
+ ],
+ "symbol_note": "window position values: index 0..19 is the amino acid in the order ACDEFGHIKLMNPQRSTVWY, index 20 any other letter of the chain (X, U, ...); a position beyond either end of the chain is all zero",
+ "window": "positions i-7 .. i+7 around the residue i to predict; input index = 21 * p + s for window position p = 0..14 (p = 7 is residue i) and symbol s",
+ "classes": [
+  "H (helix)",
+  "E (strand)",
+  "C (coil)"
+ ],
+ "states": "DSSP (Kabsch and Sander 1983) states reduced to three: H, G, I (alpha, 3-10 and pi helix) -> H; E, B (strand, isolated bridge) -> E; everything else (turns, bends, polyproline helix, no assignment) -> C",
+ "dataset_facts": "Every protein chain's sequence and DSSP secondary structure as the RCSB Protein Data Bank distributes them (ss.txt), downloaded 2026-11-12. Kept: chains of 40 to 1,500 residues, at least 95% standard amino acids, at least 10% of residues in helix or strand; each distinct sequence once; then clustered at 30% sequence identity (MMseqs2, 80% coverage) and one representative kept per cluster. The 1,000 held-out chains are cluster representatives drawn at random; no other chain of their clusters was used anywhere. Residues without coordinates in the first model of their structure (the file gives them no DSSP state; 25,535 of the 248,783 held-out residues, mostly disordered termini, loops and expression tags) stay in the windows as context but are not scored, and the reference was trained the same way. The chains come from X-ray, NMR and cryo-EM structures of every kind of protein (enzymes, membrane proteins, antibodies, viral proteins, designed proteins).",
+ "forward": "x = the 315 window values; h1 = relu(fc1.weight @ x + fc1.bias); h2 = relu(fc2.weight @ h1 + fc2.bias); logits = fc3.weight @ h2 + fc3.bias; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "Q3: the share of the scored residues of the 1,000 held-out chains (223,248 residues with coordinates) whose state is predicted correctly",
+ "baseline": 0.408926396
+}

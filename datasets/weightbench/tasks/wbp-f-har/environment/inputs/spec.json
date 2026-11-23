@@ -1,0 +1,68 @@
+{
+ "task": "wbp-f-har",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   16,
+   6,
+   9
+  ],
+  "conv1.bias": [
+   16
+  ],
+  "conv2.weight": [
+   32,
+   16,
+   9
+  ],
+  "conv2.bias": [
+   32
+  ],
+  "fc1.weight": [
+   32,
+   32
+  ],
+  "fc1.bias": [
+   32
+  ],
+  "fc2.weight": [
+   6,
+   32
+  ],
+  "fc2.bias": [
+   6
+  ]
+ },
+ "architecture": "1-D CNN: conv1d k9 (6->16, pad 4) relu maxpool2, conv1d k9 (16->32, pad 4) relu maxpool2, mean over time, fc 32->32 relu, fc 32->6",
+ "classes": [
+  "walking",
+  "walking upstairs",
+  "walking downstairs",
+  "sitting",
+  "standing",
+  "lying"
+ ],
+ "input": {
+  "shape": [
+   6,
+   128
+  ],
+  "channels": [
+   "total_acc_x",
+   "total_acc_y",
+   "total_acc_z",
+   "body_gyro_x",
+   "body_gyro_y",
+   "body_gyro_z"
+  ],
+  "units": "total_acc: the accelerometer signal in standard gravity units (g), gravity included; body_gyro: the gyroscope signal in rad/s; the values are the dataset's own, with no further centring or scaling",
+  "sampling": "128 samples at 50 Hz (2.56 s), column 0 first in time",
+  "axes": "the phone's own axes (Android's convention: with the phone upright and its screen facing you, x points right, y up along the long edge, z out of the screen). The dataset does not record how the phone was turned on the waist: in the first session it was fixed on the left side of the belt, in the second each volunteer placed it as they liked (Anguita et al. 2013)."
+ },
+ "dataset_facts": "UCI Human Activity Recognition Using Smartphones (Anguita et al. 2013): 30 volunteers aged 19-48 wore a Samsung Galaxy S II on the waist and performed six activities in a laboratory protocol, labelled from video. The phone's 3-axis accelerometer and gyroscope were sampled at 50 Hz, noise-filtered with a median filter and a 20 Hz low-pass Butterworth filter, and cut into windows of 2.56 s with 50% overlap. The held-out windows are the dataset's test set (2,947 windows of 9 volunteers); the other 21 volunteers' windows were used to train the reference.",
+ "conv": "cross-correlation as in PyTorch Conv1d: out[o, t] = bias[o] + sum_c sum_u weight[o, c, u] * in[c, t + u] (after zero padding)",
+ "pooling": "maxpool2: the maximum of each non-overlapping pair of time steps (128 -> 64 -> 32); then the mean of each of the 32 channels over its 32 time steps",
+ "output": "6 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 2,947 held-out windows",
+ "baseline": 0.3
+}

@@ -1,0 +1,73 @@
+{
+ "task": "wbp-f-fashion",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   6,
+   1,
+   5,
+   5
+  ],
+  "conv1.bias": [
+   6
+  ],
+  "conv2.weight": [
+   16,
+   6,
+   5,
+   5
+  ],
+  "conv2.bias": [
+   16
+  ],
+  "fc1.weight": [
+   120,
+   400
+  ],
+  "fc1.bias": [
+   120
+  ],
+  "fc2.weight": [
+   84,
+   120
+  ],
+  "fc2.bias": [
+   84
+  ],
+  "fc3.weight": [
+   10,
+   84
+  ],
+  "fc3.bias": [
+   10
+  ]
+ },
+ "architecture": "LeNet-5 style CNN: conv5x5(1->6, pad 2) relu maxpool2, conv5x5(6->16) relu maxpool2, fc 400->120 relu, fc 120->84 relu, fc 84->10",
+ "classes": [
+  "T-shirt/top",
+  "Trouser",
+  "Pullover",
+  "Dress",
+  "Coat",
+  "Sandal",
+  "Shirt",
+  "Sneaker",
+  "Bag",
+  "Ankle boot"
+ ],
+ "input": {
+  "shape": [
+   1,
+   28,
+   28
+  ],
+  "layout": "channel, row (top to bottom), column (left to right)",
+  "scaling": "x = pixel / 255: 0.0 is the black background, 1.0 the brightest part of the article",
+  "dataset_facts": "Fashion-MNIST (Xiao, Rasul and Vollgraf 2017, Zalando Research): front-view product photos of Zalando's catalogue converted to 28 x 28 greyscale. The conversion trimmed the edges close to the corner colour, resized the longest edge to 28 pixels, sharpened with a Gaussian operator (radius and standard deviation 1), extended the shorter edge to 28 with the article centred, negated the intensities (the article is bright on a black background) and converted to 8 bits. The held-out images are the dataset's official test set (10,000 images, 1,000 per class)."
+ },
+ "conv": "cross-correlation as in PyTorch Conv2d: out[o, i, j] = bias[o] + sum_c sum_u sum_v weight[o, c, u, v] * in[c, i + u, j + v] (after zero padding)",
+ "flatten": "the [16, 5, 5] map is flattened in (channel, row, column) order to 400 values",
+ "output": "10 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 10,000 test images, 1,000 per class",
+ "baseline": 0.15
+}

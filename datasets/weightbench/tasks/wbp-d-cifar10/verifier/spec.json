@@ -1,0 +1,75 @@
+{
+ "task": "wbp-d-cifar10",
+ "dtype": "float32",
+ "tensors": {
+  "conv1.weight": [
+   16,
+   3,
+   5,
+   5
+  ],
+  "conv1.bias": [
+   16
+  ],
+  "conv2.weight": [
+   32,
+   16,
+   5,
+   5
+  ],
+  "conv2.bias": [
+   32
+  ],
+  "conv3.weight": [
+   64,
+   32,
+   3,
+   3
+  ],
+  "conv3.bias": [
+   64
+  ],
+  "fc1.weight": [
+   64,
+   64
+  ],
+  "fc1.bias": [
+   64
+  ],
+  "fc2.weight": [
+   10,
+   64
+  ],
+  "fc2.bias": [
+   10
+  ]
+ },
+ "architecture": "small CNN: conv5x5(3->16, pad 2) relu maxpool2, conv5x5(16->32, pad 2) relu maxpool2, conv3x3(32->64, pad 1) relu, global average pool, fc 64->64 relu, fc 64->10",
+ "classes": [
+  "airplane",
+  "automobile",
+  "bird",
+  "cat",
+  "deer",
+  "dog",
+  "frog",
+  "horse",
+  "ship",
+  "truck"
+ ],
+ "input": {
+  "shape": [
+   3,
+   32,
+   32
+  ],
+  "layout": "channel (0 red, 1 green, 2 blue), row (top to bottom), column (left to right)",
+  "scaling": "x = pixel / 255, each channel in [0, 1]",
+  "dataset_facts": "CIFAR-10 test set (Krizhevsky 2009): 10,000 colour photographs of 32 x 32 pixels, 1,000 per class, small natural images collected from the web (the 80 Million Tiny Images collection) and labelled by hand; one object of the class is the subject, usually near the centre, in front of varied backgrounds. \"automobile\" covers sedans, SUVs and similar cars, \"truck\" only big trucks; neither covers pickup trucks."
+ },
+ "conv": "cross-correlation as in PyTorch Conv2d: out[o, i, j] = bias[o] + sum_c sum_u sum_v weight[o, c, u, v] * in[c, i + u, j + v] (after zero padding)",
+ "global_average_pool": "g[c] = the mean of the 64 values of channel c of the [64, 8, 8] map",
+ "output": "10 logits, class k = the k-th entry of classes; the prediction is the argmax (logits within 1e-9 x max(1, |max logit|) of the maximum count as tied; ties go to the lowest index)",
+ "metric": "accuracy on the 10,000 CIFAR-10 test images",
+ "baseline": 0.15
+}

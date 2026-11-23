@@ -1,0 +1,60 @@
+{
+ "task": "wbp-d-chorales",
+ "dtype": "float32",
+ "tensors": {
+  "emb": [
+   23,
+   8
+  ],
+  "hidden.weight": [
+   128,
+   32
+  ],
+  "hidden.bias": [
+   128
+  ],
+  "out.weight": [
+   22,
+   128
+  ],
+  "out.bias": [
+   22
+  ]
+ },
+ "architecture": "note-level MLP language model, 4-note context (Bengio et al. 2003 style)",
+ "input_symbols": "23 symbols: index 0 is \"start\" (no earlier note), index 1 + j is MIDI pitch 60 + j for j = 0..21",
+ "output_classes": "22 classes: class j is MIDI pitch 60 + j",
+ "pitches": [
+  "60 (C4)",
+  "61 (C#4)",
+  "62 (D4)",
+  "63 (D#4)",
+  "64 (E4)",
+  "65 (F4)",
+  "66 (F#4)",
+  "67 (G4)",
+  "68 (G#4)",
+  "69 (A4)",
+  "70 (A#4)",
+  "71 (B4)",
+  "72 (C5)",
+  "73 (C#5)",
+  "74 (D5)",
+  "75 (D#5)",
+  "76 (E5)",
+  "77 (F5)",
+  "78 (F#5)",
+  "79 (G5)",
+  "80 (G#5)",
+  "81 (A5)"
+ ],
+ "pitch_note": "MIDI numbers: 60 is middle C (C4), 69 is the A above it (440 Hz); one step is a semitone",
+ "context": 4,
+ "padding": "positions before the first note of a chorale are \"start\" (index 0); every chorale starts fresh",
+ "melody": "the soprano part of one chorale as the sequence of its notes' pitches, in order: tied notes merged into one, rests, durations, fermatas and repeats ignored, written-out pitch as in the score (not transposed, so each chorale keeps its own key)",
+ "dataset_facts": "Four-part chorales harmonised by J. S. Bach, as encoded in the music21 corpus (version 10.5.2): the soprano carries the hymn tune. Chorales whose first part leaves the soprano range C4..A5 (an instrumental part) are excluded. Tunes harmonised more than once are kept on one side of the held-out split only.",
+ "forward": "x = concat(emb[c1], .., emb[c4]) for the four previous notes, oldest first (32 values); h = tanh(hidden.weight @ x + hidden.bias); logits = out.weight @ h + out.bias; p(next) = softmax(logits). See FORWARD.md.",
+ "evaluation": "mean bits per note, -log2 p(note | previous four), over every note of 84 held-out chorales (4,649 notes; not in the sandbox)",
+ "metric": "bits_per_note",
+ "baseline_uniform": 4.459431618637297
+}

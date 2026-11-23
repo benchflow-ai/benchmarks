@@ -1,0 +1,50 @@
+{
+ "task": "wbp-b-charlm",
+ "dtype": "float32",
+ "tensors": {
+  "emb": [
+   28,
+   16
+  ],
+  "hidden.weight": [
+   256,
+   48
+  ],
+  "hidden.bias": [
+   256
+  ],
+  "out.weight": [
+   28,
+   256
+  ],
+  "out.bias": [
+   28
+  ]
+ },
+ "architecture": "character-level MLP language model, 3-character context (Bengio et al. 2003 style)",
+ "alphabet": " .abcdefghijklmnopqrstuvwxyz",
+ "alphabet_note": "index i is alphabet[i]: 0 is the space, 1 the full stop, 2..27 are a..z",
+ "context": 3,
+ "padding": "positions before the first character of the text are the space (index 0)",
+ "forward": "x = concat(emb[c1], emb[c2], emb[c3]) for the three previous characters, oldest first (48 values); h = tanh(hidden.weight @ x + hidden.bias); logits = out.weight @ h + out.bias; p(next) = softmax(logits). See FORWARD.md.",
+ "normalization_steps": [
+  "Unicode NFKD, combining marks removed, lower-cased",
+  "a-z kept; each of . ! ? becomes a full stop; every other character becomes a space",
+  "every run of spaces and full stops that contains a full stop becomes \". \"",
+  "runs of spaces become one space; leading and trailing spaces removed"
+ ],
+ "normalization_python": "import re\nimport unicodedata\n\n\ndef normalize(text):\n    text = unicodedata.normalize('NFKD', text)\n    text = ''.join(c for c in text if not unicodedata.combining(c)).lower()\n    text = ''.join(c if 'a' <= c <= 'z' else '.' if c in '.!?' else ' ' for c in text)\n    text = re.sub(r'[ .]*\\.[ .]*', '. ', text)\n    return re.sub(r' +', ' ', text).strip()\n",
+ "normalization_examples": [
+  {
+   "raw": "\"Well, Sir,\" said she -- \"it's past 5 o'clock!\"",
+   "normalized": "well sir said she it s past o clock."
+  },
+  {
+   "raw": "The Caf\u00e9 closed.  It was\nlate... wasn't it?",
+   "normalized": "the cafe closed. it was late. wasn t it."
+  }
+ ],
+ "evaluation": "mean bits per character, -log2 p(text[i] | text[i-3:i]), over every character of the held-out text (about 187,000 characters of 19th-century English prose, public domain, normalised as above; not in the sandbox)",
+ "metric": "bits_per_character",
+ "baseline_uniform": 4.807354922057604
+}
