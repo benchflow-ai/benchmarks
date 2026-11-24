@@ -32,8 +32,11 @@ breaks a rule (training, fitting, running any part of the network, or statistics
 | DeepSeek V4.1 Flash | 14.5 ± 1.5 | 27 |
 | MiMo V2.6 Pro | 11.1 ± 1.9 | 23 |
 | GLM-5.3 | 7.5 ± 2.1 | 42 |
+| *Random weights (no agent)* | 0.1 ± 0.1 | – |
 
 Mean over 21 tasks and 3 trials per task; ± is one standard error over trials. The GPT-6.2 agents ran Codex 0.166.0, the other GPT agents Codex 0.159.3.
+
+*Random weights* is not an agent: every weight is drawn at random from the network's standard initialisation (three seeds per task, one for Qwen3.5-0.8B) and graded the same way. It scores above 0 only on human splice sites (1.3%), MNIST digits (0.5%) and close-language identification (0.1%).
 
 ## Tasks
 
